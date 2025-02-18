@@ -14,6 +14,11 @@ const eslintConfig = [
     extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
     rules: {
       'no-console': ['error', { allow: ['warn', 'error'] }],
+      'padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: '*', next: 'if' },
+        { blankLine: 'always', prev: '*', next: 'return' },
+      ],
     },
   }),
 ];

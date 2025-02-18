@@ -10,35 +10,44 @@ const isValidTheme = (value: string | null): value is ThemeType => {
 };
 
 function ThemeSwitcher() {
-  const themeClassListHandler = document.documentElement.classList;
-  const themeHandles = {
-    light: () => themeClassListHandler.remove('dark'),
-    dark: () => themeClassListHandler.add('dark'),
+  const themeHandlers = {
+    light: () => document.documentElement.classList.remove('dark'),
+    dark: () => document.documentElement.classList.add('dark'),
     system: () =>
       window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? themeClassListHandler.add('dark')
-        : themeClassListHandler.remove('dark'),
+        ? document.documentElement.classList.add('dark')
+        : document.documentElement.classList.remove('dark'),
   };
 
-  const handleClick = (theme: ThemeType) => {
-    themeHandles[theme]();
-    localStorage.setItem('isDark', theme);
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const target = e.currentTarget;
+
+    if (target instanceof HTMLButtonElement) {
+      const selectedTheme = target.dataset.theme;
+
+      if (selectedTheme && isValidTheme(selectedTheme)) {
+        themeHandlers[selectedTheme]();
+        localStorage.setItem('isDark', selectedTheme);
+      }
+    }
   };
 
   useEffect(() => {
-    const currentTheme = JSON.parse(localStorage.getItem('isDark') || 'false');
+    const currentTheme = localStorage.getItem('isDark');
+
     if (isValidTheme(currentTheme)) {
-      themeHandles[currentTheme]();
+      themeHandlers[currentTheme]();
       localStorage.setItem('isDark', currentTheme);
     } else {
-      themeHandles.system();
+      themeHandlers.system();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="flex justify-between">
+    <div className="inline-flex justify-between gap-1">
       {themeArray.map((theme) => (
-        <button key={theme} onClick={() => handleClick(theme)}>
+        <button key={theme} data-theme={theme} onClick={handleClick}>
           {theme}
         </button>
       ))}
