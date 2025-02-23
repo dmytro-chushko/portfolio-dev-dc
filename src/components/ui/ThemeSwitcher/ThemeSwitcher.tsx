@@ -9,7 +9,15 @@ const isValidTheme = (value: string | null): value is ThemeType => {
   return value !== null && themeArray.some((theme) => theme === value);
 };
 
-function ThemeSwitcher() {
+type ThemeSwitcherProps = {
+  themes: {
+    dark: string;
+    light: string;
+    system: string;
+  };
+};
+
+function ThemeSwitcher({ themes }: ThemeSwitcherProps) {
   const themeHandlers = {
     light: () => document.documentElement.classList.remove('dark'),
     dark: () => document.documentElement.classList.add('dark'),
@@ -48,7 +56,7 @@ function ThemeSwitcher() {
     <div className="inline-flex justify-between gap-1">
       {themeArray.map((theme) => (
         <button key={theme} data-theme={theme} onClick={handleClick}>
-          {theme}
+          {themes[theme]}
         </button>
       ))}
     </div>
