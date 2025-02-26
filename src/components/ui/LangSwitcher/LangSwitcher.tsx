@@ -1,6 +1,7 @@
 'use client';
-import { LangType } from '@/lib/types/LangType';
 import { usePathname, useRouter } from 'next/navigation';
+
+import { LangType } from '@/lib/types/LangType';
 
 const LangSwitcher = ({
   currentLang,

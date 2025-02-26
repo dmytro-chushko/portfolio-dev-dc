@@ -1,6 +1,8 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
-import { MiddlewareFactory } from './types';
+
 import { langs } from '@/lib/utils/getDictionary';
+
+import { MiddlewareFactory } from './types';
 
 // Get the preferred locale, similar to the above or using a library
 const getLocale = (request: NextRequest): string => {
