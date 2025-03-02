@@ -3,5 +3,14 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System"
+  },
+  "header": {
+    "links": {
+      "career": "Career",
+      "skills": "Skills",
+      "projects": "Projects",
+      "about_me": "About Me",
+      "contacts": "Contact Me"
+    }
   }
 }

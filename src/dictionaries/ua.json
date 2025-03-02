@@ -3,5 +3,14 @@
     "light": "Світла",
     "dark": "Темна",
     "system": "Система"
+  },
+  "header": {
+    "links": {
+      "career": "Досвід",
+      "skills": "Навички",
+      "projects": "Проєкти",
+      "about_me": "Про мене",
+      "contacts": "Контактувати"
+    }
   }
 }

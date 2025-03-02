@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import '@/styles/globals.css';
+import Header from '@/components/layout/Header/Header';
 import LangSwitcher from '@/components/ui/LangSwitcher/LangSwitcher';
 import ThemeSwitcher from '@/components/ui/ThemeSwitcher/ThemeSwitcher';
 import { LangType } from '@/lib/types/LangType';
@@ -25,8 +26,9 @@ export default async function RootLayout({
   return (
     <html lang={lang || 'en'}>
       <body
-        className={`font-roboto ${roboto.variable} font-normal antialiased`}
+        className={`container mx-auto px-2 md:px-4 font-roboto ${roboto.variable} font-normal antialiased`}
       >
+        <Header linkLabels={dict.header.links} />
         <ThemeSwitcher themes={dict.theme} />
         <LangSwitcher currentLang={lang} langs={langs} />
         {children}
