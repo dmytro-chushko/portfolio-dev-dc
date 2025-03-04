@@ -1,5 +1,6 @@
 import NavLink from '@/components/ui/NavLink/NavLink';
 import './header.css';
+import Socials from '@/components/ui/Socials/Socials';
 
 type HeaderProps = {
   linkLabels: Record<string, string>;
@@ -20,13 +21,16 @@ const Header = ({ linkLabels }: HeaderProps) => {
       </div>
       <div
         id="toggle-menu"
-        className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-background opacity-0 z-30 transition-opacity duration-500 pointer-events-none md:static"
+        className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-background opacity-0 z-30 transition-opacity duration-500 pointer-events-none md:sticky md:opacity-100 md:pointer-events-auto"
       >
-        <ul className="flex flex-col md:flex-row md:justify-between md:p-6">
-          {Object.keys(linkLabels).map((link) => (
-            <NavLink key={link} label={linkLabels[link]} href={`#${link}`} />
-          ))}
-        </ul>
+        <div className="flex">
+          <ul className="flex flex-col md:flex-row md:justify-between md:p-6 md:w-full">
+            {Object.keys(linkLabels).map((link) => (
+              <NavLink key={link} label={linkLabels[link]} href={`#${link}`} />
+            ))}
+          </ul>
+          <Socials />
+        </div>
       </div>
     </>
   );
