@@ -7,7 +7,10 @@ type INavLinkProps = {
 
 const NavLink = ({ label, href }: INavLinkProps) => {
   return (
-    <Link href={href} className="">
+    <Link
+      href={href}
+      className="text-xl md:hover:text-hovered transition-colors"
+    >
       {label}
     </Link>
   );

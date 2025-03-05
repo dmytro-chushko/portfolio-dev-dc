@@ -5,11 +5,13 @@
 :root {
   --background: #eff6ff; /* blue-50 */
   --foreground: #172554; /* blue-950 */
+  --hovered: #2563eb; /* blue-600 */
 }
 
 :root.dark {
   --background: #172554; /* blue-950 */
   --foreground: #eff6ff; /* blue-50 */
+  --hovered: #60a5fa; /* blue-400 */
 }
 
 body {

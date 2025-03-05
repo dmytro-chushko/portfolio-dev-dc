@@ -12,6 +12,7 @@ export default {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        hovered: 'var(--hovered)',
       },
       fontFamily: {
         roboto: ['var(--font-roboto)', 'sans-serif'],

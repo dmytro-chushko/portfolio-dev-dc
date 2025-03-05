@@ -36,11 +36,11 @@ const socialArray = [
 
 const Socials = () => {
   return (
-    <ul className="flex items-center">
+    <ul className="flex items-center gap-4">
       {socialArray.map(({ icon, label, link }) => (
         <li key={label}>
           <a
-            className="text-foreground"
+            className="text-foreground md:hover:text-hovered transition-colors"
             key={label}
             href={link}
             aria-label={label}
