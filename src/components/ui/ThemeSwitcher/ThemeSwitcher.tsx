@@ -1,12 +1,21 @@
 'use client';
-import React, { useEffect } from 'react';
+import clsx from 'clsx';
+import React, { useEffect, useState } from 'react';
+
+import IconSystem from '@/components/icons/theme/monitor.svg';
+import IconMoon from '@/components/icons/theme/moon.svg';
+import IconSun from '@/components/icons/theme/sun.svg';
 
 type ThemeType = 'light' | 'dark' | 'system';
 
-const themeArray: ThemeType[] = ['light', 'dark', 'system'];
+const themeArray: { id: ThemeType; icon: React.JSX.Element }[] = [
+  { id: 'light', icon: <IconSun className="fill-current w-6 h-6" /> },
+  { id: 'dark', icon: <IconMoon className="fill-current w-6 h-6" /> },
+  { id: 'system', icon: <IconSystem className="fill-current w-6 h-6" /> },
+];
 
 const isValidTheme = (value: string | null): value is ThemeType => {
-  return value !== null && themeArray.some((theme) => theme === value);
+  return value !== null && themeArray.some((theme) => theme.id === value);
 };
 
 type ThemeSwitcherProps = {
@@ -18,6 +27,7 @@ type ThemeSwitcherProps = {
 };
 
 function ThemeSwitcher({ themes }: ThemeSwitcherProps) {
+  const [activeTheme, setActiveTheme] = useState<ThemeType>('system');
   const themeHandlers = {
     light: () => document.documentElement.classList.remove('dark'),
     dark: () => document.documentElement.classList.add('dark'),
@@ -35,17 +45,18 @@ function ThemeSwitcher({ themes }: ThemeSwitcherProps) {
 
       if (selectedTheme && isValidTheme(selectedTheme)) {
         themeHandlers[selectedTheme]();
-        localStorage.setItem('isDark', selectedTheme);
+        setActiveTheme(selectedTheme);
+        localStorage.setItem('theme', selectedTheme);
       }
     }
   };
 
   useEffect(() => {
-    const currentTheme = localStorage.getItem('isDark');
+    const currentTheme = localStorage.getItem('theme');
 
     if (isValidTheme(currentTheme)) {
       themeHandlers[currentTheme]();
-      localStorage.setItem('isDark', currentTheme);
+      setActiveTheme(currentTheme);
     } else {
       themeHandlers.system();
     }
@@ -54,9 +65,18 @@ function ThemeSwitcher({ themes }: ThemeSwitcherProps) {
 
   return (
     <div className="inline-flex justify-between gap-1">
-      {themeArray.map((theme) => (
-        <button key={theme} data-theme={theme} onClick={handleClick}>
-          {themes[theme]}
+      {themeArray.map(({ id, icon }) => (
+        <button
+          className={clsx(
+            'rounded-full p-2 md:hover:text-hovered',
+            activeTheme === id && 'bg-active'
+          )}
+          key={id}
+          data-theme={id}
+          aria-label={themes[id]}
+          onClick={handleClick}
+        >
+          {icon}
         </button>
       ))}
     </div>

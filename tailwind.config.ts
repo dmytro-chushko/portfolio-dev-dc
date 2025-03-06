@@ -13,6 +13,7 @@ export default {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         hovered: 'var(--hovered)',
+        active: 'var(--active)',
       },
       fontFamily: {
         roboto: ['var(--font-roboto)', 'sans-serif'],
