@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 
 import '@/styles/globals.css';
+import LangSwitcher from '@/components/features/LangSwitcher/LangSwitcher';
+import Socials from '@/components/features/Socials/Socials';
+import ThemeSwitcher from '@/components/features/ThemeSwitcher/ThemeSwitcher';
+import TopNavigation from '@/components/features/TopNavigation/TopNavigation';
 import Header from '@/components/layout/Header/Header';
-import LangSwitcher from '@/components/ui/LangSwitcher/LangSwitcher';
-import ThemeSwitcher from '@/components/ui/ThemeSwitcher/ThemeSwitcher';
 import { LangType } from '@/lib/types/LangType';
 import { getDictionary, langs } from '@/lib/utils/getDictionary';
 import { roboto } from '@/styles/fonts';
@@ -28,9 +30,13 @@ export default async function RootLayout({
       <body
         className={`container mx-auto px-2 md:px-4 font-roboto ${roboto.variable} font-normal antialiased`}
       >
-        <Header linkLabels={dict.header.links} />
-        <ThemeSwitcher themes={dict.theme} />
-        <LangSwitcher currentLang={lang} langs={langs} />
+        <Header>
+          <TopNavigation linkLabels={dict.nav.links} />
+          <ThemeSwitcher themes={dict.theme} />
+          <LangSwitcher currentLang={lang} langs={langs} />
+          <Socials />
+        </Header>
+
         {children}
       </body>
     </html>

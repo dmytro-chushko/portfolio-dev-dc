@@ -4,7 +4,7 @@
     "dark": "Dark",
     "system": "System"
   },
-  "header": {
+  "nav": {
     "links": {
       "career": "Career",
       "skills": "Skills",
