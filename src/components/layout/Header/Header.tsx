@@ -23,7 +23,7 @@ const Header = ({ children }: HeaderProps) => {
         id="toggle-menu"
         className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-background opacity-0 z-30 transition-opacity duration-500 pointer-events-none md:sticky md:opacity-100 md:pointer-events-auto"
       >
-        <div className="flex flex-col gap-6 md:flex-row md:w-full md:justify-between md:p-6">
+        <div className="flex flex-col gap-6 md:flex-row md:w-full md:justify-between md:items-center md:p-6">
           {children}
         </div>
       </div>

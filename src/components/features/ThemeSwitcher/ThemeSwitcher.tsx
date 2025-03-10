@@ -68,10 +68,11 @@ function ThemeSwitcher({ themes }: ThemeSwitcherProps) {
       {themeArray.map(({ id, icon }) => (
         <button
           className={clsx(
-            'rounded-full p-2 md:hover:text-hovered',
-            activeTheme === id && 'bg-active'
+            'rounded-full p-2 disabled:bg-active',
+            activeTheme !== id && 'md:hover:text-hovered'
           )}
           key={id}
+          disabled={activeTheme === id}
           data-theme={id}
           aria-label={themes[id]}
           onClick={handleClick}

@@ -1,4 +1,5 @@
 'use client';
+import clsx from 'clsx';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { LangType } from '@/lib/types/LangType';
@@ -20,17 +21,23 @@ const LangSwitcher = ({
   };
 
   return (
-    <nav>
+    <ul className="flex gap-1">
       {langs.map((lang) => (
-        <button
-          key={lang}
-          onClick={() => switchLanguage(lang)}
-          disabled={currentLang === lang}
-        >
-          {lang}
-        </button>
+        <li key={lang} className="">
+          <button
+            className={clsx(
+              'uppercase rounded-full p-2 leading-tight disabled:bg-active',
+              currentLang !== lang && 'md:hover:text-hovered'
+            )}
+            onClick={() => switchLanguage(lang)}
+            aria-label={lang}
+            disabled={currentLang === lang}
+          >
+            {lang}
+          </button>
+        </li>
       ))}
-    </nav>
+    </ul>
   );
 };
 
