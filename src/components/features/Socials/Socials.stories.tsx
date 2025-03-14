@@ -3,8 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Socials from './Socials';
 
 const meta = {
-  title: 'Socials',
+  title: 'Features/Socials',
   component: Socials,
+  parameters: {
+    layout: 'centered',
+  },
 } satisfies Meta<typeof Socials>;
 
 export default meta;

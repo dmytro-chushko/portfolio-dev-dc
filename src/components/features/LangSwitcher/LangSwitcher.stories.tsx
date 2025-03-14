@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import LangSwitcher from './LangSwitcher';
 
 const meta = {
+  title: 'Features/Lang Switcher',
   component: LangSwitcher,
 } satisfies Meta<typeof LangSwitcher>;
 
