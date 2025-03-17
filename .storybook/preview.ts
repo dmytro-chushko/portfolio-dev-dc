@@ -1,9 +1,7 @@
-import {
-  withThemeByClassName,
-  withThemeByDataAttribute,
-} from '@storybook/addon-themes';
+import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
 import '../src/styles/globals.css';
+import { themes } from '@storybook/theming';
 
 export const decorators = [
   withThemeByClassName({
@@ -12,14 +10,6 @@ export const decorators = [
       dark: 'dark',
     },
     defaultTheme: 'light',
-  }),
-  withThemeByDataAttribute({
-    themes: {
-      light: 'light',
-      dark: 'dark',
-    },
-    defaultTheme: 'light',
-    attributeName: 'data-mode',
   }),
 ];
 
@@ -33,9 +23,12 @@ const preview: Preview = {
     },
     backgrounds: {
       values: [
-        { name: 'light', value: '#fff' },
-        { name: 'dark', value: '#333' },
+        { name: 'light', value: '#eff6ff' },
+        { name: 'dark', value: '#172554' },
       ],
+    },
+    docs: {
+      theme: themes.dark,
     },
   },
   tags: ['autodocs'],
