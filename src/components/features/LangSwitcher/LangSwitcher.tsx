@@ -1,7 +1,7 @@
 'use client';
-import clsx from 'clsx';
 import { usePathname, useRouter } from 'next/navigation';
 
+import LangSwitchItem from '@/components/ui/LangSwitcherItem/LangSwitchItem';
 import { LangType } from '@/lib/types/LangType';
 
 const LangSwitcher = ({
@@ -9,12 +9,12 @@ const LangSwitcher = ({
   langs,
 }: {
   currentLang: LangType;
-  langs: string[];
+  langs: LangType[];
 }) => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const switchLanguage = (newLocale: string) => {
+  const switchLanguage = (newLocale: LangType) => {
     const newPath = `/${newLocale}${pathname.replace(/^\/[a-z]{2}/, '')}`;
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/;`;
     router.push(newPath);
@@ -24,17 +24,11 @@ const LangSwitcher = ({
     <ul className="flex gap-1">
       {langs.map((lang) => (
         <li key={lang} className="">
-          <button
-            className={clsx(
-              'uppercase rounded-full p-2 leading-tight disabled:bg-active',
-              currentLang !== lang && 'md:hover:text-hovered'
-            )}
-            onClick={() => switchLanguage(lang)}
-            aria-label={lang}
-            disabled={currentLang === lang}
-          >
-            {lang}
-          </button>
+          <LangSwitchItem
+            lang={lang}
+            isCurrent={currentLang === lang}
+            onSelect={switchLanguage}
+          />
         </li>
       ))}
     </ul>

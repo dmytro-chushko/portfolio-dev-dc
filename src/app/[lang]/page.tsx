@@ -1,9 +1,24 @@
 import Image from 'next/image';
 
+import Paragraph from '@/components/typography/Paragraph/Paragraph';
+import Title from '@/components/typography/Title/Title';
+
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <Title header="h1" copy="Dmytro Chushko" />
+        <Paragraph accent>
+          I am an accomplished Full Stack developer with about 2 years of
+          commercial experience focused on ReactJS and NodeJS application
+          development. Currently, I am actively seeking opportunities to
+          progress my career as a Full Stack developer or in related fields,
+          ready to engage and collaborate at the earliest chance. I have a
+          proven capacity to rapidly acquire and apply new technologies. I excel
+          in team settings and thrive in dynamic work environments.
+          Additionally, I bring not only technical proficiency but also
+          enthusiasm, creativity, and a positive outlook to the workplace.
+        </Paragraph>
         <Image
           className="dark:invert"
           src="/image/next.svg"
