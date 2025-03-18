@@ -12,5 +12,9 @@
       "about_me": "About Me",
       "contacts": "Contact Me"
     }
+  },
+  "hero": {
+    "title": "Dmytro Chushko",
+    "description": ""
   }
 }

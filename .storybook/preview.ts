@@ -21,6 +21,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    layout: 'centered',
     backgrounds: {
       default: 'dark',
       values: [
