@@ -28,7 +28,7 @@ export default async function RootLayout({
   return (
     <html lang={lang || 'en'}>
       <body
-        className={`container mx-auto px-2 md:px-4 font-roboto ${roboto.variable} font-normal antialiased`}
+        className={`font-roboto ${roboto.variable} font-normal antialiased`}
       >
         <Header>
           <TopNavigation linkLabels={dict.nav.links} />
@@ -36,8 +36,7 @@ export default async function RootLayout({
           <LangSwitcher currentLang={lang} langs={langs} />
           <Socials />
         </Header>
-
-        {children}
+        <main className="container mx-auto px-4">{children}</main>
       </body>
     </html>
   );

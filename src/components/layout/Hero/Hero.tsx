@@ -8,9 +8,11 @@ type HeroProps = {
 
 const Hero = ({ heroTitle, heroDescripton }: HeroProps) => {
   return (
-    <div>
-      <Title header="h1" copy={heroTitle} />
-      <Paragraph>{heroDescripton}</Paragraph>
+    <div className="h-screen mx-auto flex items-center justify-center lg:h-[calc(100vh-88px)] lg:max-w-3xl">
+      <div>
+        <Title header="h1" copy={heroTitle} />
+        <Paragraph accent>{heroDescripton}</Paragraph>
+      </div>
     </div>
   );
 };

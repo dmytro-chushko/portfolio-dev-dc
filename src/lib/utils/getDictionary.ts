@@ -6,6 +6,6 @@ const dictionaries = {
   ua: () => import('@/dictionaries/ua.json').then((module) => module.default),
 };
 
-export const langs = Object.keys(dictionaries);
+export const langs = Object.keys(dictionaries) as (keyof typeof dictionaries)[];
 
 export const getDictionary = async (locale: LangType) => dictionaries[locale]();

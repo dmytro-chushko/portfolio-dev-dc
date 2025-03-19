@@ -7,7 +7,7 @@ type TopNavigationProps = {
 const TopNavigation = ({ linkLabels }: TopNavigationProps) => {
   return (
     <nav>
-      <ul className="flex flex-col gap-2 md:flex-row md:justify-between md:gap-6">
+      <ul className="flex flex-col gap-2 lg:flex-row lg:justify-between lg:gap-6">
         {Object.keys(linkLabels).map((link) => (
           <NavLink key={link} label={linkLabels[link]} href={`#${link}`} />
         ))}
