@@ -1,40 +1,29 @@
-import React from 'react';
+import clsx from 'clsx';
+import { ReactNode } from 'react';
 
-import './button.css';
-
-export interface ButtonProps {
+type ButtonProps = {
   primary?: boolean;
-  backgroundColor?: string;
-  size?: 'small' | 'medium' | 'large';
-  label: string;
-  onClick?: () => void;
-}
+  secondary?: boolean;
+  fullwidth?: boolean;
+  children: ReactNode;
+};
 
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
-
+const Button = ({ primary, secondary, fullwidth, children }: ButtonProps) => {
   return (
     <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' '
+      className={clsx(
+        'rounded-full p-4 font-bold',
+        primary &&
+          'border-2 border-solid border-transparent bg-foreground  text-background md:hover:bg-hovered md:active:bg-active',
+        secondary &&
+          'border-2 border-solid border-foreground text-foreground  md:hover:border-hovered md:hover:text-hovered md:active:border-active md:active:text-active',
+        fullwidth && 'w-full',
+        'transition'
       )}
-      {...props}
     >
-      {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
+      {children}
     </button>
   );
 };
+
+export default Button;

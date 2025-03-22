@@ -1,5 +1,6 @@
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
+import Button from '@/components/ui/Button/Button';
 import StyledImage from '@/components/ui/StyledImage/StyledImage';
 
 type HeroProps = {
@@ -13,6 +14,8 @@ const Hero = ({ heroTitle, heroDescripton }: HeroProps) => {
       <div className="order-2 md:order-1">
         <Title className="mb-4" header="h1" copy={heroTitle} />
         <Paragraph accent>{heroDescripton}</Paragraph>
+        <Button primary>Primary Button</Button>
+        <Button secondary>Secondaey Button</Button>
       </div>
       <div className=" order-1 rounded-full overflow-hidden flex-shrink-0 border-4 border-solid border-[--foreground] md:order-2">
         <StyledImage
