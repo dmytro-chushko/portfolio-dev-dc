@@ -11,11 +11,13 @@ type HeroProps = {
 const Hero = ({ heroTitle, heroDescripton }: HeroProps) => {
   return (
     <div className="h-screen mx-auto flex flex-col items-center justify-center md:flex-row lg:h-[calc(100vh-88px)] lg:max-w-4xl">
-      <div className="order-2 md:order-1">
-        <Title className="mb-4" header="h1" copy={heroTitle} />
+      <div className="order-2 grid gap-4 md:order-1">
+        <Title header="h1" copy={heroTitle} />
         <Paragraph accent>{heroDescripton}</Paragraph>
-        <Button primary>Primary Button</Button>
-        <Button secondary>Secondaey Button</Button>
+        <div className="flex items-center gap-4">
+          <Button variant="primary">Primary Button</Button>
+          <Button variant="secondary">Secondary Button</Button>
+        </div>
       </div>
       <div className=" order-1 rounded-full overflow-hidden flex-shrink-0 border-4 border-solid border-[--foreground] md:order-2">
         <StyledImage
