@@ -15,8 +15,12 @@ const Hero = ({ heroTitle, heroDescripton }: HeroProps) => {
         <Title header="h1" copy={heroTitle} />
         <Paragraph accent>{heroDescripton}</Paragraph>
         <div className="flex items-center gap-4">
-          <Button variant="primary">Primary Button</Button>
-          <Button variant="secondary">Secondary Button</Button>
+          <Button variant="primary" loading>
+            Primary Button
+          </Button>
+          <Button variant="secondary" loading>
+            Secondary Button
+          </Button>
         </div>
       </div>
       <div className=" order-1 rounded-full overflow-hidden flex-shrink-0 border-4 border-solid border-[--foreground] md:order-2">
