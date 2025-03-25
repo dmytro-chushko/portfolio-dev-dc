@@ -6,9 +6,6 @@ import LangSwitchItem from './LangSwitchItem';
 const meta = {
   title: 'UI/Lang Switch Item',
   component: LangSwitchItem,
-  parameters: {
-    layout: 'centered',
-  },
   args: { onSelect: fn() },
 } satisfies Meta<typeof LangSwitchItem>;
 

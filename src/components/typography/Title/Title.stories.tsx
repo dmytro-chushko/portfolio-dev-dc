@@ -5,9 +5,6 @@ import Title from './Title';
 const meta = {
   title: 'Typography/Title',
   component: Title,
-  parameters: {
-    layout: 'centered',
-  },
   argTypes: {
     header: {
       control: 'select',

@@ -6,7 +6,6 @@ const meta = {
   title: 'Features/Lang Switcher',
   component: LangSwitcher,
   parameters: {
-    layout: 'centered',
     nextjs: {
       appDirectory: true,
     },

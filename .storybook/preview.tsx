@@ -2,8 +2,24 @@ import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
 import '../src/styles/globals.css';
 import { themes } from '@storybook/theming';
+import React, { ElementType } from 'react';
 
 export const decorators = [
+  (Story: ElementType, { viewMode }) => {
+    const modes = {
+      docs: '135px',
+      story: '100vh',
+    };
+
+    return (
+      <div
+        style={{ padding: '20px', height: modes[viewMode] }}
+        className="p-5 w-full h-[135px] bg-background flex justify-center items-center "
+      >
+        <Story />
+      </div>
+    );
+  },
   withThemeByClassName({
     themes: {
       light: 'light',
@@ -21,9 +37,8 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    layout: 'centered',
+    layout: 'fullscreen',
     backgrounds: {
-      default: 'dark',
       values: [
         { name: 'light', value: '#eff6ff' },
         { name: 'dark', value: '#172554' },

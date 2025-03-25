@@ -5,9 +5,6 @@ import ThemeSwitcher from './ThemeSwitcher';
 const meta = {
   title: 'Features/Theme Switcher',
   component: ThemeSwitcher,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof ThemeSwitcher>;
 

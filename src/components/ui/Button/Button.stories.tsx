@@ -6,9 +6,6 @@ import Button from './Button';
 const meta = {
   title: 'UI/Button',
   component: Button,
-  parameters: {
-    layout: 'centered',
-  },
   args: {
     onClick: fn(),
   },
@@ -62,26 +59,9 @@ export const Fullwidth: Story = {
     fullwidth: true,
     children: 'Fullwidth Button',
     loading: false,
-    variant: 'secondary',
     disabled: false,
   },
   parameters: {
     layout: 'fullscreen',
   },
-  decorators: [
-    (Story) => (
-      <div style={wrapperStyle}>
-        <Story />
-      </div>
-    ),
-  ],
-};
-
-const wrapperStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '100vh',
-  width: '100%',
-  padding: '20px',
 };

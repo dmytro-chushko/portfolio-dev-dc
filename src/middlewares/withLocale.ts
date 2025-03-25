@@ -8,7 +8,7 @@ import { MiddlewareFactory } from './types';
 const getLocale = (request: NextRequest): string => {
   const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
 
-  if (cookieLocale && langs.includes(cookieLocale)) {
+  if (cookieLocale && langs.some((item) => item === cookieLocale)) {
     return cookieLocale;
   }
 
@@ -19,7 +19,9 @@ const getLocale = (request: NextRequest): string => {
       .split(',')
       .map((lang) => lang.split(';')[0].trim());
 
-    const matchedLocale = browserLocales.find((lang) => langs.includes(lang));
+    const matchedLocale = browserLocales.find((lang) =>
+      langs.some((item) => item === lang)
+    );
 
     if (matchedLocale) {
       return matchedLocale;

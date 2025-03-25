@@ -5,9 +5,6 @@ import NavLink from './NavLink';
 const meta = {
   title: 'UI/Nav Link',
   component: NavLink,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof NavLink>;
 

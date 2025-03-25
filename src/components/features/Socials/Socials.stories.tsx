@@ -5,9 +5,6 @@ import Socials from './Socials';
 const meta = {
   title: 'Features/Socials',
   component: Socials,
-  parameters: {
-    layout: 'centered',
-  },
 } satisfies Meta<typeof Socials>;
 
 export default meta;

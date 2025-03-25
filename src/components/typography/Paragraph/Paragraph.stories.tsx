@@ -5,9 +5,6 @@ import Paragraph from './Paragraph';
 const meta = {
   title: 'Typography/Paragraph',
   component: Paragraph,
-  parameters: {
-    layout: 'centered',
-  },
   argTypes: {
     accent: { control: 'boolean' },
     className: { control: 'text' },
