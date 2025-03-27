@@ -18,10 +18,12 @@
     ]
   },
   "dependencies": {
+    "@prisma/client": "^6.5.0",
     "@svgr/webpack": "^8.1.0",
     "clsx": "^2.1.1",
     "i18next": "^24.2.2",
     "next": "15.1.7",
+    "prisma": "^6.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
