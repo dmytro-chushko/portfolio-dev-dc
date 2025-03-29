@@ -8,6 +8,33 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+model Language {
+  id             String           @id @default(uuid())
+  code           String           @unique
+  name           String
+  TextContent    TextContent[]
+  TranslatedText TranslatedText[]
+}
+
+model TextContent {
+  id                 String           @id @default(uuid())
+  originalText       String
+  originalLanguage   Language         @relation(fields: [originalLanguageId], references: [id])
+  originalLanguageId String
+  translations       TranslatedText[]
+}
+
+model TranslatedText {
+  id             String      @id @default(uuid())
+  textContent    TextContent @relation(fields: [textId], references: [id])
+  textId         String
+  language       Language    @relation(fields: [languageId], references: [id])
+  languageId     String
+  translatedText String
+
+  @@unique([textId, languageId])
+}
+
 model Hero {
   id String @id @default(uuid())
 }
