@@ -16,13 +16,13 @@ model Language {
 }
 
 model HeroTranslation {
-  id             String   @id @default(uuid())
-  hero           Hero     @relation(fields: [heroId], references: [id])
-  heroId         String
-  language       Language @relation(fields: [languageId], references: [id])
-  languageId     String   @unique
-  heroName       String
-  heroDescripton String
+  id              String   @id @default(uuid())
+  hero            Hero     @relation(fields: [heroId], references: [id])
+  heroId          String
+  language        Language @relation(fields: [languageId], references: [id])
+  languageId      String   @unique
+  heroName        String
+  heroDescription String
 
   @@unique([heroId, languageId])
 }
