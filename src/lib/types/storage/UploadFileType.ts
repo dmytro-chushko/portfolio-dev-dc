@@ -1,4 +1,4 @@
 export type UploadFileType = {
-  path: string;
+  path?: string;
   fileBody: File;
 };
