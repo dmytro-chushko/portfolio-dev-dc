@@ -8,12 +8,16 @@ export const POST = async (req: Request) => {
   const body = await req.json();
   const fileBody = formData.get('fileBody');
 
-  const validatedBody = await createHeroSchema.validate({
-    ...body,
-    heroPhoto: fileBody,
-  });
+  try {
+    const validatedBody = await createHeroSchema.validate({
+      ...body,
+      heroPhoto: fileBody,
+    });
 
-  const createdHero = await createHeroVariant(validatedBody);
+    const createdHero = await createHeroVariant(validatedBody);
 
-  return NextResponse.json({ createdHero });
+    return NextResponse.json({ createdHero });
+  } catch (error) {
+    return NextResponse.json({ error });
+  }
 };
