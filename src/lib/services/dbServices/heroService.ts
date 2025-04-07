@@ -11,7 +11,7 @@ export const createHeroVariant = async ({
 }: CreateHeroType) => {
   const heroPhotoObject = await uploadFile({ fileBody: heroPhoto });
 
-  if (heroPhotoObject instanceof Error) return heroPhotoObject;
+  if (heroPhotoObject instanceof Error) throw heroPhotoObject;
 
   const createdHero = await prisma.hero.create({
     data: {

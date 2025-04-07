@@ -11,7 +11,9 @@ export const uploadFile = async ({
 }: UploadFileType): Promise<Error | FileResponseType> => {
   const { data, error } = await storageClient.storage
     .from(bucket)
-    .upload(`${path}/${fileBody.name}`, fileBody);
+    .upload(`${path}/${fileBody.name}`, fileBody, {
+      contentType: fileBody.type,
+    });
 
   if (error) return error;
 

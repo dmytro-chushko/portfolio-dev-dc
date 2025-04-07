@@ -5,5 +5,6 @@ declare namespace NodeJS {
     SUPABASE_STORAGE_FOLDER_NAME: string;
     SUPABASE_PROJECT_URL: string;
     SUPABASE_ANON_API_KEY: string;
+    SUPABASE_ACCESS_TOKEN: string;
   }
 }

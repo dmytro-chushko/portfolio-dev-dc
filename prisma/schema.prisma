@@ -31,6 +31,7 @@ model Hero {
   id           String            @id @default(uuid())
   createdAt    DateTime          @default(now())
   updatedAt    DateTime          @updatedAt
+  heroVersion  String            @unique
   heroPhoto    String
   translations HeroTranslation[]
 }
