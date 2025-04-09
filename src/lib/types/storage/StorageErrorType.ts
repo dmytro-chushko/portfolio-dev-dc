@@ -1,4 +1,4 @@
-export type StorageError = {
+export type StorageErrorType = {
   statusCode: string;
   error: string;
   message: string;

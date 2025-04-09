@@ -1,34 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+import { apiErrorHandler } from '@/lib/errors/errorHandlers/apiErrorHandler';
+import StorageError from '@/lib/errors/StorageError';
 import { uploadFile } from '@/lib/services/storageService';
-import CustomError from '@/lib/utils/CustomError';
+import { FileResponseType, UploadFileType } from '@/lib/types/storage';
 import { storageErrorTypeGuard } from '@/lib/utils/storageErrorTypeGuard';
 import { uploadFileSchema } from '@/lib/validation/storageSchema';
+import { validateFormData } from '@/lib/validation/validationHandlers/validateFormData';
 
-export const POST = async (req: NextRequest) => {
-  const formDataObj: Record<string, FormDataEntryValue> = {};
-  try {
+export const POST = apiErrorHandler<FileResponseType | Error>(
+  async (req: NextRequest) => {
     const formData = await req.formData();
 
-    formData.forEach((value, key) => {
-      formDataObj[key] = value;
+    const validatedFormData = await validateFormData<UploadFileType>({
+      formData,
+      schema: uploadFileSchema,
     });
-
-    const validatedPayload = await uploadFileSchema.validate(formDataObj);
-    const heroPhotoObject = await uploadFile(validatedPayload);
+    const heroPhotoObject = await uploadFile(validatedFormData);
 
     if (storageErrorTypeGuard(heroPhotoObject))
-      throw new CustomError({
-        message: heroPhotoObject.message,
-        status: +heroPhotoObject.statusCode,
-        details: { error: heroPhotoObject.error },
-      });
+      throw new StorageError(heroPhotoObject);
 
     return NextResponse.json(heroPhotoObject, { status: 200 });
-  } catch (err) {
-    if (err instanceof CustomError)
-      return NextResponse.json(err, { status: err.status });
-
-    return NextResponse.json({ err }, { status: 500 });
   }
-};
+);

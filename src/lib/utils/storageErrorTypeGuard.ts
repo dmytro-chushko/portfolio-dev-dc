@@ -1,10 +1,8 @@
-export type StorageError = {
-  statusCode: string;
-  error: string;
-  message: string;
-};
+import { StorageErrorType } from '../types/storage';
 
-export const storageErrorTypeGuard = (obj: unknown): obj is StorageError => {
+export const storageErrorTypeGuard = (
+  obj: unknown
+): obj is StorageErrorType => {
   return (
     typeof obj === 'object' &&
     obj !== null &&
