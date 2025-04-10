@@ -1,7 +1,7 @@
 interface CustomErrorConfig {
   message: string;
   status: number;
-  details?: Record<string, string>;
+  details?: Record<string, string | string[]>;
 }
 
 class CustomError extends Error {

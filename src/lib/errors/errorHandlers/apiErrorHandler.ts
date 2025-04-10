@@ -23,7 +23,13 @@ export const apiErrorHandler = <T>(routeHandler: RouteHandlerType<T>) => {
       console.error(err);
 
       return NextResponse.json(
-        { message: 'Internal server error', err },
+        {
+          message:
+            err && typeof err === 'object' && 'message' in err
+              ? err.message
+              : 'Internal server error',
+          err,
+        },
         { status: 500 }
       );
     }
