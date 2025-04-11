@@ -25,4 +25,5 @@ export const createHeroSchema = yup.object({
     .test('fileType', 'typeChecking', (value) =>
       value instanceof File ? SUPPORTED_FORMATS.includes(value.type) : false
     ),
+  heroVersion: yup.string().required(),
 });

@@ -7,6 +7,7 @@ import { uploadFile } from '../storageService';
 
 export const createHeroVariant = async ({
   heroPhoto,
+  heroVersion,
   translations,
 }: CreateHeroType) => {
   const heroPhotoObject = await uploadFile({ fileBody: heroPhoto });
@@ -16,6 +17,7 @@ export const createHeroVariant = async ({
   const createdHero = await prisma.hero.create({
     data: {
       heroPhoto: heroPhotoObject.fullPath,
+      heroVersion,
       translations: {
         create: translations.map(({ lang, heroName, heroDescription }) => ({
           heroName,

@@ -8,5 +8,6 @@ type HeroTranslations = {
 
 export type CreateHeroType = {
   heroPhoto: File;
+  heroVersion: string;
   translations: HeroTranslations[];
 };
