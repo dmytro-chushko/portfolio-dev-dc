@@ -9,10 +9,10 @@ datasource db {
 }
 
 model Language {
-  id              String           @id @default(uuid())
-  code            String           @unique
+  id              String            @id @default(uuid())
+  code            String            @unique
   name            String
-  heroTranslation HeroTranslation?
+  heroTranslation HeroTranslation[]
 }
 
 model HeroTranslation {
@@ -20,7 +20,7 @@ model HeroTranslation {
   hero            Hero     @relation(fields: [heroId], references: [id])
   heroId          String
   language        Language @relation(fields: [languageId], references: [id])
-  languageId      String   @unique
+  languageId      String
   heroName        String
   heroDescription String
 

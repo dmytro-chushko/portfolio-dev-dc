@@ -1,13 +1,7 @@
-import { LangType } from '../LangType';
-
-type HeroTranslations = {
-  lang: LangType;
-  heroName: string;
-  heroDescription: string;
-};
+import { HeroTranslationType } from './HeroTranslationType';
 
 export type CreateHeroType = {
-  heroPhoto: File;
+  heroPhoto: string;
   heroVersion: string;
-  translations: HeroTranslations[];
+  translations: HeroTranslationType[];
 };

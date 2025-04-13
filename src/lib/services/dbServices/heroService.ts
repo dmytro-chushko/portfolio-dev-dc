@@ -1,22 +1,17 @@
 'use server';
 
 import prisma from '@/lib/clients/prismaClient';
+import { CreateHeroResType } from '@/lib/types/dbServices/CreateHeroResType';
 import { CreateHeroType } from '@/lib/types/dbServices/CreateHeroType';
-
-import { uploadFile } from '../storageService';
 
 export const createHeroVariant = async ({
   heroPhoto,
   heroVersion,
   translations,
-}: CreateHeroType) => {
-  const heroPhotoObject = await uploadFile({ fileBody: heroPhoto });
-
-  if (heroPhotoObject instanceof Error) throw heroPhotoObject;
-
+}: CreateHeroType): Promise<CreateHeroResType> => {
   const createdHero = await prisma.hero.create({
     data: {
-      heroPhoto: heroPhotoObject.fullPath,
+      heroPhoto,
       heroVersion,
       translations: {
         create: translations.map(({ lang, heroName, heroDescription }) => ({
@@ -28,8 +23,18 @@ export const createHeroVariant = async ({
         })),
       },
     },
-    include: {
-      translations: true,
+    select: {
+      id: true,
+      heroPhoto: true,
+      heroVersion: true,
+      translations: {
+        select: {
+          id: true,
+          heroName: true,
+          heroDescription: true,
+          language: true,
+        },
+      },
     },
   });
 

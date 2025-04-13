@@ -20,7 +20,9 @@ export const apiErrorHandler = <T>(routeHandler: RouteHandlerType<T>) => {
           { status: err.status }
         );
 
-      console.error(err);
+      console.error(
+        err && typeof err === 'object' && 'name' in err && err.name
+      );
 
       return NextResponse.json(
         {
