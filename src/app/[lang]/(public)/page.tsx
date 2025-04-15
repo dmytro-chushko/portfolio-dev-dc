@@ -1,9 +1,16 @@
+import type { Metadata } from 'next';
+
 import Hero from '@/components/layout/Hero/Hero';
 import { LangType } from '@/lib/types/LangType';
 import { getDictionary } from '@/lib/utils/getDictionary';
 
 type HomeProps = {
   params: Promise<{ lang: LangType }>;
+};
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description: '...',
 };
 
 export default async function Home({ params }: HomeProps) {
