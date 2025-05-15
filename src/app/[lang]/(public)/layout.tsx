@@ -1,3 +1,4 @@
+import DashboardLink from '@/components/features/DashboardLink/DashboardLink';
 import LangSwitcher from '@/components/features/LangSwitcher/LangSwitcher';
 import Socials from '@/components/features/Socials/Socials';
 import ThemeSwitcher from '@/components/features/ThemeSwitcher/ThemeSwitcher';
@@ -20,6 +21,7 @@ export default async function RootLayout({
     <>
       <Header>
         <TopNavigation linkLabels={dict.nav.links} />
+        <DashboardLink />
         <ThemeSwitcher themes={dict.theme} />
         <LangSwitcher currentLang={lang} langs={langs} />
         <Socials />
