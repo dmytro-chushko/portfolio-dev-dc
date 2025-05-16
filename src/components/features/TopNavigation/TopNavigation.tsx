@@ -2,6 +2,7 @@ import NavLink from '@/components/ui/NavLink/NavLink';
 
 type TopNavigationProps = {
   linkLabels: Record<string, string>;
+  linkPrefix?: string;
 };
 
 const TopNavigation = ({ linkLabels }: TopNavigationProps) => {

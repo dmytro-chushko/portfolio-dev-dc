@@ -11,6 +11,10 @@
       "projects": "Projects",
       "about_me": "About Me",
       "contacts": "Contact Me"
+    },
+    "dashboard": {
+      "live": "Go to Live",
+      "hero": "Hero"
     }
   },
   "hero": {
