@@ -2,7 +2,6 @@ import LangSwitcher from '@/components/features/LangSwitcher/LangSwitcher';
 import ThemeSwitcher from '@/components/features/ThemeSwitcher/ThemeSwitcher';
 import TopNavigation from '@/components/features/TopNavigation/TopNavigation';
 import Header from '@/components/layout/Header/Header';
-import NavLink from '@/components/ui/NavLink/NavLink';
 import { RootLayoutProps } from '@/lib/types/RootLayoutType';
 import { getDictionary, langs } from '@/lib/utils/getDictionary';
 
@@ -16,8 +15,10 @@ export default async function RootLayout({
   return (
     <>
       <Header>
-        <NavLink label="Go to Live" href="/" />
-        <TopNavigation linkLabels={dict.nav.dashboard} />
+        <TopNavigation
+          linkLabels={dict.nav.dashboard}
+          linkPrefix="dc-dashboard/"
+        />
         <ThemeSwitcher themes={dict.theme} />
         <LangSwitcher currentLang={lang} langs={langs} />
       </Header>

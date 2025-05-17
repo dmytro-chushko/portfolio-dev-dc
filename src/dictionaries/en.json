@@ -10,7 +10,8 @@
       "skills": "Skills",
       "projects": "Projects",
       "about_me": "About Me",
-      "contacts": "Contact Me"
+      "contacts": "Contact Me",
+      "dc-dashboard": "Dashboard"
     },
     "dashboard": {
       "live": "Go to Live",

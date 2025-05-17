@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: '/:locale/dc-dashboard/live',
+        destination: '/:locale',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
