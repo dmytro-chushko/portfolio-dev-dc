@@ -40,3 +40,26 @@ export const createHeroVariant = async ({
 
   return createdHero;
 };
+
+export const getActiveHero = async () => {
+  const activeHero = await prisma.hero.findFirst({
+    where: {
+      isActive: true,
+    },
+    select: {
+      id: true,
+      heroPhoto: true,
+      heroVersion: true,
+      translations: {
+        select: {
+          id: true,
+          heroName: true,
+          heroDescription: true,
+          language: true,
+        },
+      },
+    },
+  });
+
+  return activeHero;
+};
