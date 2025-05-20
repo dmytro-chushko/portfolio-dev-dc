@@ -21,5 +21,8 @@
   "hero": {
     "title": "Dmytro Chushko",
     "description": "I am an accomplished Full Stack developer with about 2 years of commercial experience focused on ReactJS and NodeJS application development. Currently, I am actively seeking opportunities to progress my career as a Full Stack developer or in related fields, ready to engage and collaborate at the earliest chance. I have a proven capacity to rapidly acquire and apply new technologies. I excel in team settings and thrive in dynamic work environments. Additionally, I bring not only technical proficiency but also enthusiasm, creativity, and a positive outlook to the workplace."
+  },
+  "errors": {
+    "db": "Database error"
   }
 }

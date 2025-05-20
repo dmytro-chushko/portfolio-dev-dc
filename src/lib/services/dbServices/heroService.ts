@@ -1,14 +1,17 @@
 'use server';
 
 import prisma from '@/lib/clients/prismaClient';
-import { CreateHeroResType } from '@/lib/types/dbServices/CreateHeroResType';
+import { getPrismaErrorDetails } from '@/lib/errors/errorHandlers/getPrismaErrorDetails';
 import { CreateHeroType } from '@/lib/types/dbServices/CreateHeroType';
+import { HeroResType } from '@/lib/types/dbServices/HeroResType';
+import { LangType } from '@/lib/types/LangType';
+import { getDictionary } from '@/lib/utils/getDictionary';
 
 export const createHeroVariant = async ({
   heroPhoto,
   heroVersion,
   translations,
-}: CreateHeroType): Promise<CreateHeroResType> => {
+}: CreateHeroType): Promise<HeroResType> => {
   const createdHero = await prisma.hero.create({
     data: {
       heroPhoto,
@@ -41,25 +44,35 @@ export const createHeroVariant = async ({
   return createdHero;
 };
 
-export const getActiveHero = async () => {
-  const activeHero = await prisma.hero.findFirst({
-    where: {
-      isActive: true,
-    },
-    select: {
-      id: true,
-      heroPhoto: true,
-      heroVersion: true,
-      translations: {
-        select: {
-          id: true,
-          heroName: true,
-          heroDescription: true,
-          language: true,
+export const getActiveHero = async (
+  lang: LangType
+): Promise<HeroResType | null> => {
+  const dict = await getDictionary(lang);
+  try {
+    const activeHero = await prisma.hero.findFirst({
+      where: {
+        isActive: true,
+      },
+      select: {
+        id: true,
+        heroPhoto: true,
+        heroVersion: true,
+        translations: {
+          where: {
+            heroName: 'Дмитро Чушко',
+          },
+          select: {
+            id: true,
+            heroName: true,
+            heroDescription: true,
+            language: true,
+          },
         },
       },
-    },
-  });
+    });
 
-  return activeHero;
+    return activeHero;
+  } catch (err) {
+    throw new Error(`${dict.errors.db}: ${getPrismaErrorDetails(err).message}`);
+  }
 };
