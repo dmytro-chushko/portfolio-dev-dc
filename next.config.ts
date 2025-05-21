@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  images: {
+    remotePatterns: [{ hostname: 'jrvahgupsifnchwwzflu.supabase.co' }],
+  },
 };
 
 export default nextConfig;

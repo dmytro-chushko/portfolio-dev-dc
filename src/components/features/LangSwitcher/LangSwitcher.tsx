@@ -2,6 +2,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 
 import LangSwitchItem from '@/components/ui/LangSwitcherItem/LangSwitchItem';
+import revalidateLang from '@/lib/actions/revalidateLang';
 import { LangType } from '@/lib/types/LangType';
 
 const LangSwitcher = ({
@@ -14,9 +15,10 @@ const LangSwitcher = ({
   const router = useRouter();
   const pathname = usePathname();
 
-  const switchLanguage = (newLocale: LangType) => {
+  const switchLanguage = async (newLocale: LangType) => {
     const newPath = `/${newLocale}${pathname.replace(/^\/[a-z]{2}/, '')}`;
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/;`;
+    await revalidateLang();
     router.push(newPath);
   };
 

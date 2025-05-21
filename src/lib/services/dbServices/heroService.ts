@@ -57,9 +57,12 @@ export const getActiveHero = async (
         id: true,
         heroPhoto: true,
         heroVersion: true,
+        isActive: true,
         translations: {
           where: {
-            heroName: 'Дмитро Чушко',
+            language: {
+              code: lang,
+            },
           },
           select: {
             id: true,
