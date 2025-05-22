@@ -1,3 +1,5 @@
+import path from 'path';
+
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
@@ -40,7 +42,7 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {},
   },
-  staticDirs: ['..\\public'],
+  staticDirs: [path.resolve(__dirname, '../public')],
   docs: {
     autodocs: 'tag',
   },

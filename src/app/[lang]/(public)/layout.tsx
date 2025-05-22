@@ -7,9 +7,11 @@ import { LangType } from '@/lib/types/LangType';
 import { getDictionary, langs } from '@/lib/utils/getDictionary';
 
 export default async function RootLayout({
+  hero,
   children,
   params,
 }: Readonly<{
+  hero: React.ReactNode;
   children: React.ReactNode;
   params: Promise<{ lang: LangType }>;
 }>) {
@@ -24,7 +26,10 @@ export default async function RootLayout({
         <LangSwitcher currentLang={lang} langs={langs} />
         <Socials />
       </Header>
-      <main className="container mx-auto px-4">{children}</main>
+      <main className="container mx-auto px-4">
+        {hero}
+        {children}
+      </main>
     </>
   );
 }
