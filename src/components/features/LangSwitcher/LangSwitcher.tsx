@@ -1,8 +1,8 @@
 'use client';
 import { usePathname, useRouter } from 'next/navigation';
 
+import revalidateLang from '@/app/actions/revalidateLang';
 import LangSwitchItem from '@/components/ui/LangSwitcherItem/LangSwitchItem';
-import revalidateLang from '@/lib/actions/revalidateLang';
 import { LangType } from '@/lib/types/LangType';
 
 const LangSwitcher = ({

@@ -79,3 +79,22 @@ export const getActiveHero = async (
     throw new Error(`${dict.errors.db}: ${getPrismaErrorDetails(err).message}`);
   }
 };
+
+export const getAllHeroes = async (): Promise<HeroResType[]> => {
+  return await prisma.hero.findMany({
+    select: {
+      id: true,
+      heroPhoto: true,
+      heroVersion: true,
+      isActive: true,
+      translations: {
+        select: {
+          id: true,
+          heroName: true,
+          heroDescription: true,
+          language: true,
+        },
+      },
+    },
+  });
+};

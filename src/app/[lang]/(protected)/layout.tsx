@@ -17,7 +17,7 @@ export default async function RootLayout({
       <Header>
         <TopNavigation
           linkLabels={dict.nav.dashboard}
-          linkPrefix="dc-dashboard/"
+          linkPrefix="/dc-dashboard/"
         />
         <ThemeSwitcher themes={dict.theme} />
         <LangSwitcher currentLang={lang} langs={langs} />
