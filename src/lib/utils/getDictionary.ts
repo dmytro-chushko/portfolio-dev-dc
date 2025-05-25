@@ -9,3 +9,7 @@ const dictionaries = {
 export const langs = Object.keys(dictionaries) as (keyof typeof dictionaries)[];
 
 export const getDictionary = async (locale: LangType) => dictionaries[locale]();
+
+export type GetDictionaryType = typeof getDictionary;
+
+export type Dictionary = Awaited<ReturnType<GetDictionaryType>>;

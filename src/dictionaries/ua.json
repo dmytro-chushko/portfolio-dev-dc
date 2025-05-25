@@ -25,6 +25,11 @@
   "dashboard": {
     "hero": {
       "page_title": "Налаштування титульної сторінки"
+    },
+    "hero_item": {
+      "version_name": "Ім'я версії",
+      "full_name": "Повне ім'я",
+      "description": "Опис"
     }
   },
   "errors": {

@@ -25,6 +25,11 @@
   "dashboard": {
     "hero": {
       "page_title": "Hero Settings"
+    },
+    "hero_item": {
+      "version_name": "Version Name",
+      "full_name": "Full Name",
+      "description": "Description"
     }
   },
   "errors": {
