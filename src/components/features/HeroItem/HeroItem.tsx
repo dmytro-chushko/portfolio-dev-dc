@@ -30,18 +30,19 @@ const HeroItem = ({
     'No Description';
 
   return (
-    <div>
+    <div className="flex rounded-2xl border-2 border-solid border-[--foreground] p-4 gap-4">
       <StyledImage
         imgSrc={heroPhoto}
-        width={322}
-        height={323.67}
+        width={320}
+        height={320}
         altText={getAltText(lang)}
         priority={!!imagePriority}
       />
-      <div>
+      <div className="flex-grow">
         <div>
-          <Paragraph accent>{dictionary.version_name}</Paragraph>
-          <Paragraph accent>{heroVersion}</Paragraph>
+          <Paragraph accent>
+            {`${dictionary.version_name}: ${heroVersion}`}
+          </Paragraph>
         </div>
       </div>
     </div>

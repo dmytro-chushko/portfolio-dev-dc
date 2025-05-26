@@ -20,7 +20,11 @@ const HeroDashboard = async ({ params }: PageProps) => {
 
   return (
     <div>
-      <Title header="h1" copy={dict.dashboard.hero.page_title} />
+      <Title
+        className="mb-6"
+        header="h1"
+        copy={dict.dashboard.hero.page_title}
+      />
     </div>
   );
 };

@@ -2,4 +2,6 @@
 
 import { revalidateTag } from 'next/cache';
 
-export default async () => revalidateTag('lang');
+const revalidateLang = async () => revalidateTag('lang');
+
+export default revalidateLang;

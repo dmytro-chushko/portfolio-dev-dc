@@ -22,6 +22,7 @@ const StyledImage = ({
       height={height}
       alt={altText}
       priority={!!priority}
+      style={{ width: 'auto', height: 'auto' }}
     />
   ) : (
     <div className="w-52 h-52 bg-foreground flex items-center justify-center">
