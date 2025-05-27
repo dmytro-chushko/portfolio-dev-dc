@@ -14,6 +14,7 @@ export default {
         foreground: 'var(--foreground)',
         hovered: 'var(--hovered)',
         active: 'var(--active)',
+        error: 'var(--error)',
       },
       fontFamily: {
         roboto: ['var(--font-roboto)', 'sans-serif'],

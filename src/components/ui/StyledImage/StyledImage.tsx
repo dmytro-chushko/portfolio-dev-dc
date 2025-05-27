@@ -6,6 +6,7 @@ type StyledImageProps = {
   width: number;
   height?: number;
   priority?: boolean;
+  className?: string;
 };
 
 const StyledImage = ({
@@ -14,15 +15,17 @@ const StyledImage = ({
   height,
   altText,
   priority,
+  className,
 }: StyledImageProps) => {
   return imgSrc ? (
     <Image
+      className={className}
       src={imgSrc}
       width={width}
       height={height}
       alt={altText}
       priority={!!priority}
-      style={{ width: 'auto', height: 'auto' }}
+      style={{ height: 'auto' }}
     />
   ) : (
     <div className="w-52 h-52 bg-foreground flex items-center justify-center">

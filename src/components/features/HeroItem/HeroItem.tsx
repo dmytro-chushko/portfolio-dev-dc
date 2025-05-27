@@ -3,7 +3,9 @@
 import { useParams } from 'next/navigation';
 
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
+import Title from '@/components/typography/Title/Title';
 import StyledImage from '@/components/ui/StyledImage/StyledImage';
+import StyledInput from '@/components/ui/StyledInput/StyledInput';
 import { HeroTranslationResType } from '@/lib/types/dbServices';
 import { LangType } from '@/lib/types/LangType';
 import { Dictionary } from '@/lib/utils/getDictionary';
@@ -30,8 +32,9 @@ const HeroItem = ({
     'No Description';
 
   return (
-    <div className="flex rounded-2xl border-2 border-solid border-[--foreground] p-4 gap-4">
+    <div className="md:flex md:items-start rounded-2xl border-2 border-solid border-[--foreground] p-4 gap-4">
       <StyledImage
+        className="w-full md:w-auto"
         imgSrc={heroPhoto}
         width={320}
         height={320}
@@ -40,9 +43,30 @@ const HeroItem = ({
       />
       <div className="flex-grow">
         <div>
-          <Paragraph accent>
-            {`${dictionary.version_name}: ${heroVersion}`}
-          </Paragraph>
+          <Title
+            className="mb-2"
+            header="h2"
+            copy={`${dictionary.version_name}: ${heroVersion}`}
+          />
+          <ul className="flex flex-col gap-2">
+            {translations.length > 0 &&
+              translations.map(
+                ({ heroName, heroDescription, language: { code } }) => (
+                  <li key={code}>
+                    <Title className="uppercase" header="h3" copy={code} />
+                    <div className="flex gap-2">
+                      <Title header="h4" copy={`${dictionary.full_name}:`} />
+                      <Paragraph accent>{heroName}</Paragraph>
+                    </div>
+                    <div>
+                      <Title header="h4" copy={dictionary.description} />
+                      <Paragraph accent>{heroDescription}</Paragraph>
+                    </div>
+                    <StyledInput error="error message" />
+                  </li>
+                )
+              )}
+          </ul>
         </div>
       </div>
     </div>
