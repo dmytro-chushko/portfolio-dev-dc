@@ -6,20 +6,30 @@ type StyledInputProps = {
   label?: string;
   description?: string;
   error?: string;
+  inputStyles?: string;
+  labelStyles?: string;
+  descriptionStyles?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const StyledInput = ({
   label,
   description,
   error,
+  inputStyles,
+  labelStyles,
+  descriptionStyles,
   ...rest
 }: StyledInputProps) => {
   return (
     <Field>
-      {label && <Label>{label}</Label>}
-      <Input invalid={!!error} {...rest} />
+      {label && <Label className={clsx(labelStyles)}>{label}</Label>}
+      <Input
+        className={clsx('p-2 rounded', inputStyles)}
+        invalid={!!error}
+        {...rest}
+      />
       {(description || error) && (
-        <Description className={clsx(error && 'text-error')}>
+        <Description className={clsx(error && 'text-error', descriptionStyles)}>
           {description || error}
         </Description>
       )}

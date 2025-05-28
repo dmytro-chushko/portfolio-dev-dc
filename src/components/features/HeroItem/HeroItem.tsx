@@ -1,6 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
+import { useState } from 'react';
 
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
@@ -9,6 +10,8 @@ import StyledInput from '@/components/ui/StyledInput/StyledInput';
 import { HeroTranslationResType } from '@/lib/types/dbServices';
 import { LangType } from '@/lib/types/LangType';
 import { Dictionary } from '@/lib/utils/getDictionary';
+
+import HeroNameForm from '../HeroNameForm/HeroNameForm';
 
 type HeroItemProps = {
   dictionary: Dictionary['dashboard']['hero_item'];
@@ -25,6 +28,7 @@ const HeroItem = ({
   dictionary,
   imagePriority,
 }: HeroItemProps) => {
+  const [isHeroNameForm, setIsHeroNameForm] = useState(false);
   const { lang } = useParams<{ lang: LangType }>();
 
   const getAltText = (lang: LangType) =>
@@ -56,13 +60,25 @@ const HeroItem = ({
                     <Title className="uppercase" header="h3" copy={code} />
                     <div className="flex gap-2">
                       <Title header="h4" copy={`${dictionary.full_name}:`} />
-                      <Paragraph accent>{heroName}</Paragraph>
+                      {isHeroNameForm ? (
+                        <HeroNameForm
+                          nameValue={heroName}
+                          onClose={() => setIsHeroNameForm(false)}
+                        />
+                      ) : (
+                        <div onClick={() => setIsHeroNameForm(true)}>
+                          <Paragraph accent>{heroName}</Paragraph>
+                        </div>
+                      )}
                     </div>
                     <div>
                       <Title header="h4" copy={dictionary.description} />
                       <Paragraph accent>{heroDescription}</Paragraph>
                     </div>
-                    <StyledInput error="error message" />
+                    <StyledInput
+                      inputStyles="bg-bgInput"
+                      error="error message"
+                    />
                   </li>
                 )
               )}

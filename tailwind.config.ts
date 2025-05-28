@@ -12,6 +12,7 @@ export default {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        bgInput: 'var(--bg-input)',
         hovered: 'var(--hovered)',
         active: 'var(--active)',
         error: 'var(--error)',
