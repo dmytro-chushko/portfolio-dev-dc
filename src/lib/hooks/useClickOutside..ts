@@ -6,11 +6,7 @@ export const useClickOutside = <T extends Node>(
 ) => {
   useEffect(() => {
     const listener = (event: MouseEvent) => {
-      if (
-        ref &&
-        (!ref.current ||
-          ref.current.contains((event.target as HTMLElement).closest('form')))
-      ) {
+      if (ref && (!ref.current || ref.current.contains(event.target as Node))) {
         return;
       }
       handler(event);

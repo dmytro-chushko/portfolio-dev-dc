@@ -1,9 +1,10 @@
 'use client';
 
-import { ChangeEvent, useRef, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import StyledInput from '@/components/ui/StyledInput/StyledInput';
-import { useClickOutside } from '@/lib/hooks/useClickOutside.';
+
+import HeroFormWrapper from '../HeroFormWrapper/HeroFormWrapper';
 
 type HeroNameFormProps = {
   nameValue: string;
@@ -11,23 +12,21 @@ type HeroNameFormProps = {
 };
 
 const HeroNameForm = ({ nameValue, onClose }: HeroNameFormProps) => {
-  const [value, setValue] = useState(nameValue);
-  const formRef = useRef<HTMLFormElement>(null);
+  const [value, setValue] = useState<string>(nameValue);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
     setValue(e.target.value);
 
-  useClickOutside<HTMLFormElement>(formRef, () => onClose());
-
   return (
-    <form ref={formRef}>
+    <HeroFormWrapper formAction={() => {}} onClose={onClose}>
       <StyledInput
-        inputStyles="bg-bgInput"
+        inputStyles="bg-bgInput text-lg"
         name="heroName"
         value={value}
+        autoFocus
         onChange={handleChange}
       />
-    </form>
+    </HeroFormWrapper>
   );
 };
 

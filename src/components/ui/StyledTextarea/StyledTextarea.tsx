@@ -1,17 +1,17 @@
-import { Description, Field, Input, Label } from '@headlessui/react';
+import { Description, Field, Label, Textarea } from '@headlessui/react';
 import clsx from 'clsx';
-import { InputHTMLAttributes } from 'react';
+import { TextareaHTMLAttributes } from 'react';
 
-type StyledInputProps = {
+type StyledTextareaProps = {
   label?: string;
   description?: string;
   error?: string;
   inputStyles?: string;
   labelStyles?: string;
   descriptionStyles?: string;
-} & InputHTMLAttributes<HTMLInputElement>;
+} & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-const StyledInput = ({
+const StyledTextarea = ({
   label,
   description,
   error,
@@ -20,11 +20,11 @@ const StyledInput = ({
   descriptionStyles,
   disabled,
   ...rest
-}: StyledInputProps) => {
+}: StyledTextareaProps) => {
   return (
     <Field disabled={disabled}>
       {label && <Label className={clsx(labelStyles)}>{label}</Label>}
-      <Input
+      <Textarea
         className={clsx('p-2 rounded', inputStyles)}
         invalid={!!error}
         {...rest}
@@ -38,4 +38,4 @@ const StyledInput = ({
   );
 };
 
-export default StyledInput;
+export default StyledTextarea;

@@ -1,17 +1,14 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { useState } from 'react';
 
-import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
 import StyledImage from '@/components/ui/StyledImage/StyledImage';
-import StyledInput from '@/components/ui/StyledInput/StyledInput';
 import { HeroTranslationResType } from '@/lib/types/dbServices';
 import { LangType } from '@/lib/types/LangType';
 import { Dictionary } from '@/lib/utils/getDictionary';
 
-import HeroNameForm from '../HeroNameForm/HeroNameForm';
+import HeroTranslationItem from './components/HeroTranslationItem/HeroTranslationItem';
 
 type HeroItemProps = {
   dictionary: Dictionary['dashboard']['hero_item'];
@@ -28,7 +25,6 @@ const HeroItem = ({
   dictionary,
   imagePriority,
 }: HeroItemProps) => {
-  const [isHeroNameForm, setIsHeroNameForm] = useState(false);
   const { lang } = useParams<{ lang: LangType }>();
 
   const getAltText = (lang: LangType) =>
@@ -57,27 +53,11 @@ const HeroItem = ({
               translations.map(
                 ({ heroName, heroDescription, language: { code } }) => (
                   <li key={code}>
-                    <Title className="uppercase" header="h3" copy={code} />
-                    <div className="flex gap-2">
-                      <Title header="h4" copy={`${dictionary.full_name}:`} />
-                      {isHeroNameForm ? (
-                        <HeroNameForm
-                          nameValue={heroName}
-                          onClose={() => setIsHeroNameForm(false)}
-                        />
-                      ) : (
-                        <div onClick={() => setIsHeroNameForm(true)}>
-                          <Paragraph accent>{heroName}</Paragraph>
-                        </div>
-                      )}
-                    </div>
-                    <div>
-                      <Title header="h4" copy={dictionary.description} />
-                      <Paragraph accent>{heroDescription}</Paragraph>
-                    </div>
-                    <StyledInput
-                      inputStyles="bg-bgInput"
-                      error="error message"
+                    <HeroTranslationItem
+                      language={code}
+                      heroName={heroName}
+                      heroDescription={heroDescription}
+                      dictionary={dictionary}
                     />
                   </li>
                 )
