@@ -36,7 +36,7 @@ const HeroTranslationItem = ({
           />
         ) : (
           <div onClick={() => setIsHeroNameForm(true)}>
-            <Paragraph className="p-2" accent>
+            <Paragraph className="p-2 cursor-pointer" accent>
               {heroName}
             </Paragraph>
           </div>
@@ -51,7 +51,9 @@ const HeroTranslationItem = ({
           />
         ) : (
           <div onClick={() => setIsHeroDescrForm(true)}>
-            <Paragraph className="p-2">{heroDescription}</Paragraph>
+            <Paragraph className="p-2 cursor-pointer">
+              {heroDescription}
+            </Paragraph>
           </div>
         )}
       </div>

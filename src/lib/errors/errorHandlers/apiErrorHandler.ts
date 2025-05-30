@@ -6,11 +6,11 @@ type RouteContextType = { params: { [key: string]: string } };
 
 type RouteHandlerType<T> = (
   req: NextRequest,
-  context?: RouteContextType
+  context: RouteContextType
 ) => Promise<NextResponse<T>>;
 
 export const apiErrorHandler = <T>(routeHandler: RouteHandlerType<T>) => {
-  return async (req: NextRequest, context?: RouteContextType) => {
+  return async (req: NextRequest, context: RouteContextType) => {
     try {
       return await routeHandler(req, context);
     } catch (err) {
