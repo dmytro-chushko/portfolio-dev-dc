@@ -1,15 +1,15 @@
 import { useState } from 'react';
 
+import HoverToltip from '@/components/features/HoverToltip/HoverToltip';
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
-import { LangType } from '@/lib/types/LangType';
 import { Dictionary } from '@/lib/utils/getDictionary';
 
 import HeroDescriptionForm from '../HeroDescriptionForm/HeroDescriptionForm';
 import HeroNameForm from '../HeroNameForm/HeroNameForm';
 
 type HeroTranslationItemProps = {
-  language: LangType;
+  language: string;
   heroName: string;
   heroDescription: string;
   dictionary: Dictionary['dashboard']['hero_item'];
@@ -36,9 +36,11 @@ const HeroTranslationItem = ({
           />
         ) : (
           <div onClick={() => setIsHeroNameForm(true)}>
-            <Paragraph className="p-2 cursor-pointer" accent>
-              {heroName}
-            </Paragraph>
+            <HoverToltip toltipValue={dictionary.toltip}>
+              <Paragraph className="p-2 cursor-pointer" accent>
+                {heroName}
+              </Paragraph>
+            </HoverToltip>
           </div>
         )}
       </div>
@@ -51,9 +53,11 @@ const HeroTranslationItem = ({
           />
         ) : (
           <div onClick={() => setIsHeroDescrForm(true)}>
-            <Paragraph className="p-2 cursor-pointer">
-              {heroDescription}
-            </Paragraph>
+            <HoverToltip toltipValue={dictionary.toltip}>
+              <Paragraph className="p-2 cursor-pointer">
+                {heroDescription}
+              </Paragraph>
+            </HoverToltip>
           </div>
         )}
       </div>

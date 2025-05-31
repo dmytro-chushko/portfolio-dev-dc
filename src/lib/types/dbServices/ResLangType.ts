@@ -1,7 +1,5 @@
-import { LangType } from '../LangType';
-
 export type ResLangType = {
   id: string;
-  code: LangType;
+  code: string;
   name: string;
 };

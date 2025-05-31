@@ -29,7 +29,8 @@
     "hero_item": {
       "version_name": "Ім'я версії",
       "full_name": "Повне ім'я",
-      "description": "Опис"
+      "description": "Опис",
+      "toltip": "Натисни, щоб змінити"
     }
   },
   "errors": {
