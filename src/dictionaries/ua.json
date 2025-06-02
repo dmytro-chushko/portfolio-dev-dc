@@ -30,7 +30,8 @@
       "version_name": "Ім'я версії",
       "full_name": "Повне ім'я",
       "description": "Опис",
-      "toltip": "Натисни, щоб змінити"
+      "toltip": "Натисни, щоб змінити",
+      "uploadLabel": "Завантажити фото"
     }
   },
   "errors": {

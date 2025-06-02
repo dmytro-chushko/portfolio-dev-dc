@@ -8,6 +8,8 @@ import { HeroTranslationResType } from '@/lib/types/dbServices';
 import { LangType } from '@/lib/types/LangType';
 import { Dictionary } from '@/lib/utils/getDictionary';
 
+import ImageUploadForm from '../ImageUploadForm/ImageUploadForm';
+
 import HeroTranslationItem from './components/HeroTranslationItem/HeroTranslationItem';
 
 type HeroItemProps = {
@@ -33,14 +35,17 @@ const HeroItem = ({
 
   return (
     <div className="md:flex md:items-start rounded-2xl border-2 border-solid border-[--foreground] p-4 gap-4">
-      <StyledImage
-        className="w-full md:w-auto"
-        imgSrc={heroPhoto}
-        width={320}
-        height={320}
-        altText={getAltText(lang)}
-        priority={!!imagePriority}
-      />
+      <div className="flex-shrink-0">
+        <StyledImage
+          className="w-full md:w-auto"
+          imgSrc={heroPhoto}
+          width={320}
+          height={320}
+          altText={getAltText(lang)}
+          priority={!!imagePriority}
+        />
+        <ImageUploadForm heroUploadLabel={dictionary.uploadLabel} />
+      </div>
       <div className="flex-grow">
         <div>
           <Title

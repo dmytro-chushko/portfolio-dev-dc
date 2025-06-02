@@ -30,7 +30,8 @@
       "version_name": "Version Name",
       "full_name": "Full Name",
       "description": "Description",
-      "toltip": "Click to edit"
+      "toltip": "Click to edit",
+      "uploadLabel": "Upload photo"
     }
   },
   "errors": {
