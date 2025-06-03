@@ -10,7 +10,7 @@ datasource db {
 
 model Language {
   id              String            @id @default(uuid())
-  code            String            @unique
+  code            LangType            @unique
   name            String
   heroTranslation HeroTranslation[]
 }
@@ -35,4 +35,9 @@ model Hero {
   heroVersion  String            @unique
   heroPhoto    String
   translations HeroTranslation[]
+}
+
+enum LangType {
+  en
+  ua
 }

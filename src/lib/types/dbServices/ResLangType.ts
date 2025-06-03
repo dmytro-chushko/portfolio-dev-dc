@@ -1,5 +1,7 @@
+import { LangType } from '@prisma/client';
+
 export type ResLangType = {
   id: string;
-  code: string;
+  code: LangType;
   name: string;
 };
