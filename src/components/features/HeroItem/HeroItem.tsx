@@ -56,9 +56,10 @@ const HeroItem = ({
           <ul className="flex flex-col gap-2">
             {translations.length > 0 &&
               translations.map(
-                ({ heroName, heroDescription, language: { code } }) => (
-                  <li key={code}>
+                ({ id, heroName, heroDescription, language: { code } }) => (
+                  <li key={id}>
                     <HeroTranslationItem
+                      languageId={id}
                       language={code}
                       heroName={heroName}
                       heroDescription={heroDescription}

@@ -9,6 +9,7 @@ import HeroDescriptionForm from '../HeroDescriptionForm/HeroDescriptionForm';
 import HeroNameForm from '../HeroNameForm/HeroNameForm';
 
 type HeroTranslationItemProps = {
+  languageId?: string;
   language: string;
   heroName: string;
   heroDescription: string;

@@ -4,6 +4,8 @@ import prisma from '@/lib/clients/prismaClient';
 import { getPrismaErrorDetails } from '@/lib/errors/errorHandlers/getPrismaErrorDetails';
 import { CreateHeroType } from '@/lib/types/dbServices/CreateHeroType';
 import { HeroResType } from '@/lib/types/dbServices/HeroResType';
+import { UpdateHeroDescriptionType } from '@/lib/types/dbServices/UpdateHeroDescriptionType';
+import { UpdateHeroNameType } from '@/lib/types/dbServices/UpdateHeroNameType';
 import { LangType } from '@/lib/types/LangType';
 import { getDictionary } from '@/lib/utils/getDictionary';
 
@@ -95,6 +97,34 @@ export const getAllHeroes = async (): Promise<HeroResType[]> => {
           language: true,
         },
       },
+    },
+  });
+};
+
+export const updateHeroName = async ({
+  heroName,
+  languageId,
+}: UpdateHeroNameType): Promise<void> => {
+  await prisma.heroTranslation.update({
+    where: {
+      id: languageId,
+    },
+    data: {
+      heroName,
+    },
+  });
+};
+
+export const updateHeroDescription = async ({
+  heroDescription,
+  languageId,
+}: UpdateHeroDescriptionType): Promise<void> => {
+  await prisma.heroTranslation.update({
+    where: {
+      id: languageId,
+    },
+    data: {
+      heroDescription,
     },
   });
 };
