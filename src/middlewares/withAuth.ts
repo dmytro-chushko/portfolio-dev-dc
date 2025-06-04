@@ -10,7 +10,7 @@ export const withAuth: MiddlewareFactory = (next) => {
   return async (req: NextRequest, _next: NextFetchEvent) => {
     const { pathname } = req.nextUrl;
 
-    const isProtected = protectedRoutes.includes(pathname.slice(4));
+    const isProtected = protectedRoutes.includes(pathname.split('/')[2]);
 
     const authRes = await auth0Client.middleware(req);
 
@@ -26,7 +26,7 @@ export const withAuth: MiddlewareFactory = (next) => {
 
     if (!session) {
       return NextResponse.redirect(
-        new URL('/auth/login?returnTo=/dc-dashboard', req.nextUrl.origin)
+        new URL(`/auth/login?returnTo=${pathname}`, req.nextUrl.origin)
       );
     }
 
