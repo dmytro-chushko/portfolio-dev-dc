@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 
 import StyledInput from '@/components/ui/StyledInput/StyledInput';
 
@@ -13,12 +13,13 @@ type HeroNameFormProps = {
 
 const HeroNameForm = ({ nameValue, onClose }: HeroNameFormProps) => {
   const [value, setValue] = useState<string>(nameValue);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
     setValue(e.target.value);
 
   return (
-    <HeroFormWrapper formAction={() => {}} onClose={onClose}>
+    <HeroFormWrapper formRef={formRef} formAction={() => {}} onClose={onClose}>
       <StyledInput
         inputStyles="bg-bgInput text-lg"
         name="heroName"

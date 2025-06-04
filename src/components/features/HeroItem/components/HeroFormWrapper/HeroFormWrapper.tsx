@@ -1,20 +1,20 @@
-import { ReactNode, useRef } from 'react';
+import { ReactNode, RefObject } from 'react';
 
 import { useClickOutside } from '@/lib/hooks/useClickOutside.';
 
 type HeroFormWrapperProps = {
+  formRef: RefObject<HTMLFormElement | null>;
   formAction: () => void;
   onClose: () => void;
   children: ReactNode;
 };
 
 const HeroFormWrapper = ({
+  formRef,
   formAction,
   onClose,
   children,
 }: HeroFormWrapperProps) => {
-  const formRef = useRef<HTMLFormElement>(null);
-
   useClickOutside<HTMLFormElement>(formRef, () => onClose());
 
   return (
