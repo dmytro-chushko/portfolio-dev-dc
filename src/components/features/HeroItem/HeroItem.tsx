@@ -59,7 +59,7 @@ const HeroItem = ({
                 ({ id, heroName, heroDescription, language: { code } }) => (
                   <li key={id}>
                     <HeroTranslationItem
-                      languageId={id}
+                      translationId={id}
                       language={code}
                       heroName={heroName}
                       heroDescription={heroDescription}

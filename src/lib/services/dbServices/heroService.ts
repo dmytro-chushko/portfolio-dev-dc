@@ -103,11 +103,11 @@ export const getAllHeroes = async (): Promise<HeroResType[]> => {
 
 export const updateHeroName = async ({
   heroName,
-  languageId,
+  translationId,
 }: UpdateHeroNameType): Promise<void> => {
   await prisma.heroTranslation.update({
     where: {
-      id: languageId,
+      id: translationId,
     },
     data: {
       heroName,
@@ -117,11 +117,11 @@ export const updateHeroName = async ({
 
 export const updateHeroDescription = async ({
   heroDescription,
-  languageId,
+  translationId,
 }: UpdateHeroDescriptionType): Promise<void> => {
   await prisma.heroTranslation.update({
     where: {
-      id: languageId,
+      id: translationId,
     },
     data: {
       heroDescription,

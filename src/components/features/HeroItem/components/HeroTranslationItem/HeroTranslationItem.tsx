@@ -1,3 +1,4 @@
+import { LangType } from '@prisma/client';
 import { useState } from 'react';
 
 import HoverToltip from '@/components/features/HoverToltip/HoverToltip';
@@ -9,14 +10,15 @@ import HeroDescriptionForm from '../HeroDescriptionForm/HeroDescriptionForm';
 import HeroNameForm from '../HeroNameForm/HeroNameForm';
 
 type HeroTranslationItemProps = {
-  languageId?: string;
-  language: string;
+  translationId: string;
+  language: LangType;
   heroName: string;
   heroDescription: string;
   dictionary: Dictionary['dashboard']['hero_item'];
 };
 
 const HeroTranslationItem = ({
+  translationId,
   language,
   heroName,
   heroDescription,
@@ -32,6 +34,8 @@ const HeroTranslationItem = ({
         <Title header="h4" copy={`${dictionary.full_name}:`} />
         {isHeroNameForm ? (
           <HeroNameForm
+            translationId={translationId}
+            lang={language}
             nameValue={heroName}
             onClose={() => setIsHeroNameForm(false)}
           />
