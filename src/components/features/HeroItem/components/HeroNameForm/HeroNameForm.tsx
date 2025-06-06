@@ -43,7 +43,7 @@ const HeroNameForm = ({
         inputStyles="bg-bgInput text-lg"
         name="heroName"
         value={value}
-        error={!Array.isArray(state?.errors) ? state?.errors : ''}
+        error={state?.status && state?.errorMessage?.['heroName']}
         autoFocus
         onChange={handleChange}
       />

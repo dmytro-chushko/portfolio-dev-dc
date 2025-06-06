@@ -1,17 +1,19 @@
 'use server';
 
 import { LangType } from '@prisma/client';
+import { revalidateTag } from 'next/cache';
 
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
 import PayloadValidationError from '@/lib/errors/PayloadValidationError';
 import { updateHeroName } from '@/lib/services/dbServices/heroService';
+import { UpdateHeroNameState } from '@/lib/types/actions/UpdateHeroNameState';
 import { updateHeroNameSchema } from '@/lib/validation/actionSchema/updateHeroNameSchema';
 import { validateReqBody } from '@/lib/validation/validationHandlers/validateReqBody';
 
 import { UpdateHeroNameType } from '../../lib/types/dbServices/UpdateHeroNameType';
 
 const updateHeroNameAction = async (
-  state: Record<string, string | string[]> | void,
+  state: UpdateHeroNameState | void,
   formData: FormData
 ) => {
   const heroName = formData.get('heroName');
@@ -33,9 +35,13 @@ const updateHeroNameAction = async (
       heroName: validatedBody.heroName,
       translationId: validatedBody.translationId,
     });
+
+    revalidateTag('all-heroes');
+
+    return { status: 'success' };
   } catch (err) {
     if (err instanceof PayloadValidationError) {
-      return err.details;
+      return { status: 'error', errorMessage: err.errorMessage };
     }
 
     throw err;

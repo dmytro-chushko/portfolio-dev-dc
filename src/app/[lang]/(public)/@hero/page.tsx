@@ -13,7 +13,7 @@ type HeroProps = {
 
 const getCachedActiveHero = unstable_cache(
   getActiveHero,
-  ['active-hero', 'lanag'],
+  ['active-hero', 'lnag'],
   { revalidate: 3600, tags: ['active-hero', 'lang'] }
 );
 
