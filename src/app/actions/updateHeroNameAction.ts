@@ -13,12 +13,11 @@ import { validateReqBody } from '@/lib/validation/validationHandlers/validateReq
 import { UpdateHeroNameType } from '../../lib/types/dbServices/UpdateHeroNameType';
 
 const updateHeroNameAction = async (
-  state: UpdateHeroNameState | void,
+  state: UpdateHeroNameState,
   formData: FormData
 ) => {
   const heroName = formData.get('heroName');
-  const translationId = formData.get('translationId');
-  const lang = formData.get('lang');
+  const { translationId, lang } = state;
 
   try {
     const validatedBody = await validateReqBody<
@@ -38,10 +37,20 @@ const updateHeroNameAction = async (
 
     revalidateTag('all-heroes');
 
-    return { status: 'success' };
+    return {
+      status: 'success',
+      successMessage: 'Name updated',
+      translationId,
+      lang,
+    };
   } catch (err) {
     if (err instanceof PayloadValidationError) {
-      return { status: 'error', errorMessage: err.errorMessage };
+      return {
+        status: 'error',
+        errorMessage: err.errorMessage,
+        translationId,
+        lang,
+      };
     }
 
     throw err;

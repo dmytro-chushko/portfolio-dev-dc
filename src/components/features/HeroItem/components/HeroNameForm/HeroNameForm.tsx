@@ -1,11 +1,15 @@
 'use client';
 
+import { yupResolver } from '@hookform/resolvers/yup';
 import { LangType } from '@prisma/client';
-import { ChangeEvent, useActionState, useRef, useState } from 'react';
+import { useActionState, useEffect, useRef } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 
 import updateHeroNameAction from '@/app/actions/updateHeroNameAction';
 import Button from '@/components/ui/Button/Button';
 import StyledInput from '@/components/ui/StyledInput/StyledInput';
+import { UpdateHeroNameForm } from '@/lib/types/initFormData/UpdateHeroNameForm';
+import { updateHeroNameFormSchema } from '@/lib/validation/formSchema/updateHeroNameFormSchema';
 
 import HeroFormWrapper from '../HeroFormWrapper/HeroFormWrapper';
 
@@ -22,36 +26,58 @@ const HeroNameForm = ({
   nameValue,
   onClose,
 }: HeroNameFormProps) => {
-  const [value, setValue] = useState<string>(nameValue);
   const formRef = useRef<HTMLFormElement>(null);
+  const [state, formAction, pending] = useActionState(updateHeroNameAction, {
+    status: '',
+    successMessage: '',
+    translationId,
+    lang,
+  });
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<UpdateHeroNameForm>({
+    defaultValues: {
+      heroName: nameValue,
+    },
+    resolver: yupResolver(updateHeroNameFormSchema),
+  });
 
-  const [state, formAction, pending] = useActionState(
-    updateHeroNameAction,
-    undefined
-  );
+  const onSubmit = (data: UpdateHeroNameForm) => {
+    const formData = new FormData();
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setValue(e.target.value);
+    formData.set('heroName', data.heroName);
+    formAction(formData);
+  };
+
+  useEffect(() => {
+    if (!state.status) return;
+
+    if (state.successMessage) alert(state.successMessage);
+  }, [state]);
 
   return (
     <HeroFormWrapper
       formRef={formRef}
-      formAction={formAction}
+      onSubmit={handleSubmit(onSubmit)}
       onClose={onClose}
     >
-      <StyledInput
-        inputStyles="bg-bgInput text-lg"
+      <Controller
         name="heroName"
-        value={value}
-        error={state?.status && state?.errorMessage?.['heroName']}
-        autoFocus
-        onChange={handleChange}
+        control={control}
+        render={({ field }) => (
+          <StyledInput
+            {...field}
+            inputStyles="bg-bgInput text-lg"
+            error={errors.heroName?.message}
+            autoFocus
+          />
+        )}
       />
       <Button type="submit" loading={pending}>
         Save
       </Button>
-      <input type="hidden" name="translationId" value={translationId} />
-      <input type="hidden" name="lang" value={lang} />
     </HeroFormWrapper>
   );
 };

@@ -4,21 +4,21 @@ import { useClickOutside } from '@/lib/hooks/useClickOutside.';
 
 type HeroFormWrapperProps = {
   formRef: RefObject<HTMLFormElement | null>;
-  formAction: (payload: FormData) => void;
+  onSubmit: (e?: React.BaseSyntheticEvent) => Promise<void>;
   onClose: () => void;
   children: ReactNode;
 };
 
 const HeroFormWrapper = ({
   formRef,
-  formAction,
+  onSubmit,
   onClose,
   children,
 }: HeroFormWrapperProps) => {
   useClickOutside<HTMLFormElement>(formRef, () => onClose());
 
   return (
-    <form action={formAction} ref={formRef}>
+    <form onSubmit={onSubmit} ref={formRef}>
       {children}
     </form>
   );
