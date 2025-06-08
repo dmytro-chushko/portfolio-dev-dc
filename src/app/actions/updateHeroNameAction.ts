@@ -6,14 +6,14 @@ import { revalidateTag } from 'next/cache';
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
 import PayloadValidationError from '@/lib/errors/PayloadValidationError';
 import { updateHeroName } from '@/lib/services/dbServices/heroService';
-import { UpdateHeroNameState } from '@/lib/types/actions/UpdateHeroNameState';
+import { UpdateHeroDataState } from '@/lib/types/actions/UpdateHeroDataState';
 import { updateHeroNameSchema } from '@/lib/validation/actionSchema/updateHeroNameSchema';
 import { validateReqBody } from '@/lib/validation/validationHandlers/validateReqBody';
 
 import { UpdateHeroNameType } from '../../lib/types/dbServices/UpdateHeroNameType';
 
 const updateHeroNameAction = async (
-  state: UpdateHeroNameState,
+  state: UpdateHeroDataState,
   formData: FormData
 ) => {
   const heroName = formData.get('heroName');

@@ -1,6 +1,6 @@
 import { LangType } from '@prisma/client';
 
-export type UpdateHeroNameState = {
+export type UpdateHeroDataState = {
   status: string;
   translationId: string;
   lang: LangType;

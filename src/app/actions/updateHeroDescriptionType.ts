@@ -1,31 +1,59 @@
 'use server';
 
-import { LangType } from '@prisma/client';
+import { revalidateTag } from 'next/cache';
 
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
+import PayloadValidationError from '@/lib/errors/PayloadValidationError';
 import { updateHeroDescription } from '@/lib/services/dbServices/heroService';
+import { UpdateHeroDataState } from '@/lib/types/actions/UpdateHeroDataState';
 import { UpdateHeroDescriptionType } from '@/lib/types/dbServices/UpdateHeroDescriptionType';
+import { LangType } from '@/lib/types/LangType';
 import { updateHeroDescriptionSchema } from '@/lib/validation/actionSchema/updateHeroDescriptionSchema';
 import { validateReqBody } from '@/lib/validation/validationHandlers/validateReqBody';
 
 const updateHeroDescriptionAction = async (
-  {
-    translationId,
-    lang,
-  }: Omit<UpdateHeroDescriptionType, 'heroName'> & { lang: LangType },
+  state: UpdateHeroDataState,
   formData: FormData
 ) => {
-  const heroName = formData.get('heroName') || '';
+  const heroDescription = formData.get('heroDescription');
+  const { translationId, lang } = state;
 
-  const validatedBody = await validateReqBody<UpdateHeroDescriptionType>({
-    body: { heroName, translationId },
-    schema: updateHeroDescriptionSchema,
-  });
+  try {
+    const validatedBody = await validateReqBody<
+      UpdateHeroDescriptionType & { lang: LangType }
+    >({
+      body: { heroDescription, translationId },
+      schema: updateHeroDescriptionSchema,
+    });
 
-  await dbQueryErrorHandler<void, UpdateHeroDescriptionType>(
-    updateHeroDescription,
-    lang
-  )(validatedBody);
+    await dbQueryErrorHandler<void, UpdateHeroDescriptionType>(
+      updateHeroDescription,
+      validatedBody.lang
+    )({
+      heroDescription: validatedBody.heroDescription,
+      translationId: validatedBody.translationId,
+    });
+
+    revalidateTag('all-heroes');
+
+    return {
+      status: 'success',
+      successMessage: 'Description updated',
+      translationId,
+      lang,
+    };
+  } catch (err) {
+    if (err instanceof PayloadValidationError) {
+      return {
+        status: 'error',
+        errorMessage: err.errorMessage,
+        translationId,
+        lang,
+      };
+    }
+
+    throw err;
+  }
 };
 
 export default updateHeroDescriptionAction;
