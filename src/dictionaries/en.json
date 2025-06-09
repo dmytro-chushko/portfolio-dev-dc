@@ -34,6 +34,10 @@
       "uploadLabel": "Upload photo"
     }
   },
+  "form": {
+    "save_submit": "Save",
+    "cancel": "Cancel"
+  },
   "errors": {
     "db": "Database error"
   }

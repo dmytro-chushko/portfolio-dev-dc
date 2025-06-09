@@ -32,7 +32,7 @@ const Button = ({
   return (
     <button
       className={clsx(
-        'rounded-full p-4 font-bold disabled:text-hovered',
+        'rounded-full min-w-20 p-4 font-bold disabled:text-hovered',
         variants[variant],
         fullwidth && 'w-full',
         loading && 'loading',

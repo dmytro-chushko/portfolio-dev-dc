@@ -5,7 +5,7 @@ type HoverToltipProps = {
   toltipValue: string;
 };
 
-const HoverToltip = ({ children, toltipValue }: HoverToltipProps) => {
+const HoverToolTip = ({ children, toltipValue }: HoverToltipProps) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(false);
 
@@ -39,4 +39,4 @@ const HoverToltip = ({ children, toltipValue }: HoverToltipProps) => {
   );
 };
 
-export default HoverToltip;
+export default HoverToolTip;

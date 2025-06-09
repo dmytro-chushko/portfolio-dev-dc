@@ -9,6 +9,7 @@ import updateHeroNameAction from '@/app/actions/updateHeroNameAction';
 import Button from '@/components/ui/Button/Button';
 import StyledInput from '@/components/ui/StyledInput/StyledInput';
 import { UpdateHeroNameForm } from '@/lib/types/initFormData/UpdateHeroNameForm';
+import { Dictionary } from '@/lib/utils/getDictionary';
 import { updateHeroNameFormSchema } from '@/lib/validation/formSchema/updateHeroNameFormSchema';
 
 import HeroFormWrapper from '../HeroFormWrapper/HeroFormWrapper';
@@ -17,6 +18,7 @@ type HeroNameFormProps = {
   translationId: string;
   lang: LangType;
   nameValue: string;
+  formDictionary: Dictionary['form'];
   onClose: () => void;
 };
 
@@ -24,6 +26,7 @@ const HeroNameForm = ({
   translationId,
   lang,
   nameValue,
+  formDictionary,
   onClose,
 }: HeroNameFormProps) => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -63,21 +66,28 @@ const HeroNameForm = ({
       onSubmit={handleSubmit(onSubmit)}
       onClose={onClose}
     >
-      <Controller
-        name="heroName"
-        control={control}
-        render={({ field }) => (
-          <StyledInput
-            {...field}
-            inputStyles="bg-bgInput text-lg"
-            error={errors.heroName?.message}
-            autoFocus
-          />
-        )}
-      />
-      <Button type="submit" loading={pending}>
-        Save
-      </Button>
+      <div className="mb-2">
+        <Controller
+          name="heroName"
+          control={control}
+          render={({ field }) => (
+            <StyledInput
+              {...field}
+              inputStyles="bg-bgInput text-lg"
+              error={errors.heroName?.message}
+              autoFocus
+            />
+          )}
+        />
+      </div>
+      <div className="flex items-center gap-3">
+        <Button type="submit" loading={pending}>
+          {formDictionary.save_submit}
+        </Button>
+        <Button type="button" loading={pending} onClick={onClose}>
+          {formDictionary.cancel}
+        </Button>
+      </div>
     </HeroFormWrapper>
   );
 };

@@ -37,6 +37,7 @@ const HeroList = async ({ params }: HeroListProps) => {
             heroVersion={heroVersion}
             translations={translations}
             dictionary={dict.dashboard.hero_item}
+            formDictionary={dict.form}
             imagePriority={i >= 0 && i < 2}
           />
         </li>

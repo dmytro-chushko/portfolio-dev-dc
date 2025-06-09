@@ -1,7 +1,7 @@
 import { LangType } from '@prisma/client';
 import { useState } from 'react';
 
-import HoverToltip from '@/components/features/HoverToltip/HoverToltip';
+import HoverToolTip from '@/components/features/HoverToolTip/HoverToolTip';
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
 import { Dictionary } from '@/lib/utils/getDictionary';
@@ -15,6 +15,7 @@ type HeroTranslationItemProps = {
   heroName: string;
   heroDescription: string;
   dictionary: Dictionary['dashboard']['hero_item'];
+  formDictionary: Dictionary['form'];
 };
 
 const HeroTranslationItem = ({
@@ -23,6 +24,7 @@ const HeroTranslationItem = ({
   heroName,
   heroDescription,
   dictionary,
+  formDictionary,
 }: HeroTranslationItemProps) => {
   const [isHeroNameForm, setIsHeroNameForm] = useState<boolean>(false);
   const [isHeroDescrForm, setIsHeroDescrForm] = useState<boolean>(false);
@@ -30,22 +32,23 @@ const HeroTranslationItem = ({
   return (
     <>
       <Title className="uppercase" header="h3" copy={language} />
-      <div className="flex items-center gap-2">
-        <Title header="h4" copy={`${dictionary.full_name}:`} />
+      <div className="flex items-start gap-2">
+        <Title className="p-2" header="h4" copy={`${dictionary.full_name}:`} />
         {isHeroNameForm ? (
           <HeroNameForm
             translationId={translationId}
             lang={language}
             nameValue={heroName}
+            formDictionary={formDictionary}
             onClose={() => setIsHeroNameForm(false)}
           />
         ) : (
           <div onClick={() => setIsHeroNameForm(true)}>
-            <HoverToltip toltipValue={dictionary.toltip}>
+            <HoverToolTip toltipValue={dictionary.toltip}>
               <Paragraph className="p-2 cursor-pointer" accent>
                 {heroName}
               </Paragraph>
-            </HoverToltip>
+            </HoverToolTip>
           </div>
         )}
       </div>
@@ -53,16 +56,19 @@ const HeroTranslationItem = ({
         <Title header="h4" copy={dictionary.description} />
         {isHeroDescrForm ? (
           <HeroDescriptionForm
+            translationId={translationId}
+            lang={language}
             descriptionValue={heroDescription}
+            formDictionary={formDictionary}
             onClose={() => setIsHeroDescrForm(false)}
           />
         ) : (
           <div onClick={() => setIsHeroDescrForm(true)}>
-            <HoverToltip toltipValue={dictionary.toltip}>
+            <HoverToolTip toltipValue={dictionary.toltip}>
               <Paragraph className="p-2 cursor-pointer">
                 {heroDescription}
               </Paragraph>
-            </HoverToltip>
+            </HoverToolTip>
           </div>
         )}
       </div>

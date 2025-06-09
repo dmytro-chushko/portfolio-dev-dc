@@ -14,6 +14,7 @@ import HeroTranslationItem from './components/HeroTranslationItem/HeroTranslatio
 
 type HeroItemProps = {
   dictionary: Dictionary['dashboard']['hero_item'];
+  formDictionary: Dictionary['form'];
   heroPhoto: string;
   heroVersion: string;
   translations: HeroTranslationResType[];
@@ -25,6 +26,7 @@ const HeroItem = ({
   heroVersion,
   translations,
   dictionary,
+  formDictionary,
   imagePriority,
 }: HeroItemProps) => {
   const { lang } = useParams<{ lang: LangType }>();
@@ -64,6 +66,7 @@ const HeroItem = ({
                       heroName={heroName}
                       heroDescription={heroDescription}
                       dictionary={dictionary}
+                      formDictionary={formDictionary}
                     />
                   </li>
                 )

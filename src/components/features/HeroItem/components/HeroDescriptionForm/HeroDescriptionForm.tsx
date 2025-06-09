@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button/Button';
 import StyledTextarea from '@/components/ui/StyledTextarea/StyledTextarea';
 import { UpdateHeroDescriptionForm } from '@/lib/types/initFormData/UpdateHeroDescriptionForm';
 import { LangType } from '@/lib/types/LangType';
+import { Dictionary } from '@/lib/utils/getDictionary';
 import { updateHeroDescriptionFormSchema } from '@/lib/validation/formSchema/updateHeroDescriptionFormSchema';
 
 import HeroFormWrapper from '../HeroFormWrapper/HeroFormWrapper';
@@ -15,6 +16,7 @@ type HeroDescriptionFormProps = {
   translationId: string;
   lang: LangType;
   descriptionValue: string;
+  formDictionary: Dictionary['form'];
   onClose: () => void;
 };
 
@@ -22,6 +24,7 @@ const HeroDescriptionForm = ({
   translationId,
   lang,
   descriptionValue,
+  formDictionary,
   onClose,
 }: HeroDescriptionFormProps) => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -65,22 +68,29 @@ const HeroDescriptionForm = ({
       onSubmit={handleSubmit(onSubmit)}
       onClose={onClose}
     >
-      <Controller
-        name="heroDescription"
-        control={control}
-        render={({ field }) => (
-          <StyledTextarea
-            {...field}
-            inputStyles="bg-bgInput w-full"
-            rows={6}
-            error={errors.heroDescription?.message}
-            autoFocus
-          />
-        )}
-      />
-      <Button type="submit" loading={pending}>
-        Save
-      </Button>
+      <div className="mb-2">
+        <Controller
+          name="heroDescription"
+          control={control}
+          render={({ field }) => (
+            <StyledTextarea
+              {...field}
+              inputStyles="bg-bgInput w-full"
+              rows={6}
+              error={errors.heroDescription?.message}
+              autoFocus
+            />
+          )}
+        />
+      </div>
+      <div className="flex items-center gap-3">
+        <Button type="submit" loading={pending}>
+          {formDictionary.save_submit}
+        </Button>
+        <Button type="button" loading={pending} onClick={onClose}>
+          {formDictionary.cancel}
+        </Button>
+      </div>
     </HeroFormWrapper>
   );
 };
