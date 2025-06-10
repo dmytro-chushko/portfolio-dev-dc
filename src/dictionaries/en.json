@@ -38,6 +38,9 @@
     "save_submit": "Save",
     "cancel": "Cancel"
   },
+  "form_validation_message": {
+    "max_symbols": "it has to be not more than 5"
+  },
   "errors": {
     "db": "Database error"
   }

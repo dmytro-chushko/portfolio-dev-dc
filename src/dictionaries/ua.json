@@ -38,6 +38,9 @@
     "save_submit": "Зберегти",
     "cancel": "Відмінити"
   },
+  "form_validation_message": {
+    "max_symbols": "має бути не більше 5"
+  },
   "errors": {
     "db": "Помилка БД"
   }

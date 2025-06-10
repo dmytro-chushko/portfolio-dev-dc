@@ -2,6 +2,7 @@
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import { LangType } from '@prisma/client';
+import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -46,6 +47,7 @@ const HeroNameForm = ({
     },
     resolver: yupResolver(updateHeroNameFormSchema),
   });
+  const t = useTranslations();
 
   const onSubmit = (data: UpdateHeroNameForm) => {
     const formData = new FormData();
@@ -74,7 +76,10 @@ const HeroNameForm = ({
             <StyledInput
               {...field}
               inputStyles="bg-bgInput text-lg"
-              error={errors.heroName?.message}
+              error={
+                errors?.heroName &&
+                t(`form_validation_message.${errors.heroName?.message}`)
+              }
               autoFocus
             />
           )}
@@ -82,7 +87,7 @@ const HeroNameForm = ({
       </div>
       <div className="flex items-center gap-3">
         <Button type="submit" loading={pending}>
-          {formDictionary.save_submit}
+          {t('form.save_submit')}
         </Button>
         <Button type="button" loading={pending} onClick={onClose}>
           {formDictionary.cancel}

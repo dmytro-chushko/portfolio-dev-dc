@@ -1,5 +1,7 @@
 import '@/styles/globals.css';
 
+import { NextIntlClientProvider } from 'next-intl';
+
 import { RootLayoutProps } from '@/lib/types/RootLayoutType';
 import { roboto } from '@/styles/fonts';
 
@@ -11,7 +13,7 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
       <body
         className={`font-roboto ${roboto.variable} font-normal antialiased`}
       >
-        {children}
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

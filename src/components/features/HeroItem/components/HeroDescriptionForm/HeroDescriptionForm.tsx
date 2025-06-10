@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -48,6 +49,7 @@ const HeroDescriptionForm = ({
     },
     resolver: yupResolver(updateHeroDescriptionFormSchema),
   });
+  const t = useTranslations('form');
 
   const onSubmit = (data: UpdateHeroDescriptionForm) => {
     const formData = new FormData();
@@ -85,7 +87,7 @@ const HeroDescriptionForm = ({
       </div>
       <div className="flex items-center gap-3">
         <Button type="submit" loading={pending}>
-          {formDictionary.save_submit}
+          {t('save_submit')}
         </Button>
         <Button type="button" loading={pending} onClick={onClose}>
           {formDictionary.cancel}
