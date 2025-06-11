@@ -37,7 +37,7 @@ const HeroItem = ({
 
   return (
     <div className="md:flex md:items-start rounded-2xl border-2 border-solid border-[--foreground] p-4 gap-4">
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 w-96">
         <StyledImage
           className="w-full md:w-auto"
           imgSrc={heroPhoto}

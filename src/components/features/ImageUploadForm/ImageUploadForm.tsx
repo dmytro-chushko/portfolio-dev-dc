@@ -13,7 +13,11 @@ const ImageUploadForm = ({ heroUploadLabel }: ImageUploadFormProps) => {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    alert(file?.name);
+
+    if (file) {
+      const url = URL.createObjectURL(file);
+      alert(url);
+    }
   };
 
   return (
