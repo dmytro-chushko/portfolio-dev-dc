@@ -9,6 +9,7 @@ import StyledTextarea from '@/components/ui/StyledTextarea/StyledTextarea';
 import { UpdateHeroDescriptionForm } from '@/lib/types/initFormData/UpdateHeroDescriptionForm';
 import { LangType } from '@/lib/types/LangType';
 import { Dictionary } from '@/lib/utils/getDictionary';
+import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
 import { updateHeroDescriptionFormSchema } from '@/lib/validation/formSchema/updateHeroDescriptionFormSchema';
 
 import HeroFormWrapper from '../HeroFormWrapper/HeroFormWrapper';
@@ -79,7 +80,7 @@ const HeroDescriptionForm = ({
               {...field}
               inputStyles="bg-bgInput w-full"
               rows={6}
-              error={errors.heroDescription?.message}
+              error={getValidationErrorMessage(t, errors?.heroDescription)}
               autoFocus
             />
           )}

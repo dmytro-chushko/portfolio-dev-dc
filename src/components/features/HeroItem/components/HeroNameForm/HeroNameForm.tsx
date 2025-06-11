@@ -11,6 +11,7 @@ import Button from '@/components/ui/Button/Button';
 import StyledInput from '@/components/ui/StyledInput/StyledInput';
 import { UpdateHeroNameForm } from '@/lib/types/initFormData/UpdateHeroNameForm';
 import { Dictionary } from '@/lib/utils/getDictionary';
+import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
 import { updateHeroNameFormSchema } from '@/lib/validation/formSchema/updateHeroNameFormSchema';
 
 import HeroFormWrapper from '../HeroFormWrapper/HeroFormWrapper';
@@ -76,10 +77,7 @@ const HeroNameForm = ({
             <StyledInput
               {...field}
               inputStyles="bg-bgInput text-lg"
-              error={
-                errors?.heroName &&
-                t(`form_validation_message.${errors.heroName?.message}`)
-              }
+              error={getValidationErrorMessage(t, errors?.heroName)}
               autoFocus
             />
           )}
