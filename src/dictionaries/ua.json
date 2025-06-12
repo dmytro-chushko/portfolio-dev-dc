@@ -31,7 +31,9 @@
       "full_name": "Повне ім'я",
       "description": "Опис",
       "toltip": "Натисни, щоб змінити",
-      "uploadLabel": "Завантажити фото"
+      "uploadFileLabel": "Змінити фото",
+      "cancelUploadFileLabel": "Відмінити",
+      "confirmUploadFileLabel": "Підтвердити"
     }
   },
   "form": {

@@ -24,7 +24,6 @@ const HeroTranslationItem = ({
   heroName,
   heroDescription,
   dictionary,
-  formDictionary,
 }: HeroTranslationItemProps) => {
   const [isHeroNameForm, setIsHeroNameForm] = useState<boolean>(false);
   const [isHeroDescrForm, setIsHeroDescrForm] = useState<boolean>(false);
@@ -39,7 +38,6 @@ const HeroTranslationItem = ({
             translationId={translationId}
             lang={language}
             nameValue={heroName}
-            formDictionary={formDictionary}
             onClose={() => setIsHeroNameForm(false)}
           />
         ) : (
@@ -59,7 +57,6 @@ const HeroTranslationItem = ({
             translationId={translationId}
             lang={language}
             descriptionValue={heroDescription}
-            formDictionary={formDictionary}
             onClose={() => setIsHeroDescrForm(false)}
           />
         ) : (

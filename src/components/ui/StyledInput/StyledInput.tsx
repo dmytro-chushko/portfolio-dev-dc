@@ -25,7 +25,11 @@ const StyledInput = ({
     <Field disabled={disabled}>
       {label && <Label className={clsx(labelStyles)}>{label}</Label>}
       <Input
-        className={clsx('p-2 rounded', inputStyles)}
+        className={clsx(
+          'p-2 rounded',
+          description || (error && 'mb-2'),
+          inputStyles
+        )}
         invalid={!!error}
         {...rest}
       />

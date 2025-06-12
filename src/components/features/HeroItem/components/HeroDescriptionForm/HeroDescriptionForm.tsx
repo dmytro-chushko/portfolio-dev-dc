@@ -8,7 +8,6 @@ import Button from '@/components/ui/Button/Button';
 import StyledTextarea from '@/components/ui/StyledTextarea/StyledTextarea';
 import { UpdateHeroDescriptionForm } from '@/lib/types/initFormData/UpdateHeroDescriptionForm';
 import { LangType } from '@/lib/types/LangType';
-import { Dictionary } from '@/lib/utils/getDictionary';
 import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
 import { updateHeroDescriptionFormSchema } from '@/lib/validation/formSchema/updateHeroDescriptionFormSchema';
 
@@ -18,7 +17,6 @@ type HeroDescriptionFormProps = {
   translationId: string;
   lang: LangType;
   descriptionValue: string;
-  formDictionary: Dictionary['form'];
   onClose: () => void;
 };
 
@@ -26,7 +24,6 @@ const HeroDescriptionForm = ({
   translationId,
   lang,
   descriptionValue,
-  formDictionary,
   onClose,
 }: HeroDescriptionFormProps) => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -50,7 +47,7 @@ const HeroDescriptionForm = ({
     },
     resolver: yupResolver(updateHeroDescriptionFormSchema),
   });
-  const t = useTranslations('form');
+  const t = useTranslations();
 
   const onSubmit = (data: UpdateHeroDescriptionForm) => {
     const formData = new FormData();
@@ -88,10 +85,10 @@ const HeroDescriptionForm = ({
       </div>
       <div className="flex items-center gap-3">
         <Button type="submit" loading={pending}>
-          {t('save_submit')}
+          {t('form.save_submit')}
         </Button>
         <Button type="button" loading={pending} onClick={onClose}>
-          {formDictionary.cancel}
+          {t('form.cancel')}
         </Button>
       </div>
     </HeroFormWrapper>

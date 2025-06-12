@@ -1,6 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
+import { useState } from 'react';
 
 import Title from '@/components/typography/Title/Title';
 import StyledImage from '@/components/ui/StyledImage/StyledImage';
@@ -30,6 +31,7 @@ const HeroItem = ({
   imagePriority,
 }: HeroItemProps) => {
   const { lang } = useParams<{ lang: LangType }>();
+  const [photoUrl, setPhotoUrl] = useState<string>(heroPhoto);
 
   const getAltText = (lang: LangType) =>
     translations.find(({ language: { code } }) => code === lang)?.heroName ||
@@ -37,16 +39,16 @@ const HeroItem = ({
 
   return (
     <div className="md:flex md:items-start rounded-2xl border-2 border-solid border-[--foreground] p-4 gap-4">
-      <div className="flex-shrink-0 w-96">
+      <div className="flex-shrink-0 md:w-[320px]">
         <StyledImage
           className="w-full md:w-auto"
-          imgSrc={heroPhoto}
+          imgSrc={photoUrl}
           width={320}
           height={320}
           altText={getAltText(lang)}
           priority={!!imagePriority}
         />
-        <ImageUploadForm heroUploadLabel={dictionary.uploadLabel} />
+        <ImageUploadForm initPhoto={heroPhoto} onChangePreview={setPhotoUrl} />
       </div>
       <div className="flex-grow">
         <div>

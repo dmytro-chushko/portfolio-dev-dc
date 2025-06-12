@@ -10,7 +10,6 @@ import updateHeroNameAction from '@/app/actions/updateHeroNameAction';
 import Button from '@/components/ui/Button/Button';
 import StyledInput from '@/components/ui/StyledInput/StyledInput';
 import { UpdateHeroNameForm } from '@/lib/types/initFormData/UpdateHeroNameForm';
-import { Dictionary } from '@/lib/utils/getDictionary';
 import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
 import { updateHeroNameFormSchema } from '@/lib/validation/formSchema/updateHeroNameFormSchema';
 
@@ -20,7 +19,6 @@ type HeroNameFormProps = {
   translationId: string;
   lang: LangType;
   nameValue: string;
-  formDictionary: Dictionary['form'];
   onClose: () => void;
 };
 
@@ -28,7 +26,6 @@ const HeroNameForm = ({
   translationId,
   lang,
   nameValue,
-  formDictionary,
   onClose,
 }: HeroNameFormProps) => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -88,7 +85,7 @@ const HeroNameForm = ({
           {t('form.save_submit')}
         </Button>
         <Button type="button" loading={pending} onClick={onClose}>
-          {formDictionary.cancel}
+          {t('form.cancel')}
         </Button>
       </div>
     </HeroFormWrapper>
