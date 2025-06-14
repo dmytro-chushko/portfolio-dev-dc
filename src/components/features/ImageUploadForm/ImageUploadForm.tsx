@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslations } from 'next-intl';
-import { useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Button from '@/components/ui/Button/Button';
@@ -23,7 +23,9 @@ const ImageUploadForm = ({
   const messageGetter = useTranslations();
   const {
     register,
-    handleSubmit,
+    // trigger,
+    // watch,
+    // handleSubmit,
     formState: { errors },
   } = useForm<{ image: File }>({
     resolver: yupResolver(fileSchema),
@@ -39,9 +41,14 @@ const ImageUploadForm = ({
 
   const handleClickConfirmButton = () => {};
 
-  const handleFileChange = ({ image }: { image: File }) => {
-    if (image) {
-      const url = URL.createObjectURL(image);
+  const handleFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+
+    // const result = await trigger('image');
+    // console.log(result);
+
+    if (file) {
+      const url = URL.createObjectURL(file);
       onChangePreview(url);
       setCreatedBlob(url);
     }
@@ -54,7 +61,10 @@ const ImageUploadForm = ({
   }, [createdBlob]);
 
   return (
-    <form className="py-4" onSubmit={handleSubmit(handleFileChange)}>
+    <form
+      className="py-4"
+      // onSubmit={handleSubmit(handleFileChange)}
+    >
       {createdBlob ? (
         <div>
           <Button
@@ -80,14 +90,14 @@ const ImageUploadForm = ({
       <span>{getValidationErrorMessage(messageGetter, errors?.image)}</span>
       <input
         className="hidden"
-        {...register('image')}
+        {...(register('image'), { onChange: handleFileChange })}
         ref={inputRef}
         type="file"
         accept="image/*"
-        onChange={(e) => {
-          register('image').onChange(e);
-          handleSubmit(handleFileChange)();
-        }}
+        // onChange={(e) => {
+        //   register('image').onChange(e);
+        //   // handleSubmit(handleFileChange)();
+        // }}
       />
     </form>
   );
