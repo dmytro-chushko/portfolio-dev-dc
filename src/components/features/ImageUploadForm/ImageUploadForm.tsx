@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslations } from 'next-intl';
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Button from '@/components/ui/Button/Button';
@@ -23,14 +23,17 @@ const ImageUploadForm = ({
   const messageGetter = useTranslations();
   const {
     register,
-    // trigger,
-    // watch,
+    trigger,
+    watch,
     // handleSubmit,
     formState: { errors },
-  } = useForm<{ image: File }>({
+  } = useForm<{ image: FileList }>({
     resolver: yupResolver(fileSchema),
     defaultValues: { image: undefined },
   });
+
+  const { onChange, onBlur, name, ref } = register('image');
+  const uploadedFile = watch('image');
 
   const handleClickButton = () => inputRef?.current?.click();
 
@@ -41,18 +44,21 @@ const ImageUploadForm = ({
 
   const handleClickConfirmButton = () => {};
 
-  const handleFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
+  useEffect(() => {
+    const check = async () => {
+      if (uploadedFile && uploadedFile.length) {
+        const fileIsValid = await trigger('image');
 
-    // const result = await trigger('image');
-    // console.log(result);
+        if (fileIsValid) {
+          const url = URL.createObjectURL(uploadedFile[0]);
+          onChangePreview(url);
+          setCreatedBlob(url);
+        }
+      }
+    };
 
-    if (file) {
-      const url = URL.createObjectURL(file);
-      onChangePreview(url);
-      setCreatedBlob(url);
-    }
-  };
+    check();
+  }, [uploadedFile, onChangePreview, trigger]);
 
   useEffect(() => {
     if (createdBlob) {
@@ -90,14 +96,15 @@ const ImageUploadForm = ({
       <span>{getValidationErrorMessage(messageGetter, errors?.image)}</span>
       <input
         className="hidden"
-        {...(register('image'), { onChange: handleFileChange })}
-        ref={inputRef}
+        ref={(e) => {
+          ref(e);
+          inputRef.current = e;
+        }}
         type="file"
         accept="image/*"
-        // onChange={(e) => {
-        //   register('image').onChange(e);
-        //   // handleSubmit(handleFileChange)();
-        // }}
+        onChange={onChange}
+        onBlur={onBlur}
+        name={name}
       />
     </form>
   );
