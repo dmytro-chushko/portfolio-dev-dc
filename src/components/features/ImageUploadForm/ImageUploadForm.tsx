@@ -72,7 +72,7 @@ const ImageUploadForm = ({
       // onSubmit={handleSubmit(handleFileChange)}
     >
       {createdBlob ? (
-        <div>
+        <div className="flex items-center justify-between">
           <Button
             variant="primary"
             type="button"
@@ -93,7 +93,11 @@ const ImageUploadForm = ({
           {t('uploadFileLabel')}
         </Button>
       )}
-      <span>{getValidationErrorMessage(messageGetter, errors?.image)}</span>
+      {errors?.image && (
+        <span className="text-error block pt-4">
+          {getValidationErrorMessage(messageGetter, errors?.image)}
+        </span>
+      )}
       <input
         className="hidden"
         ref={(e) => {
