@@ -25,6 +25,11 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ hostname: 'jrvahgupsifnchwwzflu.supabase.co' }],
   },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '5mb',
+    },
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

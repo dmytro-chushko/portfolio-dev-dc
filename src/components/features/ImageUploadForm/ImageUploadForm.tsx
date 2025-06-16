@@ -52,11 +52,17 @@ const ImageUploadForm = ({
   const onSubmit = async (data: { image: FileList }) => {
     setIsLoading(true);
 
-    await updateHeroPhotoAction({
-      heroVarsion: '',
-      fileList: data.image,
-      lang,
-    });
+    try {
+      await updateHeroPhotoAction({
+        heroVarsion: '',
+        fileList: data.image,
+        lang,
+      });
+    } catch (e) {
+      setIsLoading(false);
+
+      throw e;
+    }
 
     setIsLoading(false);
   };

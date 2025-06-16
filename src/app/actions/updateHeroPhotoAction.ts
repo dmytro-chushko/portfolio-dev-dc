@@ -4,26 +4,28 @@ import { revalidateTag } from 'next/cache';
 
 import { uploadFile } from '@/lib/services/storageService';
 import { UpdateHeroPhotoActionType } from '@/lib/types/actions/UpdateHeroPhotoActionType';
-// import { imageUploadForm } from '@/lib/validation/formSchema/imageUploadForm';
-// import { validateReqBody } from '@/lib/validation/validationHandlers/validateReqBody';
+import { updateHeroPhotoSchema } from '@/lib/validation/actionSchema/updateHeroPhotoSchema';
+import { validateReqBody } from '@/lib/validation/validationHandlers/validateReqBody';
 
 const updateHeroPhotoAction = async ({
   // heroVersion,
   fileList,
   // lang,
 }: UpdateHeroPhotoActionType) => {
-  // const validatedBodyForUploadImage = await validateReqBody<{
-  //   image: FileList;
-  // }>({
-  //   body: { image: fileList },
-  //   schema: imageUploadForm,
-  // });
+  const validatedBodyForUploadImage = await validateReqBody<{
+    image: File;
+  }>({
+    body: { image: fileList[0] },
+    schema: updateHeroPhotoSchema,
+  });
 
   await uploadFile({
-    fileBody: fileList[0],
+    fileBody: validatedBodyForUploadImage.image,
   });
 
   revalidateTag('all-heroes');
+
+  return fileList[0];
 };
 
 export default updateHeroPhotoAction;
