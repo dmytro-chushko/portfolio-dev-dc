@@ -6,6 +6,7 @@ import { CreateHeroType } from '@/lib/types/dbServices/CreateHeroType';
 import { HeroResType } from '@/lib/types/dbServices/HeroResType';
 import { UpdateHeroDescriptionType } from '@/lib/types/dbServices/UpdateHeroDescriptionType';
 import { UpdateHeroNameType } from '@/lib/types/dbServices/UpdateHeroNameType';
+import { UpdateHeroPhotoType } from '@/lib/types/dbServices/UpdateHeroPhotoType';
 import { LangType } from '@/lib/types/LangType';
 import { getDictionary } from '@/lib/utils/getDictionary';
 
@@ -125,6 +126,20 @@ export const updateHeroDescription = async ({
     },
     data: {
       heroDescription,
+    },
+  });
+};
+
+export const updateHeroPhoto = async ({
+  heroPhoto,
+  heroVersion,
+}: UpdateHeroPhotoType): Promise<void> => {
+  await prisma.hero.update({
+    where: {
+      heroVersion,
+    },
+    data: {
+      heroPhoto,
     },
   });
 };

@@ -1,12 +1,17 @@
+'use client';
+
 import { yupResolver } from '@hookform/resolvers/yup';
+import { LangType } from '@prisma/client';
+import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import updateHeroPhotoAction from '@/app/actions/updateHeroPhotoAction';
 import Button from '@/components/ui/Button/Button';
 import { SetStateType } from '@/lib/types/SetStateType';
 import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
-import { fileSchema } from '@/lib/validation/formSchema/imageUploadForm';
+import { imageUploadForm } from '@/lib/validation/formSchema/imageUploadForm';
 
 type ImageUploadFormProps = {
   initPhoto: string;
@@ -17,6 +22,8 @@ const ImageUploadForm = ({
   initPhoto,
   onChangePreview,
 }: ImageUploadFormProps) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { lang } = useParams<{ lang: LangType }>();
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [createdBlob, setCreatedBlob] = useState<string>('');
   const t = useTranslations('dashboard.hero_item');
@@ -25,10 +32,10 @@ const ImageUploadForm = ({
     register,
     trigger,
     watch,
-    // handleSubmit,
+    handleSubmit,
     formState: { errors },
   } = useForm<{ image: FileList }>({
-    resolver: yupResolver(fileSchema),
+    resolver: yupResolver(imageUploadForm),
     defaultValues: { image: undefined },
   });
 
@@ -42,7 +49,17 @@ const ImageUploadForm = ({
     setCreatedBlob('');
   };
 
-  const handleClickConfirmButton = () => {};
+  const onSubmit = async (data: { image: FileList }) => {
+    setIsLoading(true);
+
+    await updateHeroPhotoAction({
+      heroVarsion: '',
+      fileList: data.image,
+      lang,
+    });
+
+    setIsLoading(false);
+  };
 
   useEffect(() => {
     const check = async () => {
@@ -67,22 +84,16 @@ const ImageUploadForm = ({
   }, [createdBlob]);
 
   return (
-    <form
-      className="py-4"
-      // onSubmit={handleSubmit(handleFileChange)}
-    >
+    <form className="py-4" onSubmit={handleSubmit(onSubmit)}>
       {createdBlob ? (
         <div className="flex items-center justify-between">
-          <Button
-            variant="primary"
-            type="button"
-            onClick={handleClickConfirmButton}
-          >
+          <Button variant="primary" type="submit" loading={isLoading}>
             {t('confirmUploadFileLabel')}
           </Button>
           <Button
             variant="secondary"
             type="button"
+            loading={isLoading}
             onClick={handleClickCancelButton}
           >
             {t('cancelUploadFileLabel')}
