@@ -3,13 +3,14 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { LangType } from '@prisma/client';
 import { useTranslations } from 'next-intl';
-import { useActionState, useEffect, useRef } from 'react';
+import { startTransition, useActionState, useEffect, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import updateHeroNameAction from '@/app/actions/updateHeroNameAction';
 import Button from '@/components/ui/Button/Button';
 import StyledInput from '@/components/ui/StyledInput/StyledInput';
 import { UpdateHeroNameForm } from '@/lib/types/initFormData/UpdateHeroNameForm';
+import CONST from '@/lib/utils/consts';
 import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
 import { updateHeroNameFormSchema } from '@/lib/validation/formSchema/updateHeroNameFormSchema';
 
@@ -51,14 +52,25 @@ const HeroNameForm = ({
     const formData = new FormData();
 
     formData.set('heroName', data.heroName);
-    formAction(formData);
+    startTransition(() => {
+      formAction(formData);
+    });
   };
 
   useEffect(() => {
     if (!state.status) return;
 
     if (state.successMessage) alert(state.successMessage);
-  }, [state]);
+
+    if (state.errorMessage)
+      alert(
+        Object.values(state.errorMessage)
+          .map((message) =>
+            t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.${message}`)
+          )
+          .join(', ')
+      );
+  }, [state, t]);
 
   return (
     <HeroFormWrapper

@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const FILE_SIZE_LIMIT = 1 * 1024 * 1024; // 5MB
+const FILE_SIZE_LIMIT = 5 * 1024 * 1024; // 5MB
 const SUPPORTED_FORMATS = ['image/jpeg', 'image/png'];
 
 export const updateHeroPhotoSchema: yup.ObjectSchema<{ image: File }> =

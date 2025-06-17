@@ -4,30 +4,44 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { LangType } from '@prisma/client';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { useEffect, useRef, useState } from 'react';
+import {
+  startTransition,
+  useActionState,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { useForm } from 'react-hook-form';
 
 import updateHeroPhotoAction from '@/app/actions/updateHeroPhotoAction';
 import Button from '@/components/ui/Button/Button';
 import { SetStateType } from '@/lib/types/SetStateType';
+import CONST from '@/lib/utils/consts';
 import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
 import { imageUploadForm } from '@/lib/validation/formSchema/imageUploadForm';
 
 type ImageUploadFormProps = {
   initPhoto: string;
+  heroVersion: string;
   onChangePreview: SetStateType<string>;
 };
 
 const ImageUploadForm = ({
   initPhoto,
+  heroVersion,
   onChangePreview,
 }: ImageUploadFormProps) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { lang } = useParams<{ lang: LangType }>();
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [createdBlob, setCreatedBlob] = useState<string>('');
   const t = useTranslations('dashboard.hero_item');
   const messageGetter = useTranslations();
+  const [state, formAction, pending] = useActionState(updateHeroPhotoAction, {
+    status: '',
+    successMessage: '',
+    heroVersion,
+    lang,
+  });
   const {
     register,
     trigger,
@@ -49,23 +63,35 @@ const ImageUploadForm = ({
     setCreatedBlob('');
   };
 
-  const onSubmit = async (data: { image: FileList }) => {
-    setIsLoading(true);
+  const onSubmit = (data: { image: FileList }) => {
+    const formData = new FormData();
+    formData.set('image', data.image[0]);
 
     try {
-      await updateHeroPhotoAction({
-        heroVarsion: '',
-        fileList: data.image,
-        lang,
+      startTransition(() => {
+        formAction(formData);
       });
     } catch (e) {
-      setIsLoading(false);
-
-      throw e;
+      if (e instanceof Error) {
+        alert(e.message);
+      }
     }
-
-    setIsLoading(false);
   };
+
+  useEffect(() => {
+    if (!state.status) return;
+
+    if (state.successMessage) alert(state.successMessage);
+
+    if (state.errorMessage)
+      alert(
+        Object.values(state.errorMessage)
+          .map((message) =>
+            t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.${message}`)
+          )
+          .join(', ')
+      );
+  }, [state, t]);
 
   useEffect(() => {
     const check = async () => {
@@ -93,20 +119,25 @@ const ImageUploadForm = ({
     <form className="py-4" onSubmit={handleSubmit(onSubmit)}>
       {createdBlob ? (
         <div className="flex items-center justify-between">
-          <Button variant="primary" type="submit" loading={isLoading}>
+          <Button variant="primary" type="submit" loading={pending}>
             {t('confirmUploadFileLabel')}
           </Button>
           <Button
             variant="secondary"
             type="button"
-            loading={isLoading}
+            loading={pending}
             onClick={handleClickCancelButton}
           >
             {t('cancelUploadFileLabel')}
           </Button>
         </div>
       ) : (
-        <Button variant="primary" type="button" onClick={handleClickButton}>
+        <Button
+          variant="primary"
+          type="button"
+          loading={pending}
+          onClick={handleClickButton}
+        >
           {t('uploadFileLabel')}
         </Button>
       )}

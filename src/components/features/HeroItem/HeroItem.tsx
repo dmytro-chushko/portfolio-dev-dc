@@ -48,7 +48,11 @@ const HeroItem = ({
           altText={getAltText(lang)}
           priority={!!imagePriority}
         />
-        <ImageUploadForm initPhoto={heroPhoto} onChangePreview={setPhotoUrl} />
+        <ImageUploadForm
+          initPhoto={heroPhoto}
+          heroVersion={heroVersion}
+          onChangePreview={setPhotoUrl}
+        />
       </div>
       <div className="flex-grow">
         <div>

@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslations } from 'next-intl';
-import { useActionState, useEffect, useRef } from 'react';
+import { startTransition, useActionState, useEffect, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import updateHeroDescriptionAction from '@/app/actions/updateHeroDescriptionType';
@@ -53,7 +53,9 @@ const HeroDescriptionForm = ({
     const formData = new FormData();
 
     formData.set('heroDescription', data.heroDescription);
-    formAction(formData);
+    startTransition(() => {
+      formAction(formData);
+    });
   };
 
   useEffect(() => {

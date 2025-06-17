@@ -2,30 +2,61 @@
 
 import { revalidateTag } from 'next/cache';
 
+import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
+import PayloadValidationError from '@/lib/errors/PayloadValidationError';
+import { updateHeroPhoto } from '@/lib/services/dbServices/heroService';
 import { uploadFile } from '@/lib/services/storageService';
 import { UpdateHeroPhotoActionType } from '@/lib/types/actions/UpdateHeroPhotoActionType';
+import { UpdateHeroPhotoType } from '@/lib/types/dbServices/UpdateHeroPhotoType';
 import { updateHeroPhotoSchema } from '@/lib/validation/actionSchema/updateHeroPhotoSchema';
-import { validateReqBody } from '@/lib/validation/validationHandlers/validateReqBody';
+import { validateFormData } from '@/lib/validation/validationHandlers/validateFormData';
 
-const updateHeroPhotoAction = async ({
-  // heroVersion,
-  fileList,
-  // lang,
-}: UpdateHeroPhotoActionType) => {
-  const validatedBodyForUploadImage = await validateReqBody<{
-    image: File;
-  }>({
-    body: { image: fileList[0] },
-    schema: updateHeroPhotoSchema,
-  });
+const updateHeroPhotoAction = async (
+  state: UpdateHeroPhotoActionType,
+  formData: FormData
+) => {
+  const { heroVersion, lang } = state;
 
-  await uploadFile({
-    fileBody: validatedBodyForUploadImage.image,
-  });
+  try {
+    const validatedBodyForUploadImage = await validateFormData<{
+      image: File;
+    }>({
+      formData,
+      schema: updateHeroPhotoSchema,
+    });
 
-  revalidateTag('all-heroes');
+    const { fullPath } = await uploadFile({
+      fileBody: validatedBodyForUploadImage.image,
+    });
 
-  return fileList[0];
+    await dbQueryErrorHandler<void, UpdateHeroPhotoType>(
+      updateHeroPhoto,
+      lang
+    )({
+      heroPhoto: fullPath,
+      heroVersion,
+    });
+
+    revalidateTag('all-heroes');
+
+    return {
+      status: 'success',
+      heroVersion,
+      lang,
+      successMessage: 'Image updated',
+    };
+  } catch (err) {
+    if (err instanceof PayloadValidationError) {
+      return {
+        status: 'error',
+        errorMessage: err.errorMessage,
+        heroVersion,
+        lang,
+      };
+    }
+
+    throw err;
+  }
 };
 
 export default updateHeroPhotoAction;
