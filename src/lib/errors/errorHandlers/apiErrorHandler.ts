@@ -1,18 +1,22 @@
+// import type { RouteContext } from 'next/dist/server/future/route-modules/app-route/types';
 import { NextRequest, NextResponse } from 'next/server';
 
 import CustomError from '../CustomError';
 
-type RouteContextType = { params: { [key: string]: string } };
+// type RouteContextType = { params: { [key: string]: string } };
 
 type RouteHandlerType<T> = (
-  req: NextRequest,
-  context: RouteContextType
+  req: NextRequest
+  // context: RouteContext
 ) => Promise<NextResponse<T>>;
 
 export const apiErrorHandler = <T>(routeHandler: RouteHandlerType<T>) => {
-  return async (req: NextRequest, context: RouteContextType) => {
+  return async (
+    req: NextRequest
+    // context: RouteContext
+  ) => {
     try {
-      return await routeHandler(req, context);
+      return await routeHandler(req);
     } catch (err) {
       if (err instanceof CustomError)
         return NextResponse.json(

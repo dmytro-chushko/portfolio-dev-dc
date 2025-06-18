@@ -6,7 +6,7 @@ import { UpdateHeroNameType } from '@/lib/types/dbServices/UpdateHeroNameType';
 export const updateHeroNameSchema: yup.ObjectSchema<
   UpdateHeroNameType & { lang: LangType }
 > = yup.object({
-  heroName: yup.string().max(30, 'max_symbols').required(),
+  heroName: yup.string().max(5, 'max_symbols').required(),
   translationId: yup.string().required(),
   lang: yup.mixed<LangType>().required(),
 });
