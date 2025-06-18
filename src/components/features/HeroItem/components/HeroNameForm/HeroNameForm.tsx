@@ -5,6 +5,7 @@ import { LangType } from '@prisma/client';
 import { useTranslations } from 'next-intl';
 import { startTransition, useActionState, useEffect, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 
 import updateHeroNameAction from '@/app/actions/updateHeroNameAction';
 import Button from '@/components/ui/Button/Button';
@@ -60,7 +61,9 @@ const HeroNameForm = ({
   useEffect(() => {
     if (!state.status) return;
 
-    if (state.successMessage) alert(state.successMessage);
+    if (state.successMessage) {
+      toast.success(state.successMessage, { closeButton: true });
+    }
 
     if (state.errorMessage)
       alert(
