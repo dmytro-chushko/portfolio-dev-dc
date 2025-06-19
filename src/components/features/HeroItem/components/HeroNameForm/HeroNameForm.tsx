@@ -66,12 +66,10 @@ const HeroNameForm = ({
     }
 
     if (state.errorMessage)
-      alert(
-        Object.values(state.errorMessage)
-          .map((message) =>
-            t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.${message}`)
-          )
-          .join(', ')
+      Object.values(state.errorMessage).forEach((message) =>
+        toast.error(t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.${message}`), {
+          closeButton: true,
+        })
       );
   }, [state, t]);
 
