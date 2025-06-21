@@ -5,14 +5,13 @@ import { LangType } from '@prisma/client';
 import { useTranslations } from 'next-intl';
 import { startTransition, useActionState, useEffect, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { toast } from 'sonner';
 
 import updateHeroNameAction from '@/app/actions/updateHeroNameAction';
 import Button from '@/components/ui/Button/Button';
 import StyledInput from '@/components/ui/StyledInput/StyledInput';
 import { UpdateHeroNameForm } from '@/lib/types/initFormData/UpdateHeroNameForm';
-import CONST from '@/lib/utils/consts';
 import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
+import showActionMessages from '@/lib/utils/showActionMessages';
 import { updateHeroNameFormSchema } from '@/lib/validation/formSchema/updateHeroNameFormSchema';
 
 import HeroFormWrapper from '../HeroFormWrapper/HeroFormWrapper';
@@ -40,7 +39,7 @@ const HeroNameForm = ({
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty },
   } = useForm<UpdateHeroNameForm>({
     defaultValues: {
       heroName: nameValue,
@@ -50,6 +49,8 @@ const HeroNameForm = ({
   const t = useTranslations();
 
   const onSubmit = (data: UpdateHeroNameForm) => {
+    if (!isDirty) return onClose();
+
     const formData = new FormData();
 
     formData.set('heroName', data.heroName);
@@ -61,17 +62,12 @@ const HeroNameForm = ({
   useEffect(() => {
     if (!state.status) return;
 
-    if (state.successMessage) {
-      toast.success(state.successMessage, { closeButton: true });
-    }
+    const { successMessage, errorMessage } = state;
 
-    if (state.errorMessage)
-      Object.values(state.errorMessage).forEach((message) =>
-        toast.error(t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.${message}`), {
-          closeButton: true,
-        })
-      );
-  }, [state, t]);
+    showActionMessages({ t, successMessage, errorMessage });
+
+    if (state.status === 'success') onClose();
+  }, [onClose, state, t]);
 
   return (
     <HeroFormWrapper

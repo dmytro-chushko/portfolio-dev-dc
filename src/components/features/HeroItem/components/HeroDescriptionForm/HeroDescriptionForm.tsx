@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { startTransition, useActionState, useEffect, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
-import updateHeroDescriptionAction from '@/app/actions/updateHeroDescriptionType';
+import updateHeroDescriptionAction from '@/app/actions/updateHeroDescriptionAction';
 import Button from '@/components/ui/Button/Button';
 import StyledTextarea from '@/components/ui/StyledTextarea/StyledTextarea';
 import { UpdateHeroDescriptionForm } from '@/lib/types/initFormData/UpdateHeroDescriptionForm';
