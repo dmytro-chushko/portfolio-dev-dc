@@ -4,9 +4,9 @@ import { LangType } from '@prisma/client';
 import { revalidateTag } from 'next/cache';
 
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
-import PayloadValidationError from '@/lib/errors/PayloadValidationError';
 import { updateHeroName } from '@/lib/services/dbServices/heroService';
 import { UpdateHeroDataState } from '@/lib/types/actions/UpdateHeroDataState';
+import { getActionErrorMessage } from '@/lib/utils/getActionErrorMessage';
 import { updateHeroNameSchema } from '@/lib/validation/actionSchema/updateHeroNameSchema';
 import { validateReqBody } from '@/lib/validation/validationHandlers/validateReqBody';
 
@@ -44,16 +44,12 @@ const updateHeroNameAction = async (
       lang,
     };
   } catch (err) {
-    if (err instanceof PayloadValidationError) {
-      return {
-        status: 'error',
-        errorMessage: err.errorMessage,
-        translationId,
-        lang,
-      };
-    }
-
-    throw err;
+    return {
+      status: 'error',
+      errorMessage: getActionErrorMessage(err),
+      translationId,
+      lang,
+    };
   }
 };
 

@@ -3,11 +3,11 @@
 import { revalidateTag } from 'next/cache';
 
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
-import PayloadValidationError from '@/lib/errors/PayloadValidationError';
 import { updateHeroPhoto } from '@/lib/services/dbServices/heroService';
 import { uploadFile } from '@/lib/services/storageService';
 import { UpdateHeroPhotoActionType } from '@/lib/types/actions/UpdateHeroPhotoActionType';
 import { UpdateHeroPhotoType } from '@/lib/types/dbServices/UpdateHeroPhotoType';
+import { getActionErrorMessage } from '@/lib/utils/getActionErrorMessage';
 import { updateHeroPhotoSchema } from '@/lib/validation/actionSchema/updateHeroPhotoSchema';
 import { validateFormData } from '@/lib/validation/validationHandlers/validateFormData';
 
@@ -46,16 +46,12 @@ const updateHeroPhotoAction = async (
       successMessage: 'Image updated',
     };
   } catch (err) {
-    if (err instanceof PayloadValidationError) {
-      return {
-        status: 'error',
-        errorMessage: err.errorMessage,
-        heroVersion,
-        lang,
-      };
-    }
-
-    throw err;
+    return {
+      status: 'error',
+      errorMessage: getActionErrorMessage(err),
+      heroVersion,
+      lang,
+    };
   }
 };
 

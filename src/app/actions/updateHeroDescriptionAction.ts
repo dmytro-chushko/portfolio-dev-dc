@@ -3,11 +3,11 @@
 import { revalidateTag } from 'next/cache';
 
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
-import PayloadValidationError from '@/lib/errors/PayloadValidationError';
 import { updateHeroDescription } from '@/lib/services/dbServices/heroService';
 import { UpdateHeroDataState } from '@/lib/types/actions/UpdateHeroDataState';
 import { UpdateHeroDescriptionType } from '@/lib/types/dbServices/UpdateHeroDescriptionType';
 import { LangType } from '@/lib/types/LangType';
+import { getActionErrorMessage } from '@/lib/utils/getActionErrorMessage';
 import { updateHeroDescriptionSchema } from '@/lib/validation/actionSchema/updateHeroDescriptionSchema';
 import { validateReqBody } from '@/lib/validation/validationHandlers/validateReqBody';
 
@@ -43,16 +43,12 @@ const updateHeroDescriptionAction = async (
       lang,
     };
   } catch (err) {
-    if (err instanceof PayloadValidationError) {
-      return {
-        status: 'error',
-        errorMessage: err.errorMessage,
-        translationId,
-        lang,
-      };
-    }
-
-    throw err;
+    return {
+      status: 'error',
+      errorMessage: getActionErrorMessage(err),
+      translationId,
+      lang,
+    };
   }
 };
 

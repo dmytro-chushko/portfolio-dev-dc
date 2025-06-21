@@ -9,6 +9,7 @@ import StyledTextarea from '@/components/ui/StyledTextarea/StyledTextarea';
 import { UpdateHeroDescriptionForm } from '@/lib/types/initFormData/UpdateHeroDescriptionForm';
 import { LangType } from '@/lib/types/LangType';
 import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
+import showActionMessages from '@/lib/utils/showActionMessages';
 import { updateHeroDescriptionFormSchema } from '@/lib/validation/formSchema/updateHeroDescriptionFormSchema';
 
 import HeroFormWrapper from '../HeroFormWrapper/HeroFormWrapper';
@@ -40,7 +41,7 @@ const HeroDescriptionForm = ({
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty },
   } = useForm<UpdateHeroDescriptionForm>({
     defaultValues: {
       heroDescription: descriptionValue,
@@ -50,9 +51,12 @@ const HeroDescriptionForm = ({
   const t = useTranslations();
 
   const onSubmit = (data: UpdateHeroDescriptionForm) => {
+    if (!isDirty) return onClose();
+
     const formData = new FormData();
 
     formData.set('heroDescription', data.heroDescription);
+
     startTransition(() => {
       formAction(formData);
     });
@@ -61,8 +65,12 @@ const HeroDescriptionForm = ({
   useEffect(() => {
     if (!state.status) return;
 
-    if (state.successMessage) alert(state.successMessage);
-  }, [state]);
+    const { successMessage, errorMessage } = state;
+
+    showActionMessages({ t, successMessage, errorMessage });
+
+    if (state.status === 'success') onClose();
+  }, [onClose, state, t]);
 
   return (
     <HeroFormWrapper

@@ -54,6 +54,7 @@ const HeroNameForm = ({
     const formData = new FormData();
 
     formData.set('heroName', data.heroName);
+
     startTransition(() => {
       formAction(formData);
     });
