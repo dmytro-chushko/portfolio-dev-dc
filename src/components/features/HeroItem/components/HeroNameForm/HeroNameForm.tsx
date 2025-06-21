@@ -84,7 +84,10 @@ const HeroNameForm = ({
             <StyledInput
               {...field}
               inputStyles="bg-bgInput text-lg"
-              error={getValidationErrorMessage(t, errors?.heroName)}
+              error={getValidationErrorMessage(t, errors?.heroName, {
+                required: { fieldName: 'heroName' },
+                max_symbols: { number: '5' },
+              })}
               autoFocus
             />
           )}

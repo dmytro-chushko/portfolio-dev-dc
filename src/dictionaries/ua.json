@@ -42,7 +42,7 @@
   },
   "form_validation_message": {
     "required": "Поле {fieldName} має бути заповнене",
-    "max_symbols": "має бути не більше 5",
+    "max_symbols": "Має бути не більше {number} символів",
     "allowed_image_type": "Дозволені лише зображення формату JPG або PNG",
     "allowed_image_width": "Ширина зображення має бути не менше 320px"
   },

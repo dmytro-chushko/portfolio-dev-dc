@@ -42,7 +42,7 @@
   },
   "form_validation_message": {
     "required": "{fieldName} is required",
-    "max_symbols": "it has to be not more than 5",
+    "max_symbols": "It has to be not more than {number} cheracters",
     "allowed_image_type": "Only JPG and PNG images are allowed",
     "allowed_image_width": "Minimum image width is 320px"
   },

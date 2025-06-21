@@ -4,5 +4,5 @@ import { UpdateHeroDescriptionForm } from '@/lib/types/initFormData/UpdateHeroDe
 
 export const updateHeroDescriptionFormSchema: yup.ObjectSchema<UpdateHeroDescriptionForm> =
   yup.object({
-    heroDescription: yup.string().max(5).required(),
+    heroDescription: yup.string().max(5, 'max_symbols').required('required'),
   });
