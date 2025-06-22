@@ -1,16 +1,11 @@
-import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
-import CONST from './consts';
-
 type ActionMessagesPropsType = {
-  t: ReturnType<typeof useTranslations>;
   successMessage?: string;
   errorMessage?: Record<string, string>;
 };
 
 const showActionMessages = ({
-  t,
   successMessage,
   errorMessage,
 }: ActionMessagesPropsType): void => {
@@ -19,11 +14,17 @@ const showActionMessages = ({
   }
 
   if (errorMessage) {
-    Object.values(errorMessage).forEach((message) =>
-      toast.error(t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.${message}`), {
+    if (errorMessage.message) {
+      toast.error(errorMessage.message, {
         closeButton: true,
-      })
-    );
+      });
+    } else {
+      Object.values(errorMessage).forEach((message) =>
+        toast.error(message, {
+          closeButton: true,
+        })
+      );
+    }
   }
 };
 

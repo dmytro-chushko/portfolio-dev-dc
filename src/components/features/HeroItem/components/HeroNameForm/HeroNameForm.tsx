@@ -65,7 +65,7 @@ const HeroNameForm = ({
 
     const { successMessage, errorMessage } = state;
 
-    showActionMessages({ t, successMessage, errorMessage });
+    showActionMessages({ successMessage, errorMessage });
 
     if (state.status === 'success') onClose();
   }, [onClose, state, t]);
