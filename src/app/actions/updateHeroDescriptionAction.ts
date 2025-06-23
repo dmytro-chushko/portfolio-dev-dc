@@ -1,6 +1,7 @@
 'use server';
 
 import { revalidateTag } from 'next/cache';
+import { getTranslations } from 'next-intl/server';
 
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
 import { updateHeroDescription } from '@/lib/services/dbServices/heroService';
@@ -17,13 +18,14 @@ const updateHeroDescriptionAction = async (
 ) => {
   const heroDescription = formData.get('heroDescription');
   const { translationId, lang } = state;
+  const t = await getTranslations();
 
   try {
     const validatedBody = await validateReqBody<
       UpdateHeroDescriptionType & { lang: LangType }
     >({
       body: { heroDescription, translationId },
-      schema: updateHeroDescriptionSchema,
+      schema: updateHeroDescriptionSchema(t),
     });
 
     await dbQueryErrorHandler<void, UpdateHeroDescriptionType>(

@@ -40,6 +40,11 @@
     "save_submit": "Зберегти",
     "cancel": "Відмінити"
   },
+  "form_field": {
+    "hero_photo": "Фото",
+    "hero_name": "Ім'я",
+    "hero_description": "Опис"
+  },
   "form_validation_message": {
     "required": "Поле {fieldName} має бути заповнене",
     "max_symbols": "Має бути не більше {number} символів",

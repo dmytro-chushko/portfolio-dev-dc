@@ -7,7 +7,6 @@ import { getTranslations } from 'next-intl/server';
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
 import { updateHeroName } from '@/lib/services/dbServices/heroService';
 import { UpdateHeroDataState } from '@/lib/types/actions/UpdateHeroDataState';
-import CONST from '@/lib/utils/consts';
 import { getActionErrorMessage } from '@/lib/utils/getActionErrorMessage';
 import { updateHeroNameSchema } from '@/lib/validation/actionSchema/updateHeroNameSchema';
 import { validateReqBody } from '@/lib/validation/validationHandlers/validateReqBody';
@@ -20,7 +19,7 @@ const updateHeroNameAction = async (
 ) => {
   const heroName = formData.get('heroName');
   const { translationId, lang } = state;
-  const t = await getTranslations(CONST.FORM_VALIDATION_DICT_PREFIX);
+  const t = await getTranslations();
 
   try {
     const validatedBody = await validateReqBody<

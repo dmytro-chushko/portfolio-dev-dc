@@ -40,11 +40,16 @@
     "save_submit": "Save",
     "cancel": "Cancel"
   },
+  "form_field": {
+    "hero_photo": "Photo image",
+    "hero_name": "Name",
+    "hero_description": "Description"
+  },
   "form_validation_message": {
     "required": "{fieldName} is required",
     "max_symbols": "It has to be not more than {number} cheracters",
     "allowed_image_type": "Only JPG and PNG images are allowed",
-    "allowed_image_width": "Minimum image width is 320px"
+    "allowed_image_width": "Minimum image width is {width}px"
   },
   "errors": {
     "db": "Database error"

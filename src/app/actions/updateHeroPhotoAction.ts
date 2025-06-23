@@ -1,6 +1,7 @@
 'use server';
 
 import { revalidateTag } from 'next/cache';
+import { getTranslations } from 'next-intl/server';
 
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
 import { updateHeroPhoto } from '@/lib/services/dbServices/heroService';
@@ -16,13 +17,14 @@ const updateHeroPhotoAction = async (
   formData: FormData
 ) => {
   const { heroVersion, lang } = state;
+  const t = await getTranslations();
 
   try {
     const validatedBodyForUploadImage = await validateFormData<{
       image: File;
     }>({
       formData,
-      schema: updateHeroPhotoSchema,
+      schema: updateHeroPhotoSchema(t),
     });
 
     const { fullPath } = await uploadFile({
