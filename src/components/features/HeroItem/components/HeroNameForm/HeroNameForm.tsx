@@ -10,7 +10,6 @@ import updateHeroNameAction from '@/app/actions/updateHeroNameAction';
 import Button from '@/components/ui/Button/Button';
 import StyledInput from '@/components/ui/StyledInput/StyledInput';
 import { UpdateHeroNameForm } from '@/lib/types/initFormData/UpdateHeroNameForm';
-import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
 import showActionMessages from '@/lib/utils/showActionMessages';
 import { updateHeroNameFormSchema } from '@/lib/validation/formSchema/updateHeroNameFormSchema';
 
@@ -36,6 +35,7 @@ const HeroNameForm = ({
     translationId,
     lang,
   });
+  const t = useTranslations();
   const {
     control,
     handleSubmit,
@@ -44,9 +44,8 @@ const HeroNameForm = ({
     defaultValues: {
       heroName: nameValue,
     },
-    resolver: yupResolver(updateHeroNameFormSchema),
+    resolver: yupResolver(updateHeroNameFormSchema(t)),
   });
-  const t = useTranslations();
 
   const onSubmit = (data: UpdateHeroNameForm) => {
     if (!isDirty) return onClose();
@@ -84,10 +83,7 @@ const HeroNameForm = ({
             <StyledInput
               {...field}
               inputStyles="bg-bgInput text-lg"
-              error={getValidationErrorMessage(t, errors?.heroName, {
-                required: { fieldName: 'heroName' },
-                max_symbols: { number: '5' },
-              })}
+              error={errors?.heroName?.message}
               autoFocus
             />
           )}

@@ -16,8 +16,7 @@ import { useForm } from 'react-hook-form';
 import updateHeroPhotoAction from '@/app/actions/updateHeroPhotoAction';
 import Button from '@/components/ui/Button/Button';
 import { SetStateType } from '@/lib/types/SetStateType';
-import CONST from '@/lib/utils/consts';
-import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
+import showActionMessages from '@/lib/utils/showActionMessages';
 import { imageUploadForm } from '@/lib/validation/formSchema/imageUploadForm';
 
 type ImageUploadFormProps = {
@@ -49,7 +48,7 @@ const ImageUploadForm = ({
     handleSubmit,
     formState: { errors },
   } = useForm<{ image: FileList }>({
-    resolver: yupResolver(imageUploadForm),
+    resolver: yupResolver(imageUploadForm(messageGetter)),
     defaultValues: { image: undefined },
   });
 
@@ -81,17 +80,10 @@ const ImageUploadForm = ({
   useEffect(() => {
     if (!state.status) return;
 
-    if (state.successMessage) alert(state.successMessage);
+    const { successMessage, errorMessage } = state;
 
-    if (state.errorMessage)
-      alert(
-        Object.values(state.errorMessage)
-          .map((message) =>
-            t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.${message}`)
-          )
-          .join(', ')
-      );
-  }, [state, t]);
+    showActionMessages({ successMessage, errorMessage });
+  }, [state]);
 
   useEffect(() => {
     const check = async () => {
@@ -142,9 +134,7 @@ const ImageUploadForm = ({
         </Button>
       )}
       {errors?.image && (
-        <span className="text-error block pt-4">
-          {getValidationErrorMessage(messageGetter, errors?.image)}
-        </span>
+        <span className="text-error block pt-4">{errors?.image?.message}</span>
       )}
       <input
         className="hidden"

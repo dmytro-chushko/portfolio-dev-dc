@@ -8,7 +8,6 @@ import Button from '@/components/ui/Button/Button';
 import StyledTextarea from '@/components/ui/StyledTextarea/StyledTextarea';
 import { UpdateHeroDescriptionForm } from '@/lib/types/initFormData/UpdateHeroDescriptionForm';
 import { LangType } from '@/lib/types/LangType';
-import { getValidationErrorMessage } from '@/lib/utils/getValidationErrorMessage';
 import showActionMessages from '@/lib/utils/showActionMessages';
 import { updateHeroDescriptionFormSchema } from '@/lib/validation/formSchema/updateHeroDescriptionFormSchema';
 
@@ -38,6 +37,7 @@ const HeroDescriptionForm = ({
       lang,
     }
   );
+  const t = useTranslations();
   const {
     control,
     handleSubmit,
@@ -46,9 +46,8 @@ const HeroDescriptionForm = ({
     defaultValues: {
       heroDescription: descriptionValue,
     },
-    resolver: yupResolver(updateHeroDescriptionFormSchema),
+    resolver: yupResolver(updateHeroDescriptionFormSchema(t)),
   });
-  const t = useTranslations();
 
   const onSubmit = (data: UpdateHeroDescriptionForm) => {
     if (!isDirty) return onClose();
@@ -87,7 +86,7 @@ const HeroDescriptionForm = ({
               {...field}
               inputStyles="bg-bgInput w-full"
               rows={6}
-              error={getValidationErrorMessage(t, errors?.heroDescription)}
+              error={errors?.heroDescription?.message}
               autoFocus
             />
           )}
