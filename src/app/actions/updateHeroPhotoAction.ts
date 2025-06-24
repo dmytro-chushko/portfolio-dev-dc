@@ -5,7 +5,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
 import { updateHeroPhoto } from '@/lib/services/dbServices/heroService';
-import { uploadFile } from '@/lib/services/storageService';
+import { removeFile, uploadFile } from '@/lib/services/storageService';
 import { UpdateHeroPhotoActionType } from '@/lib/types/actions/UpdateHeroPhotoActionType';
 import { UpdateHeroPhotoType } from '@/lib/types/dbServices/UpdateHeroPhotoType';
 import { getActionErrorMessage } from '@/lib/utils/getActionErrorMessage';
@@ -22,14 +22,22 @@ const updateHeroPhotoAction = async (
   try {
     const validatedBodyForUploadImage = await validateFormData<{
       image: File;
+      prevPhoto: string;
     }>({
       formData,
       schema: updateHeroPhotoSchema(t),
     });
 
+    const prevPhotoPath = validatedBodyForUploadImage.prevPhoto
+      .split('/')
+      .slice(-2)
+      .join('/');
+
     const { fullPath } = await uploadFile({
       fileBody: validatedBodyForUploadImage.image,
     });
+
+    await removeFile({ filePath: prevPhotoPath });
 
     await dbQueryErrorHandler<void, UpdateHeroPhotoType>(
       updateHeroPhoto,

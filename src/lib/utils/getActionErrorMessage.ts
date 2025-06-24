@@ -1,4 +1,5 @@
 import PayloadValidationError from '../errors/PayloadValidationError';
+import StorageError from '../errors/StorageError';
 
 export const getActionErrorMessage = (
   error: unknown
@@ -9,7 +10,7 @@ export const getActionErrorMessage = (
       : { message: 'Internal server error' };
   }
 
-  if (error instanceof Error) {
+  if (error instanceof Error || error instanceof StorageError) {
     return { message: error.message };
   }
 

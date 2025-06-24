@@ -65,16 +65,11 @@ const ImageUploadForm = ({
   const onSubmit = (data: { image: FileList }) => {
     const formData = new FormData();
     formData.set('image', data.image[0]);
+    formData.set('prevPhoto', initPhoto);
 
-    try {
-      startTransition(() => {
-        formAction(formData);
-      });
-    } catch (e) {
-      if (e instanceof Error) {
-        alert(e.message);
-      }
-    }
+    startTransition(() => {
+      formAction(formData);
+    });
   };
 
   useEffect(() => {
@@ -83,6 +78,8 @@ const ImageUploadForm = ({
     const { successMessage, errorMessage } = state;
 
     showActionMessages({ successMessage, errorMessage });
+
+    if (state.status === 'success') setCreatedBlob('');
   }, [state]);
 
   useEffect(() => {

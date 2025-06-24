@@ -24,7 +24,7 @@ const updateHeroDescriptionAction = async (
     const validatedBody = await validateReqBody<
       UpdateHeroDescriptionType & { lang: LangType }
     >({
-      body: { heroDescription, translationId },
+      body: { heroDescription, translationId, lang },
       schema: updateHeroDescriptionSchema(t),
     });
 

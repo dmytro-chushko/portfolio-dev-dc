@@ -27,6 +27,19 @@ export const uploadFile = async ({
   return { ...data, fullPath: `${filePathPrefix}${data.fullPath}` };
 };
 
+export const removeFile = async ({
+  filePath,
+}: {
+  filePath: string;
+}): Promise<void> => {
+  const { error } = await storageClient.storage.from(bucket).remove([filePath]);
+
+  if (error) {
+    if (storageErrorTypeGuard(error)) throw new StorageError(error);
+    throw error;
+  }
+};
+
 export const getPublicFileUrl = async ({
   path = folder,
   fileName,

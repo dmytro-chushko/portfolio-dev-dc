@@ -8,11 +8,15 @@ const SUPPORTED_FORMATS = ['image/jpeg', 'image/png'];
 
 export const updateHeroPhotoSchema = (
   t: Awaited<ReturnType<typeof getTranslations>>
-): yup.ObjectSchema<{ image: File }> =>
+): yup.ObjectSchema<{ image: File; prevPhoto: string }> =>
   yup.object({
     image: yup
       .mixed<File>()
-      .required(t(`${CONST.FORM_FIELD_PREFIX}required`))
+      .required(
+        t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.required`, {
+          fieldName: t(`${CONST.FORM_FIELD_PREFIX}.hero_photo`),
+        })
+      )
       .test(
         'fileType',
         t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.allowed_image_type`),
@@ -22,11 +26,12 @@ export const updateHeroPhotoSchema = (
       )
       .test(
         'fileSize',
-        t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.allowed_image_width`, {
-          width: '320',
+        t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.allowed_image_size`, {
+          size: '5MB',
         }),
         (value) => {
           return value && value.size <= FILE_SIZE_LIMIT;
         }
       ),
+    prevPhoto: yup.string().required(),
   });

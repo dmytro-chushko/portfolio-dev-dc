@@ -11,8 +11,8 @@ export const updateHeroDescriptionFormSchema = (
     heroDescription: yup
       .string()
       .max(
-        500,
-        t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.max_symbols`, { number: '30' })
+        600,
+        t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.max_symbols`, { number: '600' })
       )
       .required(
         t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.required`, {

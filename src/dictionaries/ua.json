@@ -49,7 +49,8 @@
     "required": "Поле {fieldName} має бути заповнене",
     "max_symbols": "Має бути не більше {number} символів",
     "allowed_image_type": "Дозволені лише зображення формату JPG або PNG",
-    "allowed_image_width": "Ширина зображення має бути не менше 320px"
+    "allowed_image_width": "Ширина зображення має бути не менше {width}px",
+    "allowed_image_size": "Не більше ніж {size}"
   },
   "errors": {
     "db": "Помилка БД"

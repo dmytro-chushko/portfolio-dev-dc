@@ -49,7 +49,8 @@
     "required": "{fieldName} is required",
     "max_symbols": "It has to be not more than {number} cheracters",
     "allowed_image_type": "Only JPG and PNG images are allowed",
-    "allowed_image_width": "Minimum image width is {width}px"
+    "allowed_image_width": "Minimum image width is {width}px",
+    "allowed_image_size": "Not more than {size}"
   },
   "errors": {
     "db": "Database error"
