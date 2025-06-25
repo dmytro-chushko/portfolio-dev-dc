@@ -18,7 +18,7 @@ const createHeroVariantAction = async (
 ) => {
   const heroPhoto = formData.get('heroPhoto');
   const heroVersion = formData.get('heroVersion');
-  const stringifiedTranslations = formData.get('tranaslations');
+  const stringifiedTranslations = formData.get('translations');
   const translations =
     typeof stringifiedTranslations === 'string' &&
     JSON.parse(stringifiedTranslations);

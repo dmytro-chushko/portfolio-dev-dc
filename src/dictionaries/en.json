@@ -24,7 +24,8 @@
   },
   "dashboard": {
     "hero": {
-      "page_title": "Hero Settings"
+      "page_title": "Hero Settings",
+      "add_hero": "Add new version"
     },
     "hero_item": {
       "version_name": "Version Name",

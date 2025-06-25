@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import React from 'react';
 
+import AddHeroVersion from '@/components/features/AddHeroVersion/AddHeroVersion';
 import Title from '@/components/typography/Title/Title';
 import { LangType } from '@/lib/types/LangType';
 import { getDictionary } from '@/lib/utils/getDictionary';
@@ -19,12 +20,13 @@ const HeroDashboard = async ({ params }: PageProps) => {
   const dict = await getDictionary(lang);
 
   return (
-    <div>
+    <div className="lg:flex lg:items-center lg:justify-between">
       <Title
-        className="mb-6"
+        className="mb-4 lg:mb-0"
         header="h1"
         copy={dict.dashboard.hero.page_title}
       />
+      <AddHeroVersion />
     </div>
   );
 };
