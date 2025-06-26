@@ -83,7 +83,9 @@ export const getActiveHero = async (
   }
 };
 
-export const getAllHeroes = async (): Promise<HeroResType[]> => {
+export const getAllHeroes = async (
+  isDescOrder: boolean
+): Promise<HeroResType[]> => {
   return await prisma.hero.findMany({
     select: {
       id: true,
@@ -98,6 +100,9 @@ export const getAllHeroes = async (): Promise<HeroResType[]> => {
           language: true,
         },
       },
+    },
+    orderBy: {
+      updatedAt: isDescOrder ? 'desc' : 'asc',
     },
   });
 };

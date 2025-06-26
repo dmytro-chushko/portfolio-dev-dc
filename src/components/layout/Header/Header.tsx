@@ -8,7 +8,7 @@ type HeaderProps = {
 
 const Header = ({ children }: HeaderProps) => {
   return (
-    <header className="lg:sticky lg:top-0 lg:backdrop-blur">
+    <header className="lg:sticky lg:top-0 lg:backdrop-blur z-50">
       <input
         type="checkbox"
         id="toggle-menu-button"

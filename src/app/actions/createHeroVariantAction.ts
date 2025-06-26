@@ -49,7 +49,7 @@ const createHeroVariantAction = async (
 
     return {
       status: 'success',
-      successMessage: 'Name updated',
+      successMessage: t('success.create_hero'),
       lang,
     };
   } catch (err) {

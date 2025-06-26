@@ -41,7 +41,7 @@ const HeroItem = ({
     <div className="md:flex md:items-start rounded-2xl border-2 border-solid border-[--foreground] p-4 gap-4">
       <div className="flex-shrink-0 md:w-[320px]">
         <StyledImage
-          className="w-full md:w-auto"
+          className="w-full"
           imgSrc={photoUrl}
           width={320}
           height={320}

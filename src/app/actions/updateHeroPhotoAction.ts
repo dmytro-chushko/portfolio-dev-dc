@@ -53,7 +53,7 @@ const updateHeroPhotoAction = async (
       status: 'success',
       heroVersion,
       lang,
-      successMessage: 'Image updated',
+      successMessage: t('success.update_hero_photo'),
     };
   } catch (err) {
     return {

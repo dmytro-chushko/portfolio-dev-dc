@@ -1,7 +1,8 @@
-import { unstable_cache } from 'next/cache';
+import { revalidateTag, unstable_cache } from 'next/cache';
 import { notFound } from 'next/navigation';
 
 import HeroItem from '@/components/features/HeroItem/HeroItem';
+import SortingButton from '@/components/features/SortingButton/SortingButton';
 import { dbQueryErrorHandler } from '@/lib/errors/errorHandlers/dbQueryErrorHandler';
 import { getAllHeroes } from '@/lib/services/dbServices/heroService';
 import { HeroResType } from '@/lib/types/dbServices/HeroResType';
@@ -20,29 +21,38 @@ const getAllCachedHeroes = unstable_cache(getAllHeroes, ['all-heroes'], {
 const HeroList = async ({ params }: HeroListProps) => {
   const lang = (await params).lang;
   const dict = await getDictionary(lang);
+  let isDescOrder = true;
 
-  const allHeroes = await dbQueryErrorHandler<HeroResType[], undefined>(
+  const allHeroes = await dbQueryErrorHandler<HeroResType[], boolean>(
     getAllCachedHeroes,
     lang
-  )(undefined);
+  )(isDescOrder);
 
   if (allHeroes.length === 0) notFound();
 
+  const handleChangeSorting = () => {
+    isDescOrder = !isDescOrder;
+    revalidateTag('all-heroes');
+  };
+
   return (
-    <ul>
-      {allHeroes.map(({ id, heroPhoto, heroVersion, translations }, i) => (
-        <li key={id}>
-          <HeroItem
-            heroPhoto={heroPhoto}
-            heroVersion={heroVersion}
-            translations={translations}
-            dictionary={dict.dashboard.hero_item}
-            formDictionary={dict.form}
-            imagePriority={i >= 0 && i < 2}
-          />
-        </li>
-      ))}
-    </ul>
+    <>
+      <SortingButton onClick={handleChangeSorting} />
+      <ul className="grid gap-4">
+        {allHeroes.map(({ id, heroPhoto, heroVersion, translations }, i) => (
+          <li key={id}>
+            <HeroItem
+              heroPhoto={heroPhoto}
+              heroVersion={heroVersion}
+              translations={translations}
+              dictionary={dict.dashboard.hero_item}
+              formDictionary={dict.form}
+              imagePriority={i >= 0 && i < 2}
+            />
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 

@@ -53,6 +53,12 @@
     "allowed_image_width": "Ширина зображення має бути не менше {width}px",
     "allowed_image_size": "Не більше ніж {size}"
   },
+  "success": {
+    "update_hero_name": "Ім'я оновлено",
+    "update_hero_description": "Опис оновлено",
+    "update_hero_photo": "Фото оновлено",
+    "create_hero": "Нова версія створена"
+  },
   "errors": {
     "db": "Помилка БД"
   }

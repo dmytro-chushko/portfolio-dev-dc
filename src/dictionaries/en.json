@@ -53,6 +53,12 @@
     "allowed_image_width": "Minimum image width is {width}px",
     "allowed_image_size": "Not more than {size}"
   },
+  "success": {
+    "update_hero_name": "Name updated",
+    "update_hero_description": "Description updated",
+    "update_hero_photo": "Photo updated",
+    "create_hero": "New version created"
+  },
   "errors": {
     "db": "Database error"
   }

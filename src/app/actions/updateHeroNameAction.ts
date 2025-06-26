@@ -41,7 +41,7 @@ const updateHeroNameAction = async (
 
     return {
       status: 'success',
-      successMessage: 'Name updated',
+      successMessage: t('success.update_hero_name'),
       translationId,
       lang,
     };
