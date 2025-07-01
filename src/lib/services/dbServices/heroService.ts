@@ -33,6 +33,8 @@ export const createHeroVariant = async ({
       id: true,
       heroPhoto: true,
       heroVersion: true,
+      updatedAt: true,
+      isActive: true,
       translations: {
         select: {
           id: true,
@@ -61,6 +63,7 @@ export const getActiveHero = async (
         heroPhoto: true,
         heroVersion: true,
         isActive: true,
+        updatedAt: true,
         translations: {
           where: {
             language: {
@@ -83,15 +86,14 @@ export const getActiveHero = async (
   }
 };
 
-export const getAllHeroes = async (
-  isDescOrder: boolean
-): Promise<HeroResType[]> => {
+export const getAllHeroes = async (): Promise<HeroResType[]> => {
   return await prisma.hero.findMany({
     select: {
       id: true,
       heroPhoto: true,
       heroVersion: true,
       isActive: true,
+      updatedAt: true,
       translations: {
         select: {
           id: true,
@@ -100,9 +102,6 @@ export const getAllHeroes = async (
           language: true,
         },
       },
-    },
-    orderBy: {
-      updatedAt: isDescOrder ? 'desc' : 'asc',
     },
   });
 };
