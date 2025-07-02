@@ -147,3 +147,17 @@ export const updateHeroPhoto = async ({
     },
   });
 };
+
+export const activateHero = ({ id }: { id: string }) => {
+  return prisma.$transaction(async (db) => {
+    await db.hero.updateMany({
+      where: { isActive: true },
+      data: { isActive: false },
+    });
+
+    await db.hero.update({
+      where: { id },
+      data: { isActive: true },
+    });
+  });
+};
