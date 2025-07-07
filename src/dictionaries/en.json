@@ -34,7 +34,9 @@
       "toltip": "Click to edit",
       "uploadFileLabel": "Change a photo",
       "cancelUploadFileLabel": "Cancel",
-      "confirmUploadFileLabel": "Confirm"
+      "confirmUploadFileLabel": "Confirm",
+      "activateHero": "Activate",
+      "activationIndicator": "Active"
     }
   },
   "form": {

@@ -9,6 +9,7 @@ import { HeroTranslationResType } from '@/lib/types/dbServices';
 import { LangType } from '@/lib/types/LangType';
 import { Dictionary } from '@/lib/utils/getDictionary';
 
+import ActivateHero from '../ActivateHero/ActivateHero';
 import ImageUploadForm from '../ImageUploadForm/ImageUploadForm';
 
 import HeroTranslationItem from './components/HeroTranslationItem/HeroTranslationItem';
@@ -18,6 +19,7 @@ type HeroItemProps = {
   formDictionary: Dictionary['form'];
   heroPhoto: string;
   heroVersion: string;
+  isActive: boolean;
   translations: HeroTranslationResType[];
   imagePriority?: boolean;
 };
@@ -25,6 +27,7 @@ type HeroItemProps = {
 const HeroItem = ({
   heroPhoto,
   heroVersion,
+  isActive,
   translations,
   dictionary,
   formDictionary,
@@ -53,6 +56,7 @@ const HeroItem = ({
           heroVersion={heroVersion}
           onChangePreview={setPhotoUrl}
         />
+        <ActivateHero isActive={isActive} />
       </div>
       <div className="flex-grow">
         <div>

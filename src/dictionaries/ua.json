@@ -34,7 +34,9 @@
       "toltip": "Натисни, щоб змінити",
       "uploadFileLabel": "Змінити фото",
       "cancelUploadFileLabel": "Відмінити",
-      "confirmUploadFileLabel": "Підтвердити"
+      "confirmUploadFileLabel": "Підтвердити",
+      "activateHero": "Активувати",
+      "activationIndicator": "Активний"
     }
   },
   "form": {

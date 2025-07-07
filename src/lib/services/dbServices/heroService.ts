@@ -149,8 +149,8 @@ export const updateHeroPhoto = async ({
   });
 };
 
-export const activateHero = ({ id }: ActivateHeroPropType) => {
-  return prisma.$transaction(async (db) => {
+export const activateHero = async ({ id }: ActivateHeroPropType) => {
+  return await prisma.$transaction(async (db) => {
     await db.hero.updateMany({
       where: { isActive: true },
       data: { isActive: false },
