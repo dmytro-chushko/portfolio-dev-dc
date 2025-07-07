@@ -2,6 +2,7 @@
 
 import prisma from '@/lib/clients/prismaClient';
 import { getPrismaErrorDetails } from '@/lib/errors/errorHandlers/getPrismaErrorDetails';
+import { ActivateHeroPropType } from '@/lib/types/dbServices/ActivateHeroPropType';
 import { CreateHeroType } from '@/lib/types/dbServices/CreateHeroType';
 import { HeroResType } from '@/lib/types/dbServices/HeroResType';
 import { UpdateHeroDescriptionType } from '@/lib/types/dbServices/UpdateHeroDescriptionType';
@@ -148,7 +149,7 @@ export const updateHeroPhoto = async ({
   });
 };
 
-export const activateHero = ({ id }: { id: string }) => {
+export const activateHero = ({ id }: ActivateHeroPropType) => {
   return prisma.$transaction(async (db) => {
     await db.hero.updateMany({
       where: { isActive: true },
