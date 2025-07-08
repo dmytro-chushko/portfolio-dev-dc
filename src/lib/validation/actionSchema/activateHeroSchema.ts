@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import { ActivateHeroPropType } from '@/lib/types/dbServices/ActivateHeroPropType';
 import CONST from '@/lib/utils/consts';
 
-export const activeHeroSchema = (
+export const activateHeroSchema = (
   t: Awaited<ReturnType<typeof getTranslations>>
 ): yup.ObjectSchema<ActivateHeroPropType> =>
   yup.object({

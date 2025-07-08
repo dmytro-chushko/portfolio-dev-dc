@@ -59,7 +59,8 @@
     "update_hero_name": "Ім'я оновлено",
     "update_hero_description": "Опис оновлено",
     "update_hero_photo": "Фото оновлено",
-    "create_hero": "Нова версія створена"
+    "create_hero": "Нова версія створена",
+    "activate_hero": "Версія активована"
   },
   "errors": {
     "db": "Помилка БД"

@@ -59,7 +59,8 @@
     "update_hero_name": "Name updated",
     "update_hero_description": "Description updated",
     "update_hero_photo": "Photo updated",
-    "create_hero": "New version created"
+    "create_hero": "New version created",
+    "activate_hero": "Hero version activated"
   },
   "errors": {
     "db": "Database error"

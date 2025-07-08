@@ -1,9 +1,5 @@
-import { LangType } from '@prisma/client';
+import { InitActionState } from './InitActionState';
 
-export type UpdateHeroPhotoActionType = {
-  status: string;
+export type UpdateHeroPhotoActionType = InitActionState & {
   heroVersion: string;
-  lang: LangType;
-  successMessage?: string;
-  errorMessage?: Record<string, string>;
 };

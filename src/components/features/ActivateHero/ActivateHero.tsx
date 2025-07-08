@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
