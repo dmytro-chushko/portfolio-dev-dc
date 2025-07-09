@@ -26,7 +26,7 @@ const activateHeroAction = async (
       schema: activateHeroSchema(t),
     });
 
-    await dbQueryErrorHandler<void, { id: string }>(
+    await dbQueryErrorHandler<void, ActivateHeroPropType>(
       activateHero,
       lang
     )({ id: validatedBody.id });
@@ -35,7 +35,7 @@ const activateHeroAction = async (
 
     return {
       status: 'success',
-      successMessage: t('success.uactivate_hero'),
+      successMessage: t('success.activate_hero'),
       lang,
     };
   } catch (err) {

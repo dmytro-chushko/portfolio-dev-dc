@@ -39,6 +39,7 @@ const HeroListClient = ({ heroList, dict }: HeroListProps) => {
           ({ id, heroPhoto, heroVersion, isActive, translations }, i) => (
             <li key={id}>
               <HeroItem
+                id={id}
                 heroPhoto={heroPhoto}
                 heroVersion={heroVersion}
                 isActive={isActive}

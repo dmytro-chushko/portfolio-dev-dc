@@ -15,6 +15,7 @@ import ImageUploadForm from '../ImageUploadForm/ImageUploadForm';
 import HeroTranslationItem from './components/HeroTranslationItem/HeroTranslationItem';
 
 type HeroItemProps = {
+  id: string;
   dictionary: Dictionary['dashboard']['hero_item'];
   formDictionary: Dictionary['form'];
   heroPhoto: string;
@@ -25,6 +26,7 @@ type HeroItemProps = {
 };
 
 const HeroItem = ({
+  id,
   heroPhoto,
   heroVersion,
   isActive,
@@ -56,7 +58,7 @@ const HeroItem = ({
           heroVersion={heroVersion}
           onChangePreview={setPhotoUrl}
         />
-        <ActivateHero isActive={isActive} />
+        <ActivateHero heroId={id} isActive={isActive} lang={lang} />
       </div>
       <div className="flex-grow">
         <div>
