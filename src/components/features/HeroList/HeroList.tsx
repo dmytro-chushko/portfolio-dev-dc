@@ -28,7 +28,7 @@ const HeroListClient = ({ heroList, dict }: HeroListProps) => {
             : b.updatedAt.getMilliseconds() - a.updatedAt.getMilliseconds()
         )
       );
-    }
+    } else setSortedHeroList(heroList);
   }, [heroList, isAscSorting]);
 
   return (

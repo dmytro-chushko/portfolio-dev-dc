@@ -36,7 +36,8 @@
       "cancelUploadFileLabel": "Cancel",
       "confirmUploadFileLabel": "Confirm",
       "activateHero": "Activate",
-      "activationIndicator": "Active"
+      "activationIndicator": "Active",
+      "removeHero": "Remove"
     }
   },
   "form": {
@@ -60,9 +61,11 @@
     "update_hero_description": "Description updated",
     "update_hero_photo": "Photo updated",
     "create_hero": "New version created",
-    "activate_hero": "Hero version activated"
+    "activate_hero": "Hero version activated",
+    "remove_hero": "Hero version removed"
   },
   "errors": {
-    "db": "Database error"
+    "db": "Database error",
+    "remove_active": "Hero version has to be deactivated"
   }
 }

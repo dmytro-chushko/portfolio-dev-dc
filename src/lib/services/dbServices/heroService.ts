@@ -1,5 +1,7 @@
 'use server';
 
+import { getTranslations } from 'next-intl/server';
+
 import prisma from '@/lib/clients/prismaClient';
 import { getPrismaErrorDetails } from '@/lib/errors/errorHandlers/getPrismaErrorDetails';
 import { ActivateHeroPropType } from '@/lib/types/dbServices/ActivateHeroPropType';
@@ -10,6 +12,8 @@ import { UpdateHeroNameType } from '@/lib/types/dbServices/UpdateHeroNameType';
 import { UpdateHeroPhotoType } from '@/lib/types/dbServices/UpdateHeroPhotoType';
 import { LangType } from '@/lib/types/LangType';
 import { getDictionary } from '@/lib/utils/getDictionary';
+
+import { RemoveHeroPropType } from './../../types/dbServices/RemoveHeroPropType';
 
 export const createHeroVariant = async ({
   heroPhoto,
@@ -159,6 +163,22 @@ export const activateHero = async ({ id }: ActivateHeroPropType) => {
     await db.hero.update({
       where: { id },
       data: { isActive: true },
+    });
+  });
+};
+
+export const removeHero = async ({ id }: RemoveHeroPropType) => {
+  const t = await getTranslations();
+
+  return await prisma.$transaction(async (db) => {
+    const hero = await db.hero.findFirst({
+      where: { id },
+    });
+
+    if (hero?.isActive) throw new Error(t('errors.remove_active_hero'));
+
+    await db.hero.delete({
+      where: { id },
     });
   });
 };

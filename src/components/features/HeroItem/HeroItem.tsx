@@ -11,6 +11,7 @@ import { Dictionary } from '@/lib/utils/getDictionary';
 
 import ActivateHero from '../ActivateHero/ActivateHero';
 import ImageUploadForm from '../ImageUploadForm/ImageUploadForm';
+import RemoveHero from '../RemoveHero/RemoveHero';
 
 import HeroTranslationItem from './components/HeroTranslationItem/HeroTranslationItem';
 
@@ -59,6 +60,7 @@ const HeroItem = ({
           onChangePreview={setPhotoUrl}
         />
         <ActivateHero heroId={id} isActive={isActive} lang={lang} />
+        <RemoveHero heroId={id} isActive={isActive} lang={lang} />
       </div>
       <div className="flex-grow">
         <div>

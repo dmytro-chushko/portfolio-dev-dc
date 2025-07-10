@@ -17,7 +17,7 @@ model Language {
 
 model HeroTranslation {
   id              String   @id @default(uuid())
-  hero            Hero     @relation(fields: [heroId], references: [id])
+  hero            Hero     @relation(fields: [heroId], references: [id], onDelete: Cascade)
   heroId          String
   language        Language @relation(fields: [languageId], references: [id])
   languageId      String
@@ -31,7 +31,7 @@ model Hero {
   id           String            @id @default(uuid())
   createdAt    DateTime          @default(now())
   updatedAt    DateTime          @updatedAt
-  isActive     Boolean           @default(true)
+  isActive     Boolean           @default(false)
   heroVersion  String            @unique
   heroPhoto    String
   translations HeroTranslation[]

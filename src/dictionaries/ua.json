@@ -36,7 +36,8 @@
       "cancelUploadFileLabel": "Відмінити",
       "confirmUploadFileLabel": "Підтвердити",
       "activateHero": "Активувати",
-      "activationIndicator": "Активний"
+      "activationIndicator": "Активний",
+      "removeHero": "Видалити"
     }
   },
   "form": {
@@ -60,9 +61,11 @@
     "update_hero_description": "Опис оновлено",
     "update_hero_photo": "Фото оновлено",
     "create_hero": "Нова версія створена",
-    "activate_hero": "Версія активована"
+    "activate_hero": "Версія активована",
+    "remove_hero": "Версія видалена"
   },
   "errors": {
-    "db": "Помилка БД"
+    "db": "Помилка БД",
+    "remove_active_hero": "Версія не має бути деактивована"
   }
 }
