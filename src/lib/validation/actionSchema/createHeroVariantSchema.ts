@@ -40,5 +40,5 @@ export const createHeroVariantSchema = (
           fieldName: t(`${CONST.FORM_FIELD_PREFIX}.translation.array`),
         })
       )
-      .min(2, t('At least one translation is required')),
+      .min(2, t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.quantity`)),
   });

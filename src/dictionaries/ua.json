@@ -50,7 +50,8 @@
     "hero_description": "Опис",
     "translation": {
       "array": "Варіант перекладу",
-      "lang": "Мова"
+      "lang": "Мова",
+      "quantity": "Two translation variants are required"
     }
   },
   "form_validation_message": {

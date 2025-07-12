@@ -50,7 +50,8 @@
     "hero_description": "Description",
     "translation": {
       "array": "Translaition varriant",
-      "lang": "Language"
+      "lang": "Language",
+      "quantity": "Має бути дві версії перекладу"
     }
   },
   "form_validation_message": {
