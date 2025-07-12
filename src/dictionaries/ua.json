@@ -47,7 +47,11 @@
   "form_field": {
     "hero_photo": "Фото",
     "hero_name": "Ім'я",
-    "hero_description": "Опис"
+    "hero_description": "Опис",
+    "translation": {
+      "array": "Варіант перекладу",
+      "lang": "Мова"
+    }
   },
   "form_validation_message": {
     "required": "Поле {fieldName} має бути заповнене",

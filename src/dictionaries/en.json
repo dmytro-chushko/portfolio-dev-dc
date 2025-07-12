@@ -47,7 +47,11 @@
   "form_field": {
     "hero_photo": "Photo image",
     "hero_name": "Name",
-    "hero_description": "Description"
+    "hero_description": "Description",
+    "translation": {
+      "array": "Translaition varriant",
+      "lang": "Language"
+    }
   },
   "form_validation_message": {
     "required": "{fieldName} is required",

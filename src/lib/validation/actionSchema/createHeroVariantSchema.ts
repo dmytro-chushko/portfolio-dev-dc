@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import * as yup from 'yup';
 
 import { CreateHeroType } from '@/lib/types/dbServices';
+import CONST from '@/lib/utils/consts';
 
 export const createHeroVariantSchema = (
   t: Awaited<ReturnType<typeof getTranslations>>
@@ -17,13 +18,27 @@ export const createHeroVariantSchema = (
           lang: yup
             .mixed<LangType>()
             .oneOf(Object.values(LangType))
-            .required(t('Language is required')),
-          heroName: yup.string().required(t('Hero name is required')),
-          heroDescription: yup
-            .string()
-            .required(t('Hero description is required')),
+            .required(
+              t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.required`, {
+                fieldName: t(`${CONST.FORM_FIELD_PREFIX}.translation.lang`),
+              })
+            ),
+          heroName: yup.string().required(
+            t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.required`, {
+              fieldName: t(`${CONST.FORM_FIELD_PREFIX}.hero_name`),
+            })
+          ),
+          heroDescription: yup.string().required(
+            t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.required`, {
+              fieldName: t(`${CONST.FORM_FIELD_PREFIX}.hero_descriotion`),
+            })
+          ),
         })
       )
-      .required(t('Translations are required'))
+      .required(
+        t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.required`, {
+          fieldName: t(`${CONST.FORM_FIELD_PREFIX}.translation.array`),
+        })
+      )
       .min(2, t('At least one translation is required')),
   });
