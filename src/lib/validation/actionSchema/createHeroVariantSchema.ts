@@ -30,7 +30,7 @@ export const createHeroVariantSchema = (
           ),
           heroDescription: yup.string().required(
             t(`${CONST.FORM_VALIDATION_DICT_PREFIX}.required`, {
-              fieldName: t(`${CONST.FORM_FIELD_PREFIX}.hero_descriotion`),
+              fieldName: t(`${CONST.FORM_FIELD_PREFIX}.hero_description`),
             })
           ),
         })

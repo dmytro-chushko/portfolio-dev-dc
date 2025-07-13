@@ -81,6 +81,11 @@ export const getActiveHero = async (
             heroDescription: true,
             language: true,
           },
+          orderBy: {
+            language: {
+              code: 'asc',
+            },
+          },
         },
       },
     });
@@ -105,6 +110,11 @@ export const getAllHeroes = async (): Promise<HeroResType[]> => {
           heroName: true,
           heroDescription: true,
           language: true,
+        },
+        orderBy: {
+          language: {
+            code: 'asc',
+          },
         },
       },
     },

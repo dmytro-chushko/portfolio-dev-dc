@@ -50,8 +50,7 @@
     "hero_description": "Опис",
     "translation": {
       "array": "Варіант перекладу",
-      "lang": "Мова",
-      "quantity": "Two translation variants are required"
+      "lang": "Мова"
     }
   },
   "form_validation_message": {
@@ -59,7 +58,8 @@
     "max_symbols": "Має бути не більше {number} символів",
     "allowed_image_type": "Дозволені лише зображення формату JPG або PNG",
     "allowed_image_width": "Ширина зображення має бути не менше {width}px",
-    "allowed_image_size": "Не більше ніж {size}"
+    "allowed_image_size": "Не більше ніж {size}",
+    "quantity": "Має бути дві версії перекладу"
   },
   "success": {
     "update_hero_name": "Ім'я оновлено",

@@ -50,8 +50,7 @@
     "hero_description": "Description",
     "translation": {
       "array": "Translaition varriant",
-      "lang": "Language",
-      "quantity": "Має бути дві версії перекладу"
+      "lang": "Language"
     }
   },
   "form_validation_message": {
@@ -59,7 +58,8 @@
     "max_symbols": "It has to be not more than {number} cheracters",
     "allowed_image_type": "Only JPG and PNG images are allowed",
     "allowed_image_width": "Minimum image width is {width}px",
-    "allowed_image_size": "Not more than {size}"
+    "allowed_image_size": "Not more than {size}",
+    "quantity": "Two translation variants are required"
   },
   "success": {
     "update_hero_name": "Name updated",
