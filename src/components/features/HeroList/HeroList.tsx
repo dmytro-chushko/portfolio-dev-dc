@@ -22,11 +22,19 @@ const HeroListClient = ({ heroList, dict }: HeroListProps) => {
   useEffect(() => {
     if (heroList.length > 1) {
       setSortedHeroList(
-        heroList.sort((a, b) =>
-          isAscSorting
-            ? a.updatedAt.getMilliseconds() - b.updatedAt.getMilliseconds()
-            : b.updatedAt.getMilliseconds() - a.updatedAt.getMilliseconds()
-        )
+        heroList
+          .map((hero) => ({
+            ...hero,
+            updatedAt:
+              typeof hero.updatedAt === 'string'
+                ? new Date(hero.updatedAt)
+                : hero.updatedAt,
+          }))
+          .sort((a, b) =>
+            isAscSorting
+              ? a.updatedAt.getTime() - b.updatedAt.getTime()
+              : b.updatedAt.getTime() - a.updatedAt.getTime()
+          )
       );
     } else setSortedHeroList(heroList);
   }, [heroList, isAscSorting]);
