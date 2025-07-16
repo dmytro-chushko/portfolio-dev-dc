@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -10,7 +10,7 @@ export default async function Dashboard() {
   return (
     <div>
       <p>Dashboard</p>
-      <Link href="/auth/logout">Logout</Link>
+      <a href="/auth/logout">Logout</a>
     </div>
   );
 }
