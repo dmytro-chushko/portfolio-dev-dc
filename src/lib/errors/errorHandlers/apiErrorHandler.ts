@@ -14,7 +14,7 @@ export const apiErrorHandler = <T>(routeHandler: RouteHandlerType<T>) => {
   return async (
     req: NextRequest
     // context: RouteContext
-  ) => {
+  ): Promise<Response> => {
     try {
       return await routeHandler(req);
     } catch (err) {
