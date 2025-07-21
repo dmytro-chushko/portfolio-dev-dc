@@ -41,7 +41,9 @@ const HeroListClient = ({ heroList, dict }: HeroListProps) => {
 
   return (
     <>
-      <SortingButton onClick={handleToggleSorting} />
+      <div className="mb-4">
+        <SortingButton onClick={handleToggleSorting} />
+      </div>
       <ul className="grid gap-4">
         {sortedHeroList.map(
           ({ id, heroPhoto, heroVersion, isActive, translations }, i) => (
