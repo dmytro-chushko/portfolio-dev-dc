@@ -53,6 +53,7 @@ const TopNavigation = ({
                 (linkLabels as UniLinkLabelsType)[link as LinksLabelItemType]
               }
               href={`${linkPrefix || ''}${link}`}
+              scroll={false}
             />
           </li>
         ))}
