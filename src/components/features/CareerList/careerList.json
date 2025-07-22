@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Job one",
+    "title": "DevIt",
     "position": "Fulstack developer",
     "duties": [
       {
@@ -24,7 +24,7 @@
   },
   {
     "id": 2,
-    "title": "Job two",
+    "title": "HaloLab",
     "position": "Fulstack developer",
     "duties": [
       {
