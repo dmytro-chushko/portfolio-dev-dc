@@ -6,19 +6,35 @@
     "duties": [
       {
         "id": 1,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Developed and maintained user interface components and web pages based on design specifications."
       },
       {
         "id": 2,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Integrated third-party services and APIs, including Shopify Storefront API, Contentful, and internal systems."
       },
       {
         "id": 3,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Built reusable UI sections and implemented interactive features such as product calculators and search filters."
       },
       {
         "id": 4,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Added support for multiple currencies and alternative payment providers."
+      },
+      {
+        "id": 5,
+        "description": "Refactored codebase and styles to improve structure, consistency, and performance using tools like Material UI.."
+      },
+      {
+        "id": 6,
+        "description": "Fixed bugs, optimized functionality, and ensured production readiness."
+      },
+      {
+        "id": 7,
+        "description": "Worked closely with SEO and design teams to implement improvements in performance, content, and accessibility."
+      },
+      {
+        "id": 8,
+        "description": "Maintained and updated the codebase, providing long-term support for live projects."
       }
     ]
   },
