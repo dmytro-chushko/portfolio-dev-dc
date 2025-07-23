@@ -3,6 +3,7 @@ import Link from 'next/link';
 type INavLinkProps = {
   label: string;
   href: string;
+  scroll?: boolean;
 };
 
 const NavLink = ({ label, href }: INavLinkProps) => {

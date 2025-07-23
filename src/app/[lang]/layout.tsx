@@ -10,7 +10,7 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
   const lang = (await params).lang;
 
   return (
-    <html lang={lang || 'en'}>
+    <html lang={lang || 'en'} className="scroll-smooth">
       <body
         className={`font-roboto ${roboto.variable} font-normal antialiased`}
       >
