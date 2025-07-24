@@ -2,7 +2,10 @@
   {
     "id": 1,
     "title": "DevIt",
-    "position": "Fulstack developer",
+    "position": "Fullstack developer",
+    "format": "Full time",
+    "start": "June, 2024",
+    "finish": "",
     "duties": [
       {
         "id": 1,
@@ -41,23 +44,114 @@
   {
     "id": 2,
     "title": "HaloLab",
-    "position": "Fulstack developer",
+    "position": "Fullstack developer",
+    "format": "Full time",
+    "start": "February, 2023",
+    "finish": "May, 2024",
     "duties": [
       {
         "id": 1,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
       },
       {
         "id": 2,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Created reusable UI components consistent with the updated design system."
       },
       {
         "id": 3,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Developed advanced filtering and search functionality for improved service discoverability."
       },
       {
         "id": 4,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Refactored and enhanced the user communication system to increase reliability and usability."
+      },
+      {
+        "id": 5,
+        "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
+      },
+      {
+        "id": 6,
+        "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
+      },
+      {
+        "id": 7,
+        "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "CGS",
+    "position": "Fullstack developer",
+    "format": "Internship",
+    "start": "January, 2023",
+    "finish": "February, 2024",
+    "duties": [
+      {
+        "id": 1,
+        "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
+      },
+      {
+        "id": 2,
+        "description": "Created reusable UI components consistent with the updated design system."
+      },
+      {
+        "id": 3,
+        "description": "Developed advanced filtering and search functionality for improved service discoverability."
+      },
+      {
+        "id": 4,
+        "description": "Refactored and enhanced the user communication system to increase reliability and usability."
+      },
+      {
+        "id": 5,
+        "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
+      },
+      {
+        "id": 6,
+        "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
+      },
+      {
+        "id": 7,
+        "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "ZenBit",
+    "position": "Fulstack developer",
+    "format": "Internship",
+    "start": "November, 2022",
+    "finish": "January, 2024",
+    "duties": [
+      {
+        "id": 1,
+        "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
+      },
+      {
+        "id": 2,
+        "description": "Created reusable UI components consistent with the updated design system."
+      },
+      {
+        "id": 3,
+        "description": "Developed advanced filtering and search functionality for improved service discoverability."
+      },
+      {
+        "id": 4,
+        "description": "Refactored and enhanced the user communication system to increase reliability and usability."
+      },
+      {
+        "id": 5,
+        "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
+      },
+      {
+        "id": 6,
+        "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
+      },
+      {
+        "id": 7,
+        "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
       }
     ]
   }
