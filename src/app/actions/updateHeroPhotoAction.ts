@@ -48,6 +48,7 @@ const updateHeroPhotoAction = async (
     });
 
     revalidateTag('all-heroes');
+    revalidateTag('active-hero');
 
     return {
       status: 'success',

@@ -6,6 +6,7 @@
     "format": "Full time",
     "start": "June, 2024",
     "finish": "",
+    "logo": "devit-logo.png",
     "duties": [
       {
         "id": 1,
@@ -48,6 +49,7 @@
     "format": "Full time",
     "start": "February, 2023",
     "finish": "May, 2024",
+    "logo": "halo-lab-logo.png",
     "duties": [
       {
         "id": 1,
@@ -86,6 +88,7 @@
     "format": "Internship",
     "start": "January, 2023",
     "finish": "February, 2024",
+    "logo": "cgs-team-logo.png",
     "duties": [
       {
         "id": 1,
@@ -124,6 +127,7 @@
     "format": "Internship",
     "start": "November, 2022",
     "finish": "January, 2024",
+    "logo": "zen-bit-logo.png",
     "duties": [
       {
         "id": 1,
