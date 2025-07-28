@@ -15,7 +15,10 @@ const CareerList = ({ careers }: CareerSliderProps) => {
     <ul>
       {careers.length === 0 &&
         careerMock.map(
-          ({ id, title, position, format, start, finish, duties, logo }, i) => (
+          (
+            { id, title, position, format, start, finish, duties, logo, tech },
+            i
+          ) => (
             <li
               key={id}
               className={clsx(
@@ -39,6 +42,7 @@ const CareerList = ({ careers }: CareerSliderProps) => {
                   start={start}
                   finish={finish}
                   logo={logo}
+                  tech={tech}
                 />
               </div>
               <div

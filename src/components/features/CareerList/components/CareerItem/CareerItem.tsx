@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
 import StyledImage from '@/components/ui/StyledImage/StyledImage';
+import TechIconFactory from '@/components/ui/TechIconFactory/TechIconFactory';
 
 type CareerItemProps = {
   order: number;
@@ -12,6 +13,7 @@ type CareerItemProps = {
   start: string;
   finish: string;
   logo: string;
+  tech: string[];
 };
 
 const CareerItem = ({
@@ -22,6 +24,7 @@ const CareerItem = ({
   start,
   finish,
   logo,
+  tech,
 }: CareerItemProps) => {
   return (
     <div className={clsx('flex gap-4', order % 2 === 0 && 'flex-row-reverse')}>
@@ -43,6 +46,14 @@ const CareerItem = ({
         <Title header="h2" copy={title} />
         <Paragraph accent>{position}</Paragraph>
         <Paragraph accent>{format}</Paragraph>
+        <ul className="flex items-center gap-1">
+          {tech.length > 0 &&
+            tech.map((techName) => (
+              <li key={techName}>
+                <TechIconFactory techName={techName} size={24} />
+              </li>
+            ))}
+        </ul>
       </div>
     </div>
   );
