@@ -7,6 +7,7 @@
     "start": "June, 2024",
     "finish": "",
     "logo": "devit-logo.png",
+    "tech": ["gatsby", "typescript"],
     "duties": [
       {
         "id": 1,
@@ -50,6 +51,7 @@
     "start": "April, 2023",
     "finish": "May, 2024",
     "logo": "halo-lab-logo.png",
+    "tech": ["typescript"],
     "duties": [
       {
         "id": 1,
@@ -89,6 +91,7 @@
     "start": "January, 2023",
     "finish": "March, 2023",
     "logo": "cgs-team-logo.png",
+    "tech": ["typescript"],
     "duties": [
       {
         "id": 1,
@@ -128,6 +131,7 @@
     "start": "November, 2022",
     "finish": "January, 2023",
     "logo": "zen-bit-logo.png",
+    "tech": ["typescript"],
     "duties": [
       {
         "id": 1,
