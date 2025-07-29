@@ -2,10 +2,10 @@ import { ReactNode, useState } from 'react';
 
 type HoverToltipProps = {
   children: ReactNode;
-  toltipValue: string;
+  tooltipValue: string;
 };
 
-const HoverToolTip = ({ children, toltipValue }: HoverToltipProps) => {
+const HoverToolTip = ({ children, tooltipValue }: HoverToltipProps) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(false);
 
@@ -32,7 +32,7 @@ const HoverToolTip = ({ children, toltipValue }: HoverToltipProps) => {
             top: coords.y + 15,
           }}
         >
-          {toltipValue}
+          {tooltipValue}
         </div>
       )}
     </div>

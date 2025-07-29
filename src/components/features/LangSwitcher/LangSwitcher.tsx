@@ -19,7 +19,7 @@ const LangSwitcher = ({
     const newPath = `/${newLocale}${pathname.replace(/^\/[a-z]{2}/, '')}`;
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/;`;
     await revalidateLang();
-    router.push(newPath);
+    router.replace(newPath, { scroll: false });
   };
 
   return (

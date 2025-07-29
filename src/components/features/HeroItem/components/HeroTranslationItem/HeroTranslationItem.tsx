@@ -42,7 +42,7 @@ const HeroTranslationItem = ({
           />
         ) : (
           <div onClick={() => setIsHeroNameForm(true)}>
-            <HoverToolTip toltipValue={dictionary.toltip}>
+            <HoverToolTip tooltipValue={dictionary.toltip}>
               <Paragraph className="p-2 cursor-pointer" accent>
                 {heroName}
               </Paragraph>
@@ -61,7 +61,7 @@ const HeroTranslationItem = ({
           />
         ) : (
           <div onClick={() => setIsHeroDescrForm(true)}>
-            <HoverToolTip toltipValue={dictionary.toltip}>
+            <HoverToolTip tooltipValue={dictionary.toltip}>
               <Paragraph className="p-2 cursor-pointer">
                 {heroDescription}
               </Paragraph>
