@@ -7,41 +7,91 @@
     "start": "June, 2024",
     "finish": "",
     "logo": "devit-logo.png",
-    "tech": ["gatsby", "typescript"],
-    "duties": [
-      {
-        "id": 1,
-        "description": "Developed and maintained user interface components and web pages based on design specifications."
-      },
-      {
-        "id": 2,
-        "description": "Integrated third-party services and APIs, including Shopify Storefront API, Contentful, and internal systems."
-      },
-      {
-        "id": 3,
-        "description": "Built reusable UI sections and implemented interactive features such as product calculators and search filters."
-      },
-      {
-        "id": 4,
-        "description": "Added support for multiple currencies and alternative payment providers."
-      },
-      {
-        "id": 5,
-        "description": "Refactored codebase and styles to improve structure, consistency, and performance using tools like Material UI.."
-      },
-      {
-        "id": 6,
-        "description": "Fixed bugs, optimized functionality, and ensured production readiness."
-      },
-      {
-        "id": 7,
-        "description": "Worked closely with SEO and design teams to implement improvements in performance, content, and accessibility."
-      },
-      {
-        "id": 8,
-        "description": "Maintained and updated the codebase, providing long-term support for live projects."
-      }
-    ]
+    "tech": [
+      "node",
+      "react",
+      "typescript",
+      "gatsby",
+      "next",
+      "shopify",
+      "graphql",
+      "sass",
+      "styledcomponents",
+      "prismaorm",
+      "postgresql",
+      "vercel",
+      "netlify"
+    ],
+    "duties": {
+      "en": [
+        {
+          "id": 1,
+          "description": "Developed and maintained user interface components and web pages based on design specifications."
+        },
+        {
+          "id": 2,
+          "description": "Integrated third-party services and APIs, including Shopify Storefront API, Contentful, and internal systems."
+        },
+        {
+          "id": 3,
+          "description": "Built reusable UI sections and implemented interactive features such as product calculators and search filters."
+        },
+        {
+          "id": 4,
+          "description": "Added support for multiple currencies and alternative payment providers."
+        },
+        {
+          "id": 5,
+          "description": "Refactored codebase and styles to improve structure, consistency, and performance using tools like Material UI.."
+        },
+        {
+          "id": 6,
+          "description": "Fixed bugs, optimized functionality, and ensured production readiness."
+        },
+        {
+          "id": 7,
+          "description": "Worked closely with SEO and design teams to implement improvements in performance, content, and accessibility."
+        },
+        {
+          "id": 8,
+          "description": "Maintained and updated the codebase, providing long-term support for live projects."
+        }
+      ],
+      "ua": [
+        {
+          "id": 1,
+          "description": "Розробляв і підтримував компоненти інтерфейсу та вебсторінки відповідно до дизайн-специфікацій."
+        },
+        {
+          "id": 2,
+          "description": "Інтегрував сторонні сервіси та API, зокрема Shopify Storefront API, Contentful та внутрішні системи."
+        },
+        {
+          "id": 3,
+          "description": "Створював багаторазові UI-секції та реалізовував інтерактивні функції, як-от калькулятори продуктів і фільтри пошуку."
+        },
+        {
+          "id": 4,
+          "description": "Додав підтримку декількох валют і альтернативних платіжних провайдерів."
+        },
+        {
+          "id": 5,
+          "description": "Рефакторив кодову базу й стилі для покращення структури, узгодженості та продуктивності з використанням Material UI."
+        },
+        {
+          "id": 6,
+          "description": "Виправляв баги, оптимізував функціональність і забезпечував готовність продукту до продакшену."
+        },
+        {
+          "id": 7,
+          "description": "Співпрацював із командами SEO та дизайну для впровадження покращень у продуктивність, контент і доступність."
+        },
+        {
+          "id": 8,
+          "description": "Підтримував і оновлював кодову базу, забезпечуючи довготривалу підтримку активних проєктів."
+        }
+      ]
+    }
   },
   {
     "id": 2,
@@ -51,37 +101,78 @@
     "start": "April, 2023",
     "finish": "May, 2024",
     "logo": "halo-lab-logo.png",
-    "tech": ["typescript"],
-    "duties": [
-      {
-        "id": 1,
-        "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
-      },
-      {
-        "id": 2,
-        "description": "Created reusable UI components consistent with the updated design system."
-      },
-      {
-        "id": 3,
-        "description": "Developed advanced filtering and search functionality for improved service discoverability."
-      },
-      {
-        "id": 4,
-        "description": "Refactored and enhanced the user communication system to increase reliability and usability."
-      },
-      {
-        "id": 5,
-        "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
-      },
-      {
-        "id": 6,
-        "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
-      },
-      {
-        "id": 7,
-        "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
-      }
-    ]
+    "tech": [
+      "node",
+      "react",
+      "typescript",
+      "meteor",
+      "styledcomponents",
+      "mongoose",
+      "mongodb",
+      "netlify"
+    ],
+    "duties": {
+      "en": [
+        {
+          "id": 1,
+          "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
+        },
+        {
+          "id": 2,
+          "description": "Created reusable UI components consistent with the updated design system."
+        },
+        {
+          "id": 3,
+          "description": "Developed advanced filtering and search functionality for improved service discoverability."
+        },
+        {
+          "id": 4,
+          "description": "Refactored and enhanced the user communication system to increase reliability and usability."
+        },
+        {
+          "id": 5,
+          "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
+        },
+        {
+          "id": 6,
+          "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
+        },
+        {
+          "id": 7,
+          "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
+        }
+      ],
+      "ua": [
+        {
+          "id": 1,
+          "description": "Очолив повний редизайн платформи, оновивши користувацький інтерфейс відповідно до нових дизайн-специфікацій та покращивши загальний користувацький досвід."
+        },
+        {
+          "id": 2,
+          "description": "Створював багаторазові UI-компоненти відповідно до оновленої дизайн-системи."
+        },
+        {
+          "id": 3,
+          "description": "Розробив розширену систему фільтрації та пошуку для покращення доступності сервісів."
+        },
+        {
+          "id": 4,
+          "description": "Рефакторив та покращив систему користувацьких повідомлень для підвищення стабільності та зручності у використанні."
+        },
+        {
+          "id": 5,
+          "description": "Оптимізував функціональність розкладу та сповіщень, реалізувавши інтеграцію з календарем і логіку нагадувань."
+        },
+        {
+          "id": 6,
+          "description": "Розробив та впровадив рішення для глобального управління станом додатку з ефективною передачею даних між компонентами."
+        },
+        {
+          "id": 7,
+          "description": "Тісно співпрацював із командами продакт-менеджменту, дизайну та QA для створення якісного функціоналу, орієнтованого на користувача."
+        }
+      ]
+    }
   },
   {
     "id": 3,
@@ -91,37 +182,82 @@
     "start": "January, 2023",
     "finish": "March, 2023",
     "logo": "cgs-team-logo.png",
-    "tech": ["typescript"],
-    "duties": [
-      {
-        "id": 1,
-        "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
-      },
-      {
-        "id": 2,
-        "description": "Created reusable UI components consistent with the updated design system."
-      },
-      {
-        "id": 3,
-        "description": "Developed advanced filtering and search functionality for improved service discoverability."
-      },
-      {
-        "id": 4,
-        "description": "Refactored and enhanced the user communication system to increase reliability and usability."
-      },
-      {
-        "id": 5,
-        "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
-      },
-      {
-        "id": 6,
-        "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
-      },
-      {
-        "id": 7,
-        "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
-      }
-    ]
+    "tech": [
+      "node",
+      "react",
+      "typescript",
+      "next",
+      "nest",
+      "express",
+      "styledcomponents",
+      "prismaorm",
+      "mongoose",
+      "postgresql",
+      "mongodb",
+      "heroku"
+    ],
+    "duties": {
+      "en": [
+        {
+          "id": 1,
+          "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
+        },
+        {
+          "id": 2,
+          "description": "Created reusable UI components consistent with the updated design system."
+        },
+        {
+          "id": 3,
+          "description": "Developed advanced filtering and search functionality for improved service discoverability."
+        },
+        {
+          "id": 4,
+          "description": "Refactored and enhanced the user communication system to increase reliability and usability."
+        },
+        {
+          "id": 5,
+          "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
+        },
+        {
+          "id": 6,
+          "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
+        },
+        {
+          "id": 7,
+          "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
+        }
+      ],
+      "ua": [
+        {
+          "id": 1,
+          "description": "Очолив повний редизайн платформи, оновивши користувацький інтерфейс відповідно до нових дизайн-специфікацій та покращивши загальний користувацький досвід."
+        },
+        {
+          "id": 2,
+          "description": "Створював багаторазові UI-компоненти відповідно до оновленої дизайн-системи."
+        },
+        {
+          "id": 3,
+          "description": "Розробив розширену систему фільтрації та пошуку для покращення доступності сервісів."
+        },
+        {
+          "id": 4,
+          "description": "Рефакторив та покращив систему користувацьких повідомлень для підвищення стабільності та зручності у використанні."
+        },
+        {
+          "id": 5,
+          "description": "Оптимізував функціональність розкладу та сповіщень, реалізувавши інтеграцію з календарем і логіку нагадувань."
+        },
+        {
+          "id": 6,
+          "description": "Розробив та впровадив рішення для глобального управління станом додатку з ефективною передачею даних між компонентами."
+        },
+        {
+          "id": 7,
+          "description": "Тісно співпрацював із командами продакт-менеджменту, дизайну та QA для створення якісного функціоналу, орієнтованого на користувача."
+        }
+      ]
+    }
   },
   {
     "id": 4,
@@ -131,36 +267,76 @@
     "start": "November, 2022",
     "finish": "January, 2023",
     "logo": "zen-bit-logo.png",
-    "tech": ["typescript"],
-    "duties": [
-      {
-        "id": 1,
-        "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
-      },
-      {
-        "id": 2,
-        "description": "Created reusable UI components consistent with the updated design system."
-      },
-      {
-        "id": 3,
-        "description": "Developed advanced filtering and search functionality for improved service discoverability."
-      },
-      {
-        "id": 4,
-        "description": "Refactored and enhanced the user communication system to increase reliability and usability."
-      },
-      {
-        "id": 5,
-        "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
-      },
-      {
-        "id": 6,
-        "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
-      },
-      {
-        "id": 7,
-        "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
-      }
-    ]
+    "tech": [
+      "node",
+      "react",
+      "typescript",
+      "nest",
+      "typeorm",
+      "postgresql",
+      "amazonaws"
+    ],
+    "duties": {
+      "en": [
+        {
+          "id": 1,
+          "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
+        },
+        {
+          "id": 2,
+          "description": "Created reusable UI components consistent with the updated design system."
+        },
+        {
+          "id": 3,
+          "description": "Developed advanced filtering and search functionality for improved service discoverability."
+        },
+        {
+          "id": 4,
+          "description": "Refactored and enhanced the user communication system to increase reliability and usability."
+        },
+        {
+          "id": 5,
+          "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
+        },
+        {
+          "id": 6,
+          "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
+        },
+        {
+          "id": 7,
+          "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
+        }
+      ],
+      "ua": [
+        {
+          "id": 1,
+          "description": "Очолив повний редизайн платформи, оновивши користувацький інтерфейс відповідно до нових дизайн-специфікацій та покращивши загальний користувацький досвід."
+        },
+        {
+          "id": 2,
+          "description": "Створював багаторазові UI-компоненти відповідно до оновленої дизайн-системи."
+        },
+        {
+          "id": 3,
+          "description": "Розробив розширену систему фільтрації та пошуку для покращення доступності сервісів."
+        },
+        {
+          "id": 4,
+          "description": "Рефакторив та покращив систему користувацьких повідомлень для підвищення стабільності та зручності у використанні."
+        },
+        {
+          "id": 5,
+          "description": "Оптимізував функціональність розкладу та сповіщень, реалізувавши інтеграцію з календарем і логіку нагадувань."
+        },
+        {
+          "id": 6,
+          "description": "Розробив та впровадив рішення для глобального управління станом додатку з ефективною передачею даних між компонентами."
+        },
+        {
+          "id": 7,
+          "description": "Тісно співпрацював із командами продакт-менеджменту, дизайну та QA для створення якісного функціоналу, орієнтованого на користувача."
+        }
+      ]
+    }
   }
 ]

@@ -2,19 +2,31 @@
 
 import clsx from 'clsx';
 
-import careerMock from './careerList.json';
 import CareerDuties from './components/CareerDuties/CareerDuties';
 import CareerItem from './components/CareerItem/CareerItem';
 
 type CareerSliderProps = {
-  careers: [];
+  careers: {
+    duties: {
+      id: number;
+      description: string;
+    }[];
+    id: number;
+    title: string;
+    position: string;
+    format: string;
+    start: string;
+    finish: string;
+    logo: string;
+    tech: string[];
+  }[];
 };
 
 const CareerList = ({ careers }: CareerSliderProps) => {
   return (
     <ul>
-      {careers.length === 0 &&
-        careerMock.map(
+      {careers.length > 0 &&
+        careers.map(
           (
             { id, title, position, format, start, finish, duties, logo, tech },
             i
