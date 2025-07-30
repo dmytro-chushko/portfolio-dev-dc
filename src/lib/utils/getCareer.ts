@@ -1,6 +1,6 @@
 'server-only';
 
-import careerList from '@/components/features/CareerList/careerList.json';
+import careerList from '@/mocks/careerList.json';
 
 import { LangType } from '../types/LangType';
 

@@ -9,11 +9,13 @@ import { getDictionary, langs } from '@/lib/utils/getDictionary';
 type HomeRootLoyoutProps = Readonly<RootLayoutProps> & {
   hero: React.ReactNode;
   career: React.ReactNode;
+  skills: React.ReactNode;
 };
 
 export default async function RootLayout({
   hero,
   career,
+  skills,
   children,
   params,
 }: HomeRootLoyoutProps) {
@@ -31,6 +33,7 @@ export default async function RootLayout({
       <main className="container mx-auto px-4">
         {hero}
         {career}
+        {skills}
         {children}
       </main>
     </>

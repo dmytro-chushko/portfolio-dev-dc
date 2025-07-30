@@ -1,3 +1,5 @@
+'use client';
+
 import HoverToolTip from '@/components/features/HoverToolTip/HoverToolTip';
 import isTechIconKey from '@/lib/typeGuards/isTechIconKey';
 

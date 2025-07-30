@@ -1,0 +1,20 @@
+[
+  {
+    "techName": "node",
+    "title": "Node JS v22",
+    "estimate": 3,
+    "description": {
+      "en": "Server-side JavaScript runtime built on Chrome’s V8 engine.",
+      "ua": "Серверне JavaScript-середовище, побудоване на рушії V8 від Chrome."
+    }
+  },
+  {
+    "techName": "react",
+    "title": "React JS v19",
+    "estimate": 4,
+    "description": {
+      "en": "JavaScript library for building fast, interactive user interfaces.",
+      "ua": "JavaScript-бібліотека для створення швидких, інтерактивних інтерфейсів.."
+    }
+  }
+]
