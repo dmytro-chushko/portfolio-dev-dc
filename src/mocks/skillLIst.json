@@ -14,7 +14,16 @@
     "estimate": 4,
     "description": {
       "en": "JavaScript library for building fast, interactive user interfaces.",
-      "ua": "JavaScript-бібліотека для створення швидких, інтерактивних інтерфейсів.."
+      "ua": "JavaScript-бібліотека для створення швидких, інтерактивних інтерфейсів."
+    }
+  },
+  {
+    "techName": "next",
+    "title": "Next JS v15",
+    "estimate": 4,
+    "description": {
+      "en": "Full-stack React framework for building fast, dynamic web apps.",
+      "ua": "Фреймворк на базі React для створення швидких вебзастосунків."
     }
   }
 ]
