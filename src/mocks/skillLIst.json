@@ -9,6 +9,15 @@
     }
   },
   {
+    "techName": "typescript",
+    "title": "TypeScript v5.6",
+    "estimate": 4,
+    "description": {
+      "en": "JavaScript with static types for safer and scalable development.",
+      "ua": "JavaScript із статичною типізацією для безпечної та масштабованої розробки."
+    }
+  },
+  {
     "techName": "react",
     "title": "React JS v19",
     "estimate": 4,
@@ -24,6 +33,33 @@
     "description": {
       "en": "Full-stack React framework for building fast, dynamic web apps.",
       "ua": "Фреймворк на базі React для створення швидких вебзастосунків."
+    }
+  },
+  {
+    "techName": "shopify",
+    "title": "Shopify",
+    "estimate": 4,
+    "description": {
+      "en": "E-commerce platform for building and managing online stores.",
+      "ua": "Платформа електронної комерції для створення онлайн-магазинів."
+    }
+  },
+  {
+    "techName": "html",
+    "title": "HTML 5",
+    "estimate": 4,
+    "description": {
+      "en": "Standard markup language for building modern web pages and apps.",
+      "ua": "Стандартна мова розмітки для створення сучасних вебсторінок і застосунків."
+    }
+  },
+  {
+    "techName": "css",
+    "title": "CSS 3",
+    "estimate": 4,
+    "description": {
+      "en": "Style sheet language used to design and format web content.",
+      "ua": "Мова стилів для оформлення та структурування вебконтенту."
     }
   }
 ]
