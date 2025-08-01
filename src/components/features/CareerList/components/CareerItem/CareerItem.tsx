@@ -46,7 +46,12 @@ const CareerItem = ({
         <Title header="h2" copy={title} />
         <Paragraph accent>{position}</Paragraph>
         <Paragraph accent>{format}</Paragraph>
-        <ul className="flex items-center gap-1">
+        <ul
+          className={clsx(
+            'flex items-center gap-1 flex-wrap',
+            order % 2 === 0 ? 'justify-end' : 'justify-start'
+          )}
+        >
           {tech.length > 0 &&
             tech.map((techName) => (
               <li key={techName}>
