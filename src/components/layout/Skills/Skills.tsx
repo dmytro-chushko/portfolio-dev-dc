@@ -1,15 +1,15 @@
 import { ReactNode } from 'react';
 
+import Title from '@/components/typography/Title/Title';
+
 type SkillsProps = {
   children: ReactNode;
 };
 
 const Skills = ({ children }: SkillsProps) => {
   return (
-    <section
-      id="skills"
-      className="min-h-screen pt-[104px] lg:min-h-[calc(100vh-104px)]"
-    >
+    <section id="skills" className="min-h-screen py-[104px]">
+      <Title className="section-title" header="h2" copy="Skills" />
       {children}
     </section>
   );
