@@ -45,6 +45,15 @@
     }
   },
   {
+    "techName": "graphql",
+    "title": "Graph QL",
+    "estimate": 4,
+    "description": {
+      "en": "E-commerce platform for building and managing online stores.",
+      "ua": "Платформа електронної комерції для створення онлайн-магазинів."
+    }
+  },
+  {
     "techName": "html",
     "title": "HTML 5",
     "estimate": 4,
@@ -60,6 +69,24 @@
     "description": {
       "en": "Style sheet language used to design and format web content.",
       "ua": "Мова стилів для оформлення та структурування вебконтенту."
+    }
+  },
+  {
+    "techName": "prismaorm",
+    "title": "Prisma ORM",
+    "estimate": 4,
+    "description": {
+      "en": "Next-generation ORM for Node.js and TypeScript.",
+      "ua": "ORM нового покоління для Node.js та TypeScript."
+    }
+  },
+  {
+    "techName": "postgresql",
+    "title": "PostgreSQL 5",
+    "estimate": 4,
+    "description": {
+      "en": "Powerful open-source relational database with advanced features.",
+      "ua": "Потужна реляційна база даних з відкритим кодом і розширеними можливостями."
     }
   }
 ]
