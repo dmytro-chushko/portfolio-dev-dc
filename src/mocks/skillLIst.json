@@ -2,6 +2,7 @@
   {
     "techName": "node",
     "title": "Node JS v22",
+    "category": "primary",
     "estimate": 3,
     "description": {
       "en": "Server-side JavaScript runtime built on Chrome’s V8 engine.",
@@ -11,6 +12,7 @@
   {
     "techName": "typescript",
     "title": "TypeScript v5.6",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "JavaScript with static types for safer and scalable development.",
@@ -20,6 +22,7 @@
   {
     "techName": "react",
     "title": "React JS v19",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "JavaScript library for building fast, interactive user interfaces.",
@@ -29,6 +32,7 @@
   {
     "techName": "next",
     "title": "Next JS v15",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "Full-stack React framework for building fast, dynamic web apps.",
@@ -38,6 +42,7 @@
   {
     "techName": "shopify",
     "title": "Shopify",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "E-commerce platform for building and managing online stores.",
@@ -47,15 +52,17 @@
   {
     "techName": "graphql",
     "title": "Graph QL",
+    "category": "primary",
     "estimate": 4,
     "description": {
-      "en": "E-commerce platform for building and managing online stores.",
-      "ua": "Платформа електронної комерції для створення онлайн-магазинів."
+      "en": "Query language for APIs enabling flexible and efficient data fetching.",
+      "ua": "Мова запитів для API, що забезпечує гнучке та ефективне отримання даних."
     }
   },
   {
     "techName": "html",
     "title": "HTML 5",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "Standard markup language for building modern web pages and apps.",
@@ -65,6 +72,7 @@
   {
     "techName": "css",
     "title": "CSS 3",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "Style sheet language used to design and format web content.",
@@ -74,6 +82,7 @@
   {
     "techName": "prismaorm",
     "title": "Prisma ORM",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "Next-generation ORM for Node.js and TypeScript.",
@@ -83,6 +92,7 @@
   {
     "techName": "postgresql",
     "title": "PostgreSQL 5",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "Powerful open-source relational database with advanced features.",
