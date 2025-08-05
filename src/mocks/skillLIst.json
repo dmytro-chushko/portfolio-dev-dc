@@ -33,7 +33,7 @@
     "techName": "next",
     "title": "Next JS v15",
     "category": "primary",
-    "estimate": 4,
+    "estimate": 5,
     "description": {
       "en": "Full-stack React framework for building fast, dynamic web apps.",
       "ua": "Фреймворк на базі React для створення швидких вебзастосунків."
@@ -63,7 +63,7 @@
     "techName": "html",
     "title": "HTML 5",
     "category": "primary",
-    "estimate": 4,
+    "estimate": 5,
     "description": {
       "en": "Standard markup language for building modern web pages and apps.",
       "ua": "Стандартна мова розмітки для створення сучасних вебсторінок і застосунків."
@@ -73,7 +73,7 @@
     "techName": "css",
     "title": "CSS 3",
     "category": "primary",
-    "estimate": 4,
+    "estimate": 5,
     "description": {
       "en": "Style sheet language used to design and format web content.",
       "ua": "Мова стилів для оформлення та структурування вебконтенту."
