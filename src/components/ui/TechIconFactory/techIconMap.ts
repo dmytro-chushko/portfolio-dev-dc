@@ -22,6 +22,7 @@ import ReduxTechIcon from '@/components/icons/tech/redux.svg';
 import SassTechIcon from '@/components/icons/tech/sass.svg';
 import ShopifyTechIcon from '@/components/icons/tech/shopify.svg';
 import StyledComponentsTechIcon from '@/components/icons/tech/styled-components.svg';
+import Tailwind from '@/components/icons/tech/tailwind.svg';
 import TypeOrmTechIcon from '@/components/icons/tech/typeorm-seeklogo.svg';
 import TypeScriptTechIcon from '@/components/icons/tech/typescript.svg';
 import VercelTechIcon from '@/components/icons/tech/vercel.svg';
@@ -123,6 +124,10 @@ const techIconMap = {
   vercel: {
     icon: VercelTechIcon,
     title: 'Vercel',
+  },
+  tailwind: {
+    icon: Tailwind,
+    title: 'Tailwind CSS',
   },
 } satisfies Record<
   string,
