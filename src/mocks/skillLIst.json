@@ -60,6 +60,26 @@
     }
   },
   {
+    "techName": "tailwind",
+    "title": "Tailwind CSS v4",
+    "category": "primary",
+    "estimate": 5,
+    "description": {
+      "en": "Utility-first CSS framework for rapidly building custom designs.",
+      "ua": "CSS-фреймворк з утилітарним підходом для швидкої розробки дизайну."
+    }
+  },
+  {
+    "techName": "styledcomponents",
+    "title": "Styled Components v6.1.19",
+    "category": "primary",
+    "estimate": 5,
+    "description": {
+      "en": "CSS-in-JS library for styling React components dynamically.",
+      "ua": "Бібліотека CSS-in-JS для динамічного стилізування React-компонентів."
+    }
+  },
+  {
     "techName": "html",
     "title": "HTML 5",
     "category": "primary",
@@ -97,6 +117,26 @@
     "description": {
       "en": "Powerful open-source relational database with advanced features.",
       "ua": "Потужна реляційна база даних з відкритим кодом і розширеними можливостями."
+    }
+  },
+  {
+    "techName": "gatsby",
+    "title": "Gatsby JS v5",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "React-based framework for building fast, static websites.",
+      "ua": "Фреймворк на базі React для створення швидких статичних сайтів."
+    }
+  },
+  {
+    "techName": "meteor",
+    "title": "Meteor JS v3.3.0",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Full-stack JavaScript framework with built-in real-time data synchronization.",
+      "ua": "Повнофункціональний JavaScript-фреймворк з вбудованою синхронізацією даних у реальному часі."
     }
   }
 ]

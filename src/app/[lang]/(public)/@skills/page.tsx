@@ -12,12 +12,22 @@ type SkillsSlotProps = {
 export default async function SkillsSlot({ params }: SkillsSlotProps) {
   const lang = (await params).lang;
   const skillList = getSkillList(lang);
+  const primarySkillList = skillList.filter(
+    (skill) => skill.category === 'primary'
+  );
+  const secondarySkillList = skillList.filter(
+    (skill) => skill.category === 'secondary'
+  );
   const dictionary = await getDictionary(lang);
 
   return (
     <Skills>
       <Title className="mb-8" header="h3" copy={dictionary.slkills.primary} />
-      <SkillList skills={skillList} />
+      <div className="mb-8">
+        <SkillList skills={primarySkillList} />
+      </div>
+      <Title className="mb-8" header="h3" copy={dictionary.slkills.secondary} />
+      <SkillList skills={secondarySkillList} />
     </Skills>
   );
 }
