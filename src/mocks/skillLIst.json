@@ -138,5 +138,35 @@
       "en": "Full-stack JavaScript framework with built-in real-time data synchronization.",
       "ua": "Повнофункціональний JavaScript-фреймворк з вбудованою синхронізацією даних у реальному часі."
     }
+  },
+  {
+    "techName": "mongodb",
+    "title": "MongoDB Atlas",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Cloud-hosted MongoDB service with built-in scalability, security, and global distribution.",
+      "ua": "Хмарний сервіс MongoDB з вбудованою масштабованістю, безпекою та глобальним розподілом."
+    }
+  },
+  {
+    "techName": "mysql",
+    "title": "MySQL v8.4",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Relational database management system offering high performance, reliability, and broad SQL support.",
+      "ua": "Система керування реляційними базами даних із високою продуктивністю, надійністю та широкою підтримкою SQL."
+    }
+  },
+  {
+    "techName": "redux",
+    "title": "Redux Toolkit v2.8.2",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "State management library for predictable app behavior.",
+      "ua": "Бібліотека керування станом для передбачуваної роботи застосунків."
+    }
   }
 ]
