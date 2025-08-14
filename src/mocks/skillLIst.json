@@ -248,5 +248,15 @@
       "en": "Cloud platform tooling for deploying modern frontends.",
       "ua": "Інструменти хмари для розгортання сучасних фронтендів."
     }
+  },
+  {
+    "techName": "remixjs",
+    "title": "Remix v2.17.0",
+    "category": "primary",
+    "estimate": 4,
+    "description": {
+      "en": "Full-stack React framework emphasizing server rendering.",
+      "ua": "Full-stack React-фреймворк із акцентом на серверний рендеринг."
+    }
   }
 ]
