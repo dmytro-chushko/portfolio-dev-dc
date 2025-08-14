@@ -19,6 +19,7 @@ import PostgresqlTechIcon from '@/components/icons/tech/postgresql.svg';
 import PrismaOrmTechIcon from '@/components/icons/tech/prismaorm.svg';
 import ReactTechIcon from '@/components/icons/tech/react.svg';
 import ReduxTechIcon from '@/components/icons/tech/redux.svg';
+import RemixTechIcon from '@/components/icons/tech/remix.svg';
 import SassTechIcon from '@/components/icons/tech/sass.svg';
 import ShopifyTechIcon from '@/components/icons/tech/shopify.svg';
 import StyledComponentsTechIcon from '@/components/icons/tech/styled-components.svg';
@@ -124,6 +125,10 @@ const techIconMap = {
   vercel: {
     icon: VercelTechIcon,
     title: 'Vercel',
+  },
+  remixjs: {
+    icon: RemixTechIcon,
+    title: 'Remix.js',
   },
   tailwind: {
     icon: Tailwind,
