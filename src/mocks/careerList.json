@@ -17,6 +17,7 @@
       "graphql",
       "sass",
       "styledcomponents",
+      "storybook",
       "prismaorm",
       "postgresql",
       "vercel",
@@ -107,6 +108,7 @@
       "typescript",
       "meteor",
       "styledcomponents",
+      "storybook",
       "mongoose",
       "mongodb",
       "netlify"

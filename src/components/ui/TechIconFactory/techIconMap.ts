@@ -2,8 +2,11 @@ import { SVGProps, JSX } from 'react';
 
 import AmazonAwsTechIcon from '@/components/icons/tech/amazonaws.svg';
 import CssTechIcon from '@/components/icons/tech/css3.svg';
+import DockerTechIcon from '@/components/icons/tech/docker.svg';
 import ExpressTechIcon from '@/components/icons/tech/express.svg';
+import FigmaTechIcon from '@/components/icons/tech/figma.svg';
 import GatsbyTechIcon from '@/components/icons/tech/gatsby.svg';
+import GithubTechIcon from '@/components/icons/tech/github.svg';
 import GraphqlTechIcon from '@/components/icons/tech/graphql.svg';
 import HerokuTechIcon from '@/components/icons/tech/heroku.svg';
 import HtmlTechIcon from '@/components/icons/tech/html5.svg';
@@ -16,13 +19,16 @@ import NetlifyTechIcon from '@/components/icons/tech/netlify.svg';
 import NextTechIcon from '@/components/icons/tech/next-dot-js.svg';
 import NodeTechIcon from '@/components/icons/tech/node-dot-js.svg';
 import PostgresqlTechIcon from '@/components/icons/tech/postgresql.svg';
+import PostmanTechIcon from '@/components/icons/tech/postman.svg';
 import PrismaOrmTechIcon from '@/components/icons/tech/prismaorm.svg';
 import ReactTechIcon from '@/components/icons/tech/react.svg';
 import ReduxTechIcon from '@/components/icons/tech/redux.svg';
 import RemixTechIcon from '@/components/icons/tech/remix.svg';
 import SassTechIcon from '@/components/icons/tech/sass.svg';
 import ShopifyTechIcon from '@/components/icons/tech/shopify.svg';
+import StorybookTechIcon from '@/components/icons/tech/storybook.svg';
 import StyledComponentsTechIcon from '@/components/icons/tech/styled-components.svg';
+import SwaggerTechIcon from '@/components/icons/tech/swagger.svg';
 import Tailwind from '@/components/icons/tech/tailwind.svg';
 import TypeOrmTechIcon from '@/components/icons/tech/typeorm-seeklogo.svg';
 import TypeScriptTechIcon from '@/components/icons/tech/typescript.svg';
@@ -133,6 +139,30 @@ const techIconMap = {
   tailwind: {
     icon: Tailwind,
     title: 'Tailwind CSS',
+  },
+  docker: {
+    icon: DockerTechIcon,
+    title: 'Docker',
+  },
+  postman: {
+    icon: PostmanTechIcon,
+    title: 'Postman',
+  },
+  figma: {
+    icon: FigmaTechIcon,
+    title: 'Figma',
+  },
+  swagger: {
+    icon: SwaggerTechIcon,
+    title: 'Swagger',
+  },
+  github: {
+    icon: GithubTechIcon,
+    title: 'GitHub',
+  },
+  storybook: {
+    icon: StorybookTechIcon,
+    title: 'Storybook',
   },
 } satisfies Record<
   string,

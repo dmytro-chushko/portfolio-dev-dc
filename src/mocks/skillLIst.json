@@ -181,22 +181,22 @@
   },
   {
     "techName": "netlify",
-    "title": "Netlify CLI v23.1.3",
+    "title": "Netlify v3.0",
     "category": "secondary",
     "estimate": 4,
     "description": {
-      "en": "Platform for fast deployment of static web projects.",
-      "ua": "Платформа для швидкого деплою статичних сайтів."
+      "en": "Platform for hosting and deploying static and Jamstack sites.",
+      "ua": "Платформа для хостингу та деплою статичних і Jamstack сайтів."
     }
   },
   {
     "techName": "heroku",
-    "title": "Heroku CLI v10.10.1",
+    "title": "Heroku v7.0",
     "category": "secondary",
     "estimate": 4,
     "description": {
-      "en": "Cloud platform CLI for managing app deployments.",
-      "ua": "CLI для керування розгортанням додатків у хмарі."
+      "en": "Cloud platform for deploying, managing, and scaling apps.",
+      "ua": "Хмарна платформа для деплою, керування та масштабування додатків."
     }
   },
   {
@@ -241,12 +241,12 @@
   },
   {
     "techName": "vercel",
-    "title": "Vercel CLI v44.7.3",
+    "title": "Vercel v34.0",
     "category": "secondary",
     "estimate": 4,
     "description": {
-      "en": "Cloud platform tooling for deploying modern frontends.",
-      "ua": "Інструменти хмари для розгортання сучасних фронтендів."
+      "en": "Cloud platform for hosting and deploying modern frontends.",
+      "ua": "Хмарна платформа для хостингу та деплою сучасних фронтендів."
     }
   },
   {
@@ -257,6 +257,76 @@
     "description": {
       "en": "Full-stack React framework emphasizing server rendering.",
       "ua": "Full-stack React-фреймворк із акцентом на серверний рендеринг."
+    }
+  },
+  {
+    "techName": "amazonaws",
+    "title": "Amazon AWS v2025.1",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Comprehensive cloud platform for hosting and managing applications.",
+      "ua": "Комплексна хмарна платформа для хостингу та керування додатками."
+    }
+  },
+  {
+    "techName": "docker",
+    "title": "Docker v27.1.1",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Platform for building, running, and managing containers.",
+      "ua": "Платформа для створення, запуску та керування контейнерами."
+    }
+  },
+  {
+    "techName": "postman",
+    "title": "Postman v11.16.0",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "API platform for testing and collaboration.",
+      "ua": "Платформа для тестування API та спільної роботи."
+    }
+  },
+  {
+    "techName": "figma",
+    "title": "Figma v2025.1",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Collaborative design tool for UI/UX and prototyping.",
+      "ua": "Спільний інструмент для UI/UX та прототипування."
+    }
+  },
+  {
+    "techName": "swagger",
+    "title": "Swagger v3.1.0",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Toolset for designing and documenting RESTful APIs.",
+      "ua": "Набір інструментів для проєктування та документування REST API."
+    }
+  },
+  {
+    "techName": "github",
+    "title": "GitHub v2025.1",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Platform for hosting and collaborating on code projects.",
+      "ua": "Платформа для хостингу та співпраці над кодом."
+    }
+  },
+  {
+    "techName": "storybook",
+    "title": "Storybook v8.3.5",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Tool for developing and testing UI components in isolation.",
+      "ua": "Інструмент для розробки та тестування UI-компонентів окремо."
     }
   }
 ]
