@@ -6,10 +6,7 @@ type CareerPropsType = {
 
 const Career = ({ children }: CareerPropsType) => {
   return (
-    <section
-      id="career"
-      className="min-h-screen py-[104px] lg:min-h-[calc(100vh-104px)]"
-    >
+    <section id="career" className="min-h-screen py-[104px] lg:min-h-screen">
       <Title className="section-title" header="h2" copy="Career" />
       {children}
     </section>
