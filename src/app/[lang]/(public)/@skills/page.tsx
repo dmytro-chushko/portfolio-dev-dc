@@ -1,5 +1,5 @@
 import SkillList from '@/components/features/SkillList/SkillList';
-import Skills from '@/components/layout/Skills/Skills';
+import SectionLayout from '@/components/layout/SectionLayout/SectionLayout';
 import Title from '@/components/typography/Title/Title';
 import { LangType } from '@/lib/types/LangType';
 import { getDictionary } from '@/lib/utils/getDictionary';
@@ -21,13 +21,13 @@ export default async function SkillsSlot({ params }: SkillsSlotProps) {
   const dictionary = await getDictionary(lang);
 
   return (
-    <Skills>
+    <SectionLayout id="skills" title={dictionary.nav.links.skills}>
       <Title className="mb-8" header="h3" copy={dictionary.slkills.primary} />
       <div className="mb-8">
         <SkillList skills={primarySkillList} />
       </div>
       <Title className="mb-8" header="h3" copy={dictionary.slkills.secondary} />
       <SkillList skills={secondarySkillList} />
-    </Skills>
+    </SectionLayout>
   );
 }
