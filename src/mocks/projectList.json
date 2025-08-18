@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Heliguy",
+    "description": "Headless E-commerce Website (Gatsby + Shopify + Contentful)",
+    "company": "DevIt"
+  },
+  {
+    "title": "Kaiba",
+    "description": "AI-Powered SaaS for Educators",
+    "company": "DevIt"
+  },
+  {
+    "title": "Commit Swimming",
+    "description": "Training Platform for Swim Coaches & Teams",
+    "company": "HaloLab"
+  },
+  {
+    "title": "CGS Team",
+    "description": "IT Services Company Website",
+    "company": "CGS"
+  },
+  {
+    "title": "Puzz Drums",
+    "description": "Modular Drum System E-commerce Site",
+    "company": "Freelance"
+  }
+]
