@@ -2,26 +2,81 @@
   {
     "title": "Heliguy",
     "description": "Headless E-commerce Website (Gatsby + Shopify + Contentful)",
-    "company": "DevIt"
+    "company": "DevIt",
+    "link": "https://www.heliguy.com/",
+    "tech": [
+      "node",
+      "react",
+      "remix",
+      "typescript",
+      "gatsby",
+      "shopify",
+      "graphql",
+      "sass",
+      "styledcomponents",
+      "prismaorm",
+      "postgresql",
+      "netlify"
+    ]
   },
   {
     "title": "Kaiba",
     "description": "AI-Powered SaaS for Educators",
-    "company": "DevIt"
+    "company": "DevIt",
+    "link": "https://www.gokaiba.com/",
+    "tech": [
+      "node",
+      "react",
+      "typescript",
+      "next",
+      "styledcomponents",
+      "storybook",
+      "prismaorm",
+      "postgresql",
+      "vercel"
+    ]
   },
   {
     "title": "Commit Swimming",
     "description": "Training Platform for Swim Coaches & Teams",
-    "company": "HaloLab"
+    "company": "HaloLab",
+    "tech": [
+      "node",
+      "react",
+      "typescript",
+      "meteor",
+      "styledcomponents",
+      "storybook",
+      "mongoose",
+      "mongodb",
+      "netlify"
+    ]
   },
   {
     "title": "CGS Team",
     "description": "IT Services Company Website",
-    "company": "CGS"
+    "company": "CGS",
+    "link": "https://cgsteam.io/",
+    "tech": [
+      "node",
+      "react",
+      "typescript",
+      "next",
+      "nest",
+      "express",
+      "styledcomponents",
+      "prismaorm",
+      "mongoose",
+      "postgresql",
+      "mongodb",
+      "heroku"
+    ]
   },
   {
     "title": "Puzz Drums",
     "description": "Modular Drum System E-commerce Site",
-    "company": "Freelance"
+    "company": "Freelance",
+    "link": "https://puzz-drums.com/",
+    "tech": ["node", "react", "typescript", "styledcomponents", "heroku"]
   }
 ]
