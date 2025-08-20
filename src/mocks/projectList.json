@@ -4,6 +4,9 @@
     "description": "Headless E-commerce Website (Gatsby + Shopify + Contentful)",
     "company": "DevIt",
     "link": "https://www.heliguy.com/",
+    "background": "",
+    "desktop": "",
+    "mobile": "",
     "tech": [
       "node",
       "react",
@@ -24,6 +27,9 @@
     "description": "AI-Powered SaaS for Educators",
     "company": "DevIt",
     "link": "https://www.gokaiba.com/",
+    "background": "",
+    "desktop": "",
+    "mobile": "",
     "tech": [
       "node",
       "react",
@@ -40,6 +46,9 @@
     "title": "Commit Swimming",
     "description": "Training Platform for Swim Coaches & Teams",
     "company": "HaloLab",
+    "background": "",
+    "desktop": "",
+    "mobile": "",
     "tech": [
       "node",
       "react",
@@ -57,6 +66,9 @@
     "description": "IT Services Company Website",
     "company": "CGS",
     "link": "https://cgsteam.io/",
+    "background": "",
+    "desktop": "",
+    "mobile": "",
     "tech": [
       "node",
       "react",
@@ -77,6 +89,9 @@
     "description": "Modular Drum System E-commerce Site",
     "company": "Freelance",
     "link": "https://puzz-drums.com/",
+    "background": "",
+    "desktop": "",
+    "mobile": "",
     "tech": ["node", "react", "typescript", "styledcomponents", "heroku"]
   }
 ]
