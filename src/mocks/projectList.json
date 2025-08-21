@@ -1,7 +1,10 @@
 [
   {
     "title": "Heliguy",
-    "description": "Headless E-commerce Website (Gatsby + Shopify + Contentful)",
+    "description": {
+      "en": "Headless E-commerce Website (Gatsby + Shopify + Contentful)",
+      "ua": "Безголовий E-commerce сайт (Gatsby + Shopify + Contentful)"
+    },
     "company": "DevIt",
     "link": "https://www.heliguy.com/",
     "background": "",
@@ -24,7 +27,10 @@
   },
   {
     "title": "Kaiba",
-    "description": "AI-Powered SaaS for Educators",
+    "description": {
+      "en": "AI-Powered SaaS for Educators",
+      "ua": "SaaS для освітян на основі штучного інтелекту"
+    },
     "company": "DevIt",
     "link": "https://www.gokaiba.com/",
     "background": "",
@@ -44,8 +50,12 @@
   },
   {
     "title": "Commit Swimming",
-    "description": "Training Platform for Swim Coaches & Teams",
+    "description": {
+      "en": "Training Platform for Swim Coaches & Teams",
+      "ua": "Тренувальна платформа для тренерів з плавання та команд"
+    },
     "company": "HaloLab",
+    "link": "https://www.gokaiba.com/",
     "background": "",
     "desktop": "",
     "mobile": "",
@@ -63,7 +73,10 @@
   },
   {
     "title": "CGS Team",
-    "description": "IT Services Company Website",
+    "description": {
+      "en": "IT Services Company Website",
+      "ua": "Вебсайт компанії з IT-послуг"
+    },
     "company": "CGS",
     "link": "https://cgsteam.io/",
     "background": "",
@@ -86,7 +99,10 @@
   },
   {
     "title": "Puzz Drums",
-    "description": "Modular Drum System E-commerce Site",
+    "description": {
+      "en": "Online store for modular drum instruments",
+      "ua": "Інтернет-магазин модульних ударних інструментів"
+    },
     "company": "Freelance",
     "link": "https://puzz-drums.com/",
     "background": "",
