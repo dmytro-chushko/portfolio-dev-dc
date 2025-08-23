@@ -13,13 +13,13 @@ type ProjectListProps = {
   }[];
 };
 
-const setTopPosition = (i: number, cardsNum: number) => {
-  const configArr = new Array(cardsNum).fill(null);
-
-  return configArr.map((item, index) =>
-    !item && index ? `top-[${104 + index * 10}px]` : 'top-[104px]'
-  )[i];
-};
+const setTopPosition = [
+  'top-[104px]',
+  'top-[114px]',
+  'top-[124px]',
+  'top-[134px]',
+  'top-[144px]',
+];
 
 const ProjectList = ({ projectList }: ProjectListProps) => {
   return (
@@ -31,7 +31,7 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
               key={title}
               className={clsx(
                 'bg-foreground text-background sticky  border border-background border-solid transition-all h-[80vh]',
-                setTopPosition(i, projectList.length)
+                setTopPosition[i]
               )}
             ></li>
           ))}
