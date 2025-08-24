@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import './projectList.css';
 
 type ProjectListProps = {
   projectList: {
@@ -24,14 +25,16 @@ const setTopPosition = [
 const ProjectList = ({ projectList }: ProjectListProps) => {
   return (
     <div>
-      <ul className="w-11/12 mx-auto grid gap-4">
+      <ul className="w-11/12 mx-auto grid gap-4 cards">
         {projectList.length > 0 &&
           projectList.map(({ title }, i) => (
             <li
               key={title}
+              id={`card_${i + 1}`}
               className={clsx(
                 'bg-foreground text-background sticky  border border-background border-solid transition-all h-[80vh]',
-                setTopPosition[i]
+                setTopPosition[i],
+                'card'
               )}
             ></li>
           ))}
