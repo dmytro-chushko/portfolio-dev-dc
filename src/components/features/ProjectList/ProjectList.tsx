@@ -14,29 +14,22 @@ type ProjectListProps = {
   }[];
 };
 
-const setTopPosition = [
-  'top-[104px]',
-  'top-[114px]',
-  'top-[124px]',
-  'top-[134px]',
-  'top-[144px]',
-];
-
 const ProjectList = ({ projectList }: ProjectListProps) => {
   return (
     <div>
-      <ul className="w-11/12 mx-auto grid gap-4 cards">
+      <ul className="w-4/5 mx-auto grid gap-4 cards">
         {projectList.length > 0 &&
           projectList.map(({ title }, i) => (
             <li
               key={title}
               id={`card_${i + 1}`}
               className={clsx(
-                'bg-foreground text-background sticky  border border-background border-solid transition-all h-[80vh]',
-                setTopPosition[i],
+                'sticky transition-all h-[90vh] top-[90px]',
                 'card'
               )}
-            ></li>
+            >
+              <div className="h-full text-background bg-foreground border border-background border-solid card_content"></div>
+            </li>
           ))}
       </ul>
     </div>
