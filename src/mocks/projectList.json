@@ -8,8 +8,8 @@
     "company": "DevIt",
     "link": "https://www.heliguy.com/",
     "background": "",
-    "desktop": "",
-    "mobile": "",
+    "desktop": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/macbook-air-www.heliguy.png",
+    "mobile": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/iphone-14-heliguy.png",
     "tech": [
       "node",
       "react",
@@ -34,8 +34,8 @@
     "company": "DevIt",
     "link": "https://www.gokaiba.com/",
     "background": "",
-    "desktop": "",
-    "mobile": "",
+    "desktop": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/macbook-air-gokaiba.png",
+    "mobile": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/iphone-14-gokaiba.png",
     "tech": [
       "node",
       "react",
@@ -57,8 +57,8 @@
     "company": "HaloLab",
     "link": "https://www.gokaiba.com/",
     "background": "",
-    "desktop": "",
-    "mobile": "",
+    "desktop": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/macbook-air-commitswimming.png",
+    "mobile": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/iphone-14-commitswimming.png",
     "tech": [
       "node",
       "react",
@@ -80,8 +80,8 @@
     "company": "CGS",
     "link": "https://cgsteam.io/",
     "background": "",
-    "desktop": "",
-    "mobile": "",
+    "desktop": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/macbook-air-cgsteam.io.png",
+    "mobile": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/iphone-14-cgsteam.io.png",
     "tech": [
       "node",
       "react",
@@ -106,8 +106,8 @@
     "company": "Freelance",
     "link": "https://puzz-drums.com/",
     "background": "",
-    "desktop": "",
-    "mobile": "",
+    "desktop": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/macbook-air-puzz-drums.png",
+    "mobile": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/iphone-14-puzz-drums.png",
     "tech": ["node", "react", "typescript", "styledcomponents", "heroku"]
   }
 ]
