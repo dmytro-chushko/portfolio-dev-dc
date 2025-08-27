@@ -10,9 +10,9 @@
 .loading.primary {
   background: linear-gradient(
     90deg,
-    var(--foreground),
+    rgb(var(--foreground)),
     var(--hovered),
-    var(--foreground)
+    rgb(var(--foreground))
   );
   background-size: 200% 200%;
   animation: gradientAnimation 2s linear infinite;
@@ -22,9 +22,9 @@
 .loading.secondary {
   background: linear-gradient(
     90deg,
-    var(--background),
+    rgb(var(--background)),
     var(--hovered),
-    var(--background)
+    rgb(var(--background))
   );
   background-size: 200% 200%;
   animation: gradientAnimation 2s linear infinite;

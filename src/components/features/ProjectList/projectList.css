@@ -22,8 +22,26 @@
   --index0: calc(var(--index) - 1); /* 0-based index */
   --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
   --reverse-index0: calc(var(--reverse-index) - 1);
+}
 
+.card,
+/* .card_content_inner, */
+.card_image_wrapper {
   padding-top: calc(var(--index) * 10px);
+}
+
+.card .card_image_wrapper,
+.card .card_content_inner {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card .card_image_wrapper {
+  right: 5%;
+}
+
+.card .card_content_inner {
+  left: 5%;
 }
 
 @keyframes scale {
