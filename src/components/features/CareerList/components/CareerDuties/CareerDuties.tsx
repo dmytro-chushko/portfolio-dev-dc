@@ -19,12 +19,12 @@ const CareerDuties = ({ duties, order }: CareerDutiesProps) => {
           key={id}
           className={clsx(
             'flex items-start gap-1',
-            order % 2 !== 0 && 'flex-row-reverse'
+            order % 2 !== 0 && 'md:flex-row-reverse'
           )}
         >
           <DutyItemIcon className="fill-current w-6 h-6 shrink-0" />
           <Paragraph
-            className={clsx(order % 2 !== 0 ? 'text-right' : 'text-left')}
+            className={clsx(order % 2 !== 0 ? 'md:text-right' : 'md:text-left')}
           >
             {description}
           </Paragraph>

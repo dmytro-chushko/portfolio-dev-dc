@@ -27,7 +27,12 @@ const CareerItem = ({
   tech,
 }: CareerItemProps) => {
   return (
-    <div className={clsx('flex gap-4', order % 2 === 0 && 'flex-row-reverse')}>
+    <div
+      className={clsx(
+        'md:flex gap-4',
+        order % 2 === 0 && 'md:flex-row-reverse'
+      )}
+    >
       <StyledImage
         imgSrc={`/image/career-logo/${logo}`}
         width={200}
@@ -37,7 +42,7 @@ const CareerItem = ({
       <div
         className={clsx(
           'flex flex-col',
-          order % 2 === 0 ? 'items-end' : 'items-start'
+          order % 2 === 0 ? 'md:items-end' : 'md:items-start'
         )}
       >
         <Paragraph
@@ -49,7 +54,7 @@ const CareerItem = ({
         <ul
           className={clsx(
             'flex items-center gap-1 flex-wrap',
-            order % 2 === 0 ? 'justify-end' : 'justify-start'
+            order % 2 === 0 ? 'md:justify-end' : 'md:justify-start'
           )}
         >
           {tech.length > 0 &&
