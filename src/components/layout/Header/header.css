@@ -1,13 +1,13 @@
 #toggle-menu-button + div > span {
   display: block;
-  width: 33px;
+  width: 24px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
 
   transform-origin: 4px 0px;
 
-  background: var(--foreground);
+  background: rgb(var(--background));
   border-radius: 3px;
   transition:
     transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
@@ -30,7 +30,7 @@
 
 #toggle-menu-button:checked + div > span {
   opacity: 1;
-  transform: rotate(45deg) translate(4px, 2px);
+  transform: rotate(45deg) translate(0px, 2px);
 }
 
 #toggle-menu-button:checked + div > span:nth-last-child(2) {
@@ -39,5 +39,5 @@
 }
 
 #toggle-menu-button:checked + div > span:nth-last-child(3) {
-  transform: rotate(-45deg) translate(0, -2px);
+  transform: rotate(-45deg) translate(-4px, -1px);
 }

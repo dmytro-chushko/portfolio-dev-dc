@@ -12,9 +12,9 @@ const Header = ({ children }: HeaderProps) => {
       <input
         type="checkbox"
         id="toggle-menu-button"
-        className="opacity-0 w-6 h-6 fixed top-6 right-6 z-50 cursor-pointer lg:hidden"
+        className="opacity-0 w-10 h-10 fixed top-6 right-6 z-50 cursor-pointer lg:hidden"
       />
-      <div className="w-6 h-6 fixed top-6 right-6 z-40 cursor-pointer lg:hidden">
+      <div className="w-10 h-10 rounded-full bg-foreground p-2 fixed top-6 right-6 z-40 cursor-pointer lg:hidden">
         <span></span>
         <span></span>
         <span></span>

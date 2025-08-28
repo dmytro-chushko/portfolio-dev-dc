@@ -56,8 +56,8 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                   >
                     <div className="h-full w-full bg-gradient-to-r from-foreground/25 to-foreground/25" />
                   </div>
-                  <div>
-                    <div className="absolute card_content_inner p-4 w-1/3 bg-background/70 text-foreground">
+                  <div className="absolute card_content_inner md:p-0 md:flex md:justify-around md:items-center">
+                    <div className="p-4 mb-8 md:mb-0 md:w-1/3 bg-background/70 text-foreground">
                       <Title header="h4" copy={title} />
                       <Paragraph accent>{company}</Paragraph>
                       <Paragraph>{description}</Paragraph>
@@ -75,7 +75,7 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                           ))}
                       </ul>
                     </div>
-                    <div className="absolute w-2/4 card_image_wrapper">
+                    <div className="relative md:w-2/4">
                       <StyledImage
                         imgSrc={desktop}
                         altText={title}

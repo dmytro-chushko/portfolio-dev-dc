@@ -34,16 +34,16 @@ const CareerList = ({ careers }: CareerSliderProps) => {
             <li
               key={id}
               className={clsx(
-                'flex justify-center',
-                i % 2 !== 0 && 'flex-row-reverse'
+                'md:flex md:justify-center',
+                i % 2 !== 0 && 'md:flex-row-reverse'
               )}
             >
               <div
                 className={clsx(
-                  'flex flex-col w-1/2 border-solid border-foreground py-4',
+                  'flex flex-col md:w-1/2 border-solid border-foreground py-4',
                   i % 2 !== 0
-                    ? 'items-start pl-4 border-l-2'
-                    : 'items-end pr-4 border-r-2'
+                    ? 'md:items-start md:pl-4 md:border-l-2'
+                    : 'md:items-end md:pr-4 md:border-r-2'
                 )}
               >
                 <CareerItem
@@ -59,10 +59,10 @@ const CareerList = ({ careers }: CareerSliderProps) => {
               </div>
               <div
                 className={clsx(
-                  'flex flex-col w-1/2 border-solid border-foreground py-4',
+                  'flex flex-col md:w-1/2 border-solid border-foreground py-4',
                   i % 2 !== 0
-                    ? 'items-end pr-4 border-r-2'
-                    : 'items-start pl-4 border-l-2'
+                    ? 'md:items-end md:pr-4 md:border-r-2'
+                    : 'md:items-start md:pl-4 md:border-l-2'
                 )}
               >
                 {duties.length > 0 && (
