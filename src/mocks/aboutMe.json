@@ -1,0 +1,21 @@
+{
+  "header": {
+    "en": "For me, web development isn’t just work—it’s a lifestyle.",
+    "ua": "Веб-розробка — це для мене не просто робота, це стиль життя."
+  },
+  "subHeader": {
+    "en": "But I’m also passionate about balance: life outside the console, creativity beyond syntax, and purpose beyond the pixel",
+    "ua": "Але мені також важливий баланс: життя за межами консолі, креативність поза синтаксисом і сенс за межами пікселя."
+  },
+  "footer": {
+    "en": "",
+    "ua": ""
+  },
+  "hobbies": {
+    "en": "",
+    "ua": ""
+  },
+  "headerImg": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/about-me/header.jpg",
+  "footerImg": "",
+  "hobbiesImgs": ["", "", ""]
+}
