@@ -16,6 +16,6 @@
     "ua": ""
   },
   "headerImg": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/about-me/header.jpg",
-  "footerImg": "",
+  "footerImg": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/about-me/footer.png",
   "hobbiesImgs": ["", "", ""]
 }
