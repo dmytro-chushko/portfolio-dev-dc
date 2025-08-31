@@ -2,7 +2,6 @@ import { LangType } from '@prisma/client';
 import { notFound } from 'next/navigation';
 
 import { AboutMeContent } from '@/components/features/AboutMeContent/AboutMeContent';
-import SectionLayout from '@/components/layout/SectionLayout/SectionLayout';
 import { getAboutMe } from '@/lib/utils/getAboutMe';
 import { getDictionary } from '@/lib/utils/getDictionary';
 
@@ -28,12 +27,9 @@ export default async function AboutMeSlot({ params }: AboutMeProps) {
   } = aboutMeContent;
 
   return (
-    <SectionLayout
-      id="about_me"
-      className="flex flex-col"
-      title={dictionary.nav.links.about_me}
-    >
+    <section id="about_me">
       <AboutMeContent
+        setionHeader={dictionary.nav.links.about_me}
         header={header}
         subHeader={subHeader}
         footer={footer}
@@ -42,6 +38,6 @@ export default async function AboutMeSlot({ params }: AboutMeProps) {
         footerImg={footerImg}
         hobbiesImgs={hobbiesImgs}
       />
-    </SectionLayout>
+    </section>
   );
 }
