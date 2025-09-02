@@ -23,7 +23,9 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    remotePatterns: [{ hostname: 'jrvahgupsifnchwwzflu.supabase.co' }],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'jrvahgupsifnchwwzflu.supabase.co' },
+    ],
   },
   experimental: {
     serverActions: {

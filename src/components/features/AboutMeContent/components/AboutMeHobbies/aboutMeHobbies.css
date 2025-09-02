@@ -1,0 +1,21 @@
+@keyframes move {
+  to {
+    transform: translateX(calc(-100% + 100vw));
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .hobbies-wrapper {
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .hobbies-content {
+    will-change: transform;
+    animation: linear move forwards;
+    animation-timeline: --section-pin-tl;
+    animation-range: contain 0% contain 100%;
+  }
+}

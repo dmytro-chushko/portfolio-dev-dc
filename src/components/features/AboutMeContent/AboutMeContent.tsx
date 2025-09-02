@@ -2,6 +2,7 @@ import Title from '@/components/typography/Title/Title';
 
 import AboutMeFooter from './components/AboutMeFooter';
 import { AboutMeHeader } from './components/AboutMeHeader';
+import AboutMeHobbies from './components/AboutMeHobbies/AboutMeHobbies';
 
 type AboutMeContentProps = {
   setionHeader: string;
@@ -19,10 +20,10 @@ export const AboutMeContent = ({
   header,
   subHeader,
   footer,
-  // hobbies,
+  hobbies,
   headerImg,
   footerImg,
-  // hobbiesImgs,
+  hobbiesImgs,
 }: AboutMeContentProps) => {
   return (
     <>
@@ -36,7 +37,8 @@ export const AboutMeContent = ({
           />
         </div>
       </div>
-      <div className="min-h-screen">
+      <AboutMeHobbies hobbies={hobbies} hobbiesImgs={hobbiesImgs} />
+      <div className="min-h-screen md:flex md:items-center">
         <AboutMeFooter footerTitle={footer} footerImg={footerImg} />
       </div>
     </>
