@@ -17,8 +17,7 @@ export default async function AboutMeFooter({
         className="md:w-1/2"
         imgSrc={footerImg}
         altText="title Dmytro Chushko"
-        width={925}
-        height={648}
+        aboutMeType="FOOTER"
       />
     </div>
   );
