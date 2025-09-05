@@ -2,6 +2,7 @@
 
 ## Tailwind CSS
 
+- Use Tailwind v3.4.17
 - Use Tailwind utility classes
 - Create custom CSS only when necessary
 - Use CSS variables for theme colors
@@ -422,4 +423,3 @@ export function AccessibleComponent() {
 - Implement proper hover and focus states
 - Use proper spacing and typography
 - Follow the established design system
-

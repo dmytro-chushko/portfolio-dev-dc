@@ -25,6 +25,7 @@ body {
   background: rgb(var(--background));
   font-family: var(--font-roboto);
   font-size: 14px;
+  overflow-x: hidden;
 }
 
 h1,

@@ -17,5 +17,45 @@
     animation: linear move forwards;
     animation-timeline: --section-pin-tl;
     animation-range: contain 0% contain 100%;
+    transform-origin: left center;
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
+}
+
+/* Fallback для браузерів без підтримки animation-timeline */
+@supports not (animation-timeline: view()) {
+  .hobbies-content {
+    will-change: transform;
+    transform: translateX(0);
+    transition: transform 0.1s ease-out;
+  }
+}
+
+/* Запобігання зміні розміру при скролі */
+.hobbies-content {
+  contain: layout style paint;
+  transform-style: preserve-3d;
+}
+
+.hobbies-content > div {
+  contain: layout style paint;
+  backface-visibility: hidden;
+}
+
+/* Стилі для заголовка в hobbies секції */
+.hobbies-content .title-container {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.hobbies-content .title-container h3 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  white-space: normal;
+  line-height: 1.2;
 }

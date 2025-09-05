@@ -22,8 +22,7 @@ export const AboutMeHeader = ({
         className="md:w-1/3"
         imgSrc={headerImg}
         altText="title Dmytro Chushko"
-        width={2592}
-        height={3888}
+        aboutMeType="HEADER"
       />
     </div>
   );
