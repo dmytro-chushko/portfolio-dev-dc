@@ -1,6 +1,6 @@
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
-import Button from '@/components/ui/Button/Button';
+import ExtLink from '@/components/ui/ExtLink/ExtLink';
 import StyledImage from '@/components/ui/StyledImage/StyledImage';
 
 type HeroProps = {
@@ -11,17 +11,17 @@ type HeroProps = {
 
 const Hero = ({ heroTitle, heroDescripton, heroPhoto }: HeroProps) => {
   return (
-    <div className="h-screen mx-auto flex flex-col items-center justify-center md:flex-row lg:h-[calc(100vh-88px)] lg:max-w-4xl">
+    <div className="min-h-screen mx-auto flex flex-col items-center justify-center md:flex-row lg:h-[calc(100vh-88px)] lg:max-w-4xl">
       <div className="order-2 grid gap-4 md:order-1">
         <Title header="h1" copy={heroTitle} />
         <Paragraph accent>{heroDescripton}</Paragraph>
-        <div className="flex items-center gap-4">
-          <Button variant="primary" loading>
-            Primary Button
-          </Button>
-          <Button variant="secondary" loading>
-            Secondary Button
-          </Button>
+        <div className="flex items-center gap-4 justify-center md:justify-end">
+          <ExtLink
+            className="text-xl md:text-2xl"
+            href="https://drive.google.com/file/d/10HkALLTwXnQTgKiKkFOZmiabBsx3-_NY/view?usp=sharing"
+          >
+            Download CV
+          </ExtLink>
         </div>
       </div>
       <div className=" order-1 rounded-full overflow-hidden flex-shrink-0 border-4 border-solid border-[--foreground] md:order-2">
