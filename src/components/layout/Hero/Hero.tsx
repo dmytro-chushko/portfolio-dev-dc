@@ -11,7 +11,7 @@ type HeroProps = {
 
 const Hero = ({ heroTitle, heroDescripton, heroPhoto }: HeroProps) => {
   return (
-    <div className="min-h-screen mx-auto flex flex-col items-center justify-center md:flex-row lg:h-[calc(100vh-88px)] lg:max-w-4xl">
+    <div className="container px-4 min-h-screen mx-auto flex flex-col items-center justify-center md:flex-row lg:h-[calc(100vh-88px)] lg:max-w-4xl">
       <div className="order-2 grid gap-4 md:order-1">
         <Title header="h1" copy={heroTitle} />
         <Paragraph accent>{heroDescripton}</Paragraph>

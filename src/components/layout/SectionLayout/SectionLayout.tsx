@@ -17,7 +17,13 @@ const SectionLayout = ({
   className,
 }: SectionLayoutProps) => {
   return (
-    <section id={id} className={clsx('min-h-screen py-[104px]', className)}>
+    <section
+      id={id}
+      className={clsx(
+        'container mx-auto px-4 min-h-screen py-[104px]',
+        className
+      )}
+    >
       <Title className="section-title" header="h2" copy={title} />
       {children}
     </section>
