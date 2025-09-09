@@ -13,7 +13,7 @@ export default function AboutMeHobbies({
 }: AboutMeHobbiesProps) {
   return (
     <div className="h-[500vh] overflow-visible hobbies-wrapper">
-      <div className="h-screen w-screen sticky top-0">
+      <div className="h-screen w-screen sticky top-0 overflow-x-hidden ">
         <div className="h-screen w-[220vmax] hobbies-content flex justify-start items-center py-[50px] px-[10vw]">
           <div className="w-[40vmax] flex-shrink-0 pr-[5vw] title-container">
             <Title header="h3" copy={hobbies} />

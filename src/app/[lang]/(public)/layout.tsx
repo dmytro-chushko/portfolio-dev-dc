@@ -34,7 +34,7 @@ export default async function RootLayout({
         <LangSwitcher currentLang={lang} langs={langs} />
         <Socials />
       </Header>
-      <main className="container mx-auto px-4">
+      <main>
         {hero}
         {career}
         {skills}

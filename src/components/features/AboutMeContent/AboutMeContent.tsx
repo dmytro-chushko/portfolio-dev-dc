@@ -29,7 +29,7 @@ export const AboutMeContent = ({
     <>
       <div className="min-h-screen py-[104px] flex flex-col">
         <Title className="section-title" header="h2" copy={setionHeader} />
-        <div className="flex-grow">
+        <div className="flex-grow container mx-auto px-4">
           <AboutMeHeader
             headerTitle={header}
             headerSubtitle={subHeader}
@@ -38,7 +38,7 @@ export const AboutMeContent = ({
         </div>
       </div>
       <AboutMeHobbies hobbies={hobbies} hobbiesImgs={hobbiesImgs} />
-      <div className="min-h-screen md:flex md:items-center">
+      <div className="container mx-auto px-4 min-h-screen md:flex md:items-center">
         <AboutMeFooter footerTitle={footer} footerImg={footerImg} />
       </div>
     </>
