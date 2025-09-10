@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import ContactModal from '@/components/features/ContactModal/ContactModal';
 import { LangType } from '@/lib/types/LangType';
 
 type HomeProps = {
@@ -14,5 +15,10 @@ export const metadata: Metadata = {
 export default async function Home({ params }: HomeProps) {
   const lang = (await params).lang;
 
-  return <div data-lang={lang} />;
+  return (
+    <>
+      <ContactModal />
+      <div data-lang={lang} />
+    </>
+  );
 }
