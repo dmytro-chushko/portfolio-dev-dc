@@ -52,7 +52,11 @@ const TopNavigation = ({
               label={
                 (linkLabels as UniLinkLabelsType)[link as LinksLabelItemType]
               }
-              href={`${linkPrefix || ''}${link}`}
+              href={
+                link === 'contacts'
+                  ? 'contact-me'
+                  : `${linkPrefix || ''}${link}`
+              }
               scroll={false}
             />
           </li>
