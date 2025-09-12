@@ -12,6 +12,7 @@ type HomeRootLoyoutProps = Readonly<RootLayoutProps> & {
   skills: React.ReactNode;
   projects: React.ReactNode;
   about_me: React.ReactNode;
+  modal: React.ReactNode;
 };
 
 export default async function RootLayout({
@@ -21,6 +22,7 @@ export default async function RootLayout({
   children,
   projects,
   about_me,
+  modal,
   params,
 }: HomeRootLoyoutProps) {
   const lang = (await params).lang;
@@ -35,12 +37,13 @@ export default async function RootLayout({
         <Socials />
       </Header>
       <main>
+        {children}
         {hero}
         {career}
         {skills}
         {projects}
         {about_me}
-        {children}
+        {modal}
       </main>
     </>
   );
