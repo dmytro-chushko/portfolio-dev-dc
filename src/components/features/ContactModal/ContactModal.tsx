@@ -15,7 +15,7 @@ export default function ContactModal() {
     setIsOpen(false);
 
     setTimeout(() => {
-      router.back();
+      router.replace('/');
     }, 500);
   };
 
