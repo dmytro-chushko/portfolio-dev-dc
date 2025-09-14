@@ -15,7 +15,7 @@ export default function ContactModal() {
     setIsOpen(false);
 
     setTimeout(() => {
-      router.replace('/');
+      router.back();
     }, 500);
   };
 
@@ -24,10 +24,8 @@ export default function ContactModal() {
   }, []);
 
   return (
-    <div className="fixed inset-0">
-      <Modal isOpen={isOpen} onClose={handleClose}>
-        <Socials size="xxl" mobileColumn />
-      </Modal>
-    </div>
+    <Modal isOpen={isOpen} onClose={handleClose}>
+      <Socials size="xxl" mobileColumn />
+    </Modal>
   );
 }
