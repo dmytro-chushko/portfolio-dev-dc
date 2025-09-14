@@ -6,7 +6,15 @@ import { useEffect, useRef, useState } from 'react';
 export default function ModalObserver() {
   const router = useRouter();
   const sentinelRef = useRef<HTMLDivElement>(null);
-  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(true);
+
+  useEffect(() => {
+    const modalShown = sessionStorage.getItem('contact-modal-triggered');
+
+    if (!modalShown) {
+      setHasTriggered(false);
+    }
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -15,7 +23,7 @@ export default function ModalObserver() {
 
         if (entry.isIntersecting) {
           setTimeout(() => {
-            setIsIntersecting(true);
+            sessionStorage.setItem('contact-modal-triggered', 'true');
             router.push('/contact-me', { scroll: false });
           }, 2000);
         }
@@ -28,9 +36,9 @@ export default function ModalObserver() {
     }
 
     return () => observer.disconnect();
-  }, [router]);
+  }, [router, hasTriggered]);
 
-  return isIntersecting ? null : (
+  return hasTriggered ? null : (
     <div
       ref={sentinelRef}
       className="h-1 w-full invisible"
