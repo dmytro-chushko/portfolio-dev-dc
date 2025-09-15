@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import './projectList.css';
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
+import ExtLink from '@/components/ui/ExtLink/ExtLink';
 import StyledImage from '@/components/ui/StyledImage/StyledImage';
 import TechIconFactory from '@/components/ui/TechIconFactory/TechIconFactory';
 
@@ -28,6 +29,7 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
             (
               {
                 title,
+                link,
                 background,
                 desktop,
                 mobile,
@@ -58,7 +60,14 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                   </div>
                   <div className="absolute card_content_inner md:p-0 md:flex md:justify-around md:items-center">
                     <div className="p-4 mb-8 md:mb-0 md:w-1/3 bg-background/70 text-foreground">
-                      <Title header="h4" copy={title} />
+                      <ExtLink
+                        className="md:justify-start"
+                        href={link}
+                        openInNewTab
+                        isExternal
+                      >
+                        <Title header="h4" copy={title} />
+                      </ExtLink>
                       <Paragraph accent>{company}</Paragraph>
                       <Paragraph>{description}</Paragraph>
                       <ul

@@ -6,12 +6,15 @@ import {
   isValidElement,
 } from 'react';
 
+type AlignLink = 'start' | 'center' | 'end';
+
 type ExtLinkProps = {
   children: ReactNode;
   className?: string;
   openInNewTab?: boolean;
   isExternal?: boolean;
   truncate?: boolean;
+  alignLink?: AlignLink;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const getTextFromReactNode = (node: ReactNode): string => {
@@ -43,6 +46,7 @@ const ExtLink = ({
   isExternal,
   truncate,
   title,
+  alignLink = 'start',
   rel,
   href,
   target,
@@ -54,6 +58,12 @@ const ExtLink = ({
       ? isExternal
       : isExternalByScheme(effectiveHref);
   const shouldOpenInNewTab = Boolean(openInNewTab || resolvedIsExternal);
+
+  const position = {
+    start: 'md:justify-start',
+    center: 'md:justify-center',
+    end: 'md:justify-end',
+  };
 
   const computedTitle =
     title ?? (truncate ? getTextFromReactNode(children) : undefined);
@@ -88,7 +98,8 @@ const ExtLink = ({
   return (
     <a
       className={clsx(
-        'flex items-baseline cursor-pointer justify-center md:justify-end md:hover:underline md:hover:font-bold md:hover:text-hovered transition',
+        'flex items-baseline cursor-pointer justify-center  md:hover:underline md:hover:font-bold md:hover:text-hovered transition',
+        position[alignLink],
         className
       )}
       href={effectiveHref}
