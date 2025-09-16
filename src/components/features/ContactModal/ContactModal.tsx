@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+import ExtLink from '@/components/ui/ExtLink/ExtLink';
 import Modal from '@/components/ui/Modal/Modal';
 
 import Socials from '../Socials/Socials';
@@ -25,7 +26,16 @@ export default function ContactModal() {
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
-      <Socials size="xxl" mobileColumn />
+      <div className="grid gap-8">
+        <Socials size="xxl" mobileColumn />
+        <ExtLink
+          className="text-xl md:text-3xl"
+          href="https://drive.google.com/file/d/10HkALLTwXnQTgKiKkFOZmiabBsx3-_NY/view?usp=sharing"
+          alignLink="center"
+        >
+          Download CV
+        </ExtLink>
+      </div>
     </Modal>
   );
 }

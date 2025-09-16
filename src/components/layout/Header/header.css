@@ -39,5 +39,5 @@
 }
 
 #toggle-menu-button:checked + div > span:nth-last-child(3) {
-  transform: rotate(-45deg) translate(-4px, -1px);
+  transform: rotate(-45deg) translate(-5px, -1px);
 }
