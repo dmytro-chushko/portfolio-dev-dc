@@ -1,5 +1,12 @@
-import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
+import {
+  CloseButton,
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+} from '@headlessui/react';
 import { ReactNode } from 'react';
+
+import CustomCloseButton from './CustomCloseButton';
 
 type ModalProps = {
   isOpen: boolean;
@@ -9,7 +16,12 @@ type ModalProps = {
 
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
   return (
-    <Dialog open={isOpen} onClose={onClose} className="fixed inset-0 z-50">
+    <Dialog
+      open={isOpen}
+      onClose={onClose}
+      transition
+      className="fixed inset-0 z-50 transition duration-500 ease-out data-[closed]:opacity-0"
+    >
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-background/90 transition duration-500 ease-out data-[closed]:opacity-0"
@@ -22,6 +34,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
           {children}
         </DialogPanel>
       </div>
+      <CloseButton as={CustomCloseButton} />
     </Dialog>
   );
 }

@@ -50,7 +50,7 @@ const socialArray = [
       <DiscordIcon className={clsx('fill - current', SOCIAL_SIZE_MAP[size])} />
     ),
     label: 'discord',
-    link: 'https://discord.gg/6WzYkx9m',
+    link: 'https://discord.gg/7uK6qupkrV',
   },
 ];
 
@@ -71,9 +71,9 @@ const Socials = ({ size = 'sm', mobileColumn = false }: SocialsProps) => {
         <li key={label}>
           <a
             className="text-foreground md:hover:text-hovered transition-colors"
-            key={label}
             href={link}
             aria-label={label}
+            target="_blank"
           >
             {icon(size)}
           </a>
