@@ -33,6 +33,16 @@ const TopNavigation = ({
 }: TopNavigationProps) => {
   const { user } = useUser();
 
+  const handleCloseMenu = () => {
+    const checkbox = document.getElementById(
+      'toggle-menu-button'
+    ) as HTMLInputElement;
+
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+  };
+
   return (
     <nav>
       <ul className="flex flex-col gap-2 lg:flex-row lg:justify-between lg:gap-6">
@@ -43,6 +53,7 @@ const TopNavigation = ({
           <li
             key={link}
             className={clsx(
+              link === 'contacts' && 'hidden',
               PROTECTED_ITEMS.includes(link as LinksLabelItemType) &&
                 !user &&
                 'hidden'
@@ -58,6 +69,7 @@ const TopNavigation = ({
                   : `${linkPrefix || ''}${link}`
               }
               scroll={false}
+              onClick={handleCloseMenu}
             />
           </li>
         ))}

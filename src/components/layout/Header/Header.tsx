@@ -24,7 +24,7 @@ const Header = ({ children }: HeaderProps) => {
         className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-background opacity-0 z-30 transition-opacity duration-500 pointer-events-none lg:bg-transparent lg:sticky lg:opacity-100 lg:pointer-events-auto"
       >
         <div className="flex flex-col gap-6 lg:container lg:flex-row lg:w-full lg:justify-between lg:items-center lg:py-6 lg:px-4">
-          <label htmlFor="toggle-menu-button">{children}</label>
+          {children}
         </div>
       </div>
     </header>
