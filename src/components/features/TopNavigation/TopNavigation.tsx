@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Children, ReactNode } from 'react';
 
 import NavLink from '@/components/ui/NavLink/NavLink';
+import { useBodyScrollLock } from '@/lib/hooks/useBodyScrollLock';
 import { Dictionary } from '@/lib/utils/getDictionary';
 
 type LinkLabelsType =
@@ -42,6 +43,8 @@ const TopNavigation = ({
       checkbox.checked = false;
     }
   };
+
+  useBodyScrollLock('toggle-menu-button');
 
   return (
     <nav>
