@@ -30,7 +30,7 @@
 
 #toggle-menu-button:checked + div > span {
   opacity: 1;
-  transform: rotate(45deg) translate(0px, 2px);
+  transform: rotate(42deg) translate(0px, 2px);
 }
 
 #toggle-menu-button:checked + div > span:nth-last-child(2) {
