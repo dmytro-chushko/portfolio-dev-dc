@@ -29,11 +29,13 @@ const CareerItem = ({
   return (
     <div
       className={clsx(
-        'md:flex gap-4',
-        order % 2 === 0 && 'md:flex-row-reverse'
+        'flex max-lg:flex-col gap-4',
+        order % 2 === 0 && 'lg:flex-row-reverse',
+        order % 2 === 0 ? 'md:items-end' : 'md:items-start'
       )}
     >
       <StyledImage
+        className="flex-shrink-0"
         imgSrc={`/image/career-logo/${logo}`}
         width={200}
         height={200}

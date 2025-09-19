@@ -24,7 +24,7 @@ const Hero = ({ heroTitle, heroDescripton, heroPhoto }: HeroProps) => {
           </ExtLink>
         </div>
       </div>
-      <div className=" order-1 rounded-full overflow-hidden flex-shrink-0 border-4 border-solid border-[--foreground] md:order-2">
+      <div className=" order-1 rounded-full overflow-hidden flex-shrink-0 border-4 border-solid border-[--foreground] md:order-2 max-md:mb-4">
         <StyledImage
           imgSrc={heroPhoto}
           height={408}
