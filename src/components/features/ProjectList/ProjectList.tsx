@@ -43,7 +43,7 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                 key={title}
                 id={`card_${i + 1}`}
                 className={clsx(
-                  'sticky transition-all h-[90vh] top-[90px]',
+                  'sticky transition-all h-[90vh] top-8 lg:top-[90px]',
                   'card'
                 )}
               >
@@ -58,8 +58,8 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                   >
                     <div className="h-full w-full bg-gradient-to-r from-foreground/25 to-foreground/25" />
                   </div>
-                  <div className="absolute card_content_inner md:p-0 md:flex md:justify-around md:items-center">
-                    <div className="p-4 mb-8 md:mb-0 md:w-1/3 bg-background/70 text-foreground">
+                  <div className="absolute card_content_inner sm:p-0 sm:flex sm:justify-around sm:items-center">
+                    <div className="p-4 mb-8 sm:mb-0 sm:w-1/3 bg-background/70 text-foreground">
                       <ExtLink
                         className="md:justify-start"
                         href={link}
@@ -84,7 +84,7 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                           ))}
                       </ul>
                     </div>
-                    <div className="relative md:w-2/4">
+                    <div className="relative sm:w-2/4">
                       <StyledImage
                         imgSrc={desktop}
                         altText={title}

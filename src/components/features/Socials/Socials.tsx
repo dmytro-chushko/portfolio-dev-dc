@@ -7,7 +7,7 @@ import TelegramIcon from '@/components/icons/socials/telegram.svg';
 import WhatsAppIcon from '@/components/icons/socials/whatsup.svg';
 
 const SOCIAL_SIZE_MAP = {
-  sm: 'w-6 h-6',
+  sm: 'w-6 h-6 max-lg:w-10 max-lg:h-10',
   md: 'w-8 h-8',
   lg: 'w-10 h-10',
   xl: 'w-12 h-12',

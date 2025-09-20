@@ -38,7 +38,7 @@ export const AboutMeContent = ({
         </div>
       </div>
       <AboutMeHobbies hobbies={hobbies} hobbiesImgs={hobbiesImgs} />
-      <div className="container mx-auto px-4 min-h-screen md:flex md:items-center">
+      <div className="container mx-auto px-4 min-h-screen flex items-center">
         <AboutMeFooter footerTitle={footer} footerImg={footerImg} />
       </div>
     </>
