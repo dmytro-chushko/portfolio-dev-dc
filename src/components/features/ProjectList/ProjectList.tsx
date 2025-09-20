@@ -43,7 +43,7 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                 key={title}
                 id={`card_${i + 1}`}
                 className={clsx(
-                  'sticky transition-all h-[90vh] top-[90px]',
+                  'sticky transition-all h-[90vh] top-8 lg:top-[90px]',
                   'card'
                 )}
               >

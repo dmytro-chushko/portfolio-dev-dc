@@ -23,7 +23,7 @@ const LangSwitcher = ({
   };
 
   return (
-    <ul className="flex gap-1">
+    <ul className="flex max-lg:gap-4 gap-1">
       {langs.map((lang) => (
         <li key={lang} className="">
           <LangSwitchItem

@@ -48,7 +48,7 @@ const TopNavigation = ({
 
   return (
     <nav>
-      <ul className="flex flex-col gap-2 lg:flex-row lg:justify-between lg:gap-6">
+      <ul className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:gap-6">
         {Children.map(children, (child, i) => (
           <li key={i}>{child}</li>
         ))}

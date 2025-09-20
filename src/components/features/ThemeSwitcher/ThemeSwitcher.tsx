@@ -64,7 +64,7 @@ function ThemeSwitcher({ themes }: ThemeSwitcherProps) {
   }, []);
 
   return (
-    <div className="inline-flex justify-between gap-1">
+    <div className="inline-flex lg:justify-between max-lg:gap-4 gap-1">
       {themeArray.map(({ id, icon }) => (
         <button
           className={clsx(

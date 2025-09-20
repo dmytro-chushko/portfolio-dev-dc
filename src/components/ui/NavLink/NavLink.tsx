@@ -11,7 +11,7 @@ const NavLink = ({ label, href, onClick }: INavLinkProps) => {
   return (
     <Link
       href={href}
-      className="text-xl md:hover:text-hovered transition-colors"
+      className="text-xl max-lg:text-3xl md:hover:text-hovered transition-colors"
       onClick={onClick}
     >
       {label}
