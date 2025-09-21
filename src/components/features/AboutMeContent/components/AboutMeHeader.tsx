@@ -14,7 +14,7 @@ export const AboutMeHeader = ({
 }: AboutMeHeaderProps) => {
   return (
     <div className="h-full flex-grow md:flex md:items-center gap-6">
-      <div>
+      <div className="max-md:mb-8">
         <Paragraph className="text-5xl font-bold mb-6">{headerTitle}</Paragraph>
         <Paragraph className="text-3xl">{headerSubtitle}</Paragraph>
       </div>

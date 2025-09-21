@@ -69,7 +69,7 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                         <Title header="h4" copy={title} />
                       </ExtLink>
                       <Paragraph accent>{company}</Paragraph>
-                      <Paragraph>{description}</Paragraph>
+                      <Paragraph className="mb-2">{description}</Paragraph>
                       <ul
                         className={clsx(
                           'flex items-center gap-1 flex-wrap',

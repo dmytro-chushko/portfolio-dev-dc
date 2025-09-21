@@ -13,10 +13,10 @@
     "tech": [
       "node",
       "react",
-      "remix",
       "typescript",
       "gatsby",
       "shopify",
+      "remixjs",
       "graphql",
       "sass",
       "styledcomponents",
