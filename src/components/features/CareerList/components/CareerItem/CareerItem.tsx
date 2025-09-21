@@ -52,7 +52,9 @@ const CareerItem = ({
         >{`${start}${finish ? ` - ${finish}` : ''}`}</Paragraph>
         <Title header="h2" copy={title} />
         <Paragraph accent>{position}</Paragraph>
-        <Paragraph accent>{format}</Paragraph>
+        <Paragraph accent className="mb-2">
+          {format}
+        </Paragraph>
         <ul
           className={clsx(
             'flex items-center gap-1 flex-wrap',
