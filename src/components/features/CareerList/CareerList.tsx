@@ -13,6 +13,7 @@ type CareerSliderProps = {
     }[];
     id: number;
     title: string;
+    link: string;
     position: string;
     format: string;
     start: string;
@@ -28,7 +29,18 @@ const CareerList = ({ careers }: CareerSliderProps) => {
       {careers.length > 0 &&
         careers.map(
           (
-            { id, title, position, format, start, finish, duties, logo, tech },
+            {
+              id,
+              title,
+              link,
+              position,
+              format,
+              start,
+              finish,
+              duties,
+              logo,
+              tech,
+            },
             i
           ) => (
             <li
@@ -49,6 +61,7 @@ const CareerList = ({ careers }: CareerSliderProps) => {
                 <CareerItem
                   order={i}
                   title={title}
+                  link={link}
                   position={position}
                   format={format}
                   start={start}
