@@ -2,12 +2,14 @@ import clsx from 'clsx';
 
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
+import ExtLink from '@/components/ui/ExtLink/ExtLink';
 import StyledImage from '@/components/ui/StyledImage/StyledImage';
 import TechIconFactory from '@/components/ui/TechIconFactory/TechIconFactory';
 
 type CareerItemProps = {
   order: number;
   title: string;
+  link: string;
   position: string;
   format: string;
   start: string;
@@ -19,6 +21,7 @@ type CareerItemProps = {
 const CareerItem = ({
   order,
   title,
+  link,
   position,
   format,
   start,
@@ -50,7 +53,9 @@ const CareerItem = ({
         <Paragraph
           accent
         >{`${start}${finish ? ` - ${finish}` : ''}`}</Paragraph>
-        <Title header="h2" copy={title} />
+        <ExtLink href={link}>
+          <Title header="h2" copy={title} />
+        </ExtLink>
         <Paragraph accent>{position}</Paragraph>
         <Paragraph accent className="mb-2">
           {format}

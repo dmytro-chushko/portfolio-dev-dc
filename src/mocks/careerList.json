@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "DevIt",
+    "link": "https://devit.group/",
     "position": "Fullstack developer",
     "format": "Full time",
     "start": "June, 2024",
@@ -98,6 +99,7 @@
   {
     "id": 2,
     "title": "HaloLab",
+    "link": "https://www.halo-lab.com/",
     "position": "Fullstack developer",
     "format": "Full time",
     "start": "April, 2023",
@@ -179,7 +181,8 @@
   },
   {
     "id": 3,
-    "title": "CGS",
+    "title": "CGS-team",
+    "link": "https://cgsteam.io/",
     "position": "Fullstack developer",
     "format": "Internship",
     "start": "January, 2023",
@@ -265,6 +268,7 @@
   {
     "id": 4,
     "title": "ZenBit",
+    "link": "https://zenbit.tech/",
     "position": "Fulstack developer",
     "format": "Internship",
     "start": "November, 2022",
