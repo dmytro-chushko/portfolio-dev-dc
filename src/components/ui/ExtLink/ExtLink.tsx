@@ -98,7 +98,7 @@ const ExtLink = ({
   return (
     <a
       className={clsx(
-        'flex items-baseline cursor-pointer justify-center  md:hover:underline md:hover:font-bold md:hover:text-hovered transition',
+        'flex items-baseline cursor-pointer md:hover:underline md:hover:font-bold md:hover:text-hovered transition',
         position[alignLink],
         className
       )}
