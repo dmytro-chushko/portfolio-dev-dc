@@ -40,6 +40,16 @@
     }
   },
   {
+    "techName": "remixjs",
+    "title": "Remix v2.17.0",
+    "category": "primary",
+    "estimate": 4,
+    "description": {
+      "en": "Full-stack React framework emphasizing server rendering.",
+      "ua": "Full-stack React-фреймворк із акцентом на серверний рендеринг."
+    }
+  },
+  {
     "techName": "shopify",
     "title": "Shopify",
     "category": "primary",
@@ -249,16 +259,7 @@
       "ua": "Хмарна платформа для хостингу та деплою сучасних фронтендів."
     }
   },
-  {
-    "techName": "remixjs",
-    "title": "Remix v2.17.0",
-    "category": "primary",
-    "estimate": 4,
-    "description": {
-      "en": "Full-stack React framework emphasizing server rendering.",
-      "ua": "Full-stack React-фреймворк із акцентом на серверний рендеринг."
-    }
-  },
+
   {
     "techName": "amazonaws",
     "title": "Amazon AWS v2025.1",
