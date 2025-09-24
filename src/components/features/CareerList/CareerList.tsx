@@ -52,7 +52,7 @@ const CareerList = ({ careers }: CareerSliderProps) => {
             >
               <div
                 className={clsx(
-                  'flex flex-col md:w-1/2 border-solid border-foreground py-4',
+                  'flex flex-col md:w-1/2 border-solid border-foreground py-8',
                   i % 2 !== 0
                     ? 'md:items-start md:pl-4 md:border-l-2'
                     : 'md:items-end md:pr-4 md:border-r-2'
@@ -72,7 +72,7 @@ const CareerList = ({ careers }: CareerSliderProps) => {
               </div>
               <div
                 className={clsx(
-                  'flex flex-col md:w-1/2 border-solid border-foreground py-4',
+                  'flex flex-col md:w-1/2 border-solid border-foreground py-8',
                   i % 2 !== 0
                     ? 'md:items-end md:pr-4 md:border-r-2'
                     : 'md:items-start md:pl-4 md:border-l-2'

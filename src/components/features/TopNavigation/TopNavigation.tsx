@@ -56,7 +56,7 @@ const TopNavigation = ({
           <li
             key={link}
             className={clsx(
-              link === 'contacts' && 'hidden',
+              link === 'contacts' && 'max-md:hidden',
               PROTECTED_ITEMS.includes(link as LinksLabelItemType) &&
                 !user &&
                 'hidden'
