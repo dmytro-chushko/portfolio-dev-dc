@@ -12,27 +12,29 @@
 }
 
 @supports (animation-timeline: view()) {
-  .hobbies-content {
-    will-change: transform;
-    animation: linear move forwards;
-    animation-timeline: --section-pin-tl;
-    animation-range: contain 0% contain 100%;
-    transform-origin: left center;
-    backface-visibility: hidden;
-    perspective: 1000px;
+  @media screen and (min-width: 768px) {
+    .hobbies-content {
+      will-change: transform;
+      animation: linear move forwards;
+      animation-timeline: --section-pin-tl;
+      animation-range: contain 0% contain 100%;
+      transform-origin: left center;
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
   }
 }
 
-/* Fallback для браузерів без підтримки animation-timeline */
 @supports not (animation-timeline: view()) {
-  .hobbies-content {
-    will-change: transform;
-    transform: translateX(0);
-    transition: transform 0.1s ease-out;
+  @media screen and (min-width: 768px) {
+    .hobbies-content {
+      will-change: transform;
+      transform: translateX(0);
+      transition: transform 0.1s ease-out;
+    }
   }
 }
 
-/* Запобігання зміні розміру при скролі */
 .hobbies-content {
   contain: layout style paint;
   transform-style: preserve-3d;
@@ -43,7 +45,6 @@
   backface-visibility: hidden;
 }
 
-/* Стилі для заголовка в hobbies секції */
 .hobbies-content .title-container {
   word-wrap: break-word;
   overflow-wrap: break-word;
