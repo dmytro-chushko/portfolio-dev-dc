@@ -11,11 +11,11 @@ type HeroProps = {
 
 const Hero = ({ heroTitle, heroDescripton, heroPhoto }: HeroProps) => {
   return (
-    <div className="container px-4 min-h-screen mx-auto flex flex-col items-center justify-center md:flex-row lg:h-[calc(100vh-88px)] lg:max-w-4xl">
-      <div className="order-2 grid gap-4 md:order-1">
+    <div className="container px-4 min-h-screen mx-auto flex flex-col items-center justify-center lg:flex-row lg:h-[calc(100vh-88px)] lg:max-w-4xl">
+      <div className="order-2 grid gap-4 lg:order-1">
         <Title header="h1" copy={heroTitle} />
         <Paragraph accent>{heroDescripton}</Paragraph>
-        <div className="flex items-center gap-4 justify-center md:justify-end">
+        <div className="flex items-center gap-4 justify-center lg:justify-end">
           <ExtLink
             className="text-xl md:text-2xl"
             href="https://drive.google.com/file/d/10HkALLTwXnQTgKiKkFOZmiabBsx3-_NY/view?usp=sharing"
@@ -24,7 +24,7 @@ const Hero = ({ heroTitle, heroDescripton, heroPhoto }: HeroProps) => {
           </ExtLink>
         </div>
       </div>
-      <div className=" order-1 rounded-full overflow-hidden flex-shrink-0 border-4 border-solid border-[--foreground] md:order-2 max-md:mb-4">
+      <div className=" order-1 rounded-full overflow-hidden flex-shrink-0 border-4 border-solid border-[--foreground] lg:order-2 max-lg:mb-4">
         <StyledImage
           imgSrc={heroPhoto}
           height={408}
