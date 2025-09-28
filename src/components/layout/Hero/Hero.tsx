@@ -13,7 +13,7 @@ const Hero = ({ heroTitle, heroDescripton, heroPhoto }: HeroProps) => {
   return (
     <div className="container px-4 min-h-screen mx-auto flex flex-col items-center justify-center lg:flex-row lg:h-[calc(100vh-88px)] lg:max-w-4xl">
       <div className="order-2 grid gap-4 lg:order-1">
-        <Title header="h1" copy={heroTitle} />
+        <Title className="max-lg:text-center" header="h1" copy={heroTitle} />
         <Paragraph accent>{heroDescripton}</Paragraph>
         <div className="flex items-center gap-4 justify-center lg:justify-end">
           <ExtLink
