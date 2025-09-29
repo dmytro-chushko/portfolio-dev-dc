@@ -23,7 +23,7 @@ const SkillList = ({ skills }: SkillListProps) => {
             className="flex items-center gap-2 sm:w-1/2 md:w-1/3 lg:w-1/4"
           >
             <TechIconFactory techName={techName} size={64} />
-            <div>
+            <div className="sm:pr-2">
               <Paragraph accent>{title}</Paragraph>
               <Paragraph>{description}</Paragraph>
             </div>
