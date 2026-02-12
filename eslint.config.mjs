@@ -11,6 +11,9 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    ignores: ['.next/**', 'node_modules/**', 'out/**', '.storybook/**'],
+  },
   ...compat.config({
     extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
     plugins: ['import'],

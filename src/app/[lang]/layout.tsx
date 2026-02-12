@@ -3,11 +3,12 @@ import '@/styles/globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 
 import CustomToaster from '@/components/features/CustomToaster/CustomToaster';
+import { LangType } from '@/lib/types/LangType';
 import { RootLayoutProps } from '@/lib/types/RootLayoutType';
 import { roboto } from '@/styles/fonts';
 
 const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
-  const lang = (await params).lang;
+  const lang = (await params).lang as LangType;
 
   return (
     <html lang={lang || 'en'} className="scroll-smooth">

@@ -3,6 +3,7 @@ import Socials from '@/components/features/Socials/Socials';
 import ThemeSwitcher from '@/components/features/ThemeSwitcher/ThemeSwitcher';
 import TopNavigation from '@/components/features/TopNavigation/TopNavigation';
 import Header from '@/components/layout/Header/Header';
+import { LangType } from '@/lib/types/LangType';
 import { RootLayoutProps } from '@/lib/types/RootLayoutType';
 import { getDictionary, langs } from '@/lib/utils/getDictionary';
 
@@ -25,7 +26,7 @@ export default async function RootLayout({
   modal,
   params,
 }: HomeRootLoyoutProps) {
-  const lang = (await params).lang;
+  const lang = (await params).lang as LangType;
   const dict = await getDictionary(lang);
 
   return (

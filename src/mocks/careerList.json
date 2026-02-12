@@ -29,69 +29,53 @@
       "en": [
         {
           "id": 1,
-          "description": "Developed and maintained user interface components and web pages based on design specifications."
+          "description": "Designing and implementing scalable FullStack architectures using Next.js 14+ and NestJS, following modular and atomic design principles."
         },
         {
           "id": 2,
-          "description": "Integrated third-party services and APIs, including Shopify Storefront API, Contentful, and internal systems."
+          "description": "Developing robust RESTful APIs with domain-driven service layers, implementing complex business logic, and managing data with Prisma ORM."
         },
         {
           "id": 3,
-          "description": "Built reusable UI sections and implemented interactive features such as product calculators and search filters."
+          "description": "Implementing advanced authentication and authorization systems (Auth0, Clerk, RBAC) for multi-tenant environments with granular permissions."
         },
         {
           "id": 4,
-          "description": "Added support for multiple currencies and alternative payment providers."
+          "description": "Integrating headless solutions like Shopify and Contentful into static and dynamic web applications."
         },
         {
           "id": 5,
-          "description": "Refactored codebase and styles to improve structure, consistency, and performance using tools like Material UI."
+          "description": "Managing Serverless functions (Netlify/Vercel), handling heavy file uploads (S3 Multipart), and setting up CI/CD pipelines with GitHub Actions."
         },
         {
           "id": 6,
-          "description": "Fixed bugs, optimized functionality, and ensured production readiness."
-        },
-        {
-          "id": 7,
-          "description": "Worked closely with SEO and design teams to implement improvements in performance, content, and accessibility."
-        },
-        {
-          "id": 8,
-          "description": "Maintained and updated the codebase, providing long-term support for live projects."
+          "description": "Developing custom Shopify applications using the Remix framework, integrating with the Shopify Admin API, and implementing a webhook-based system for real-time data synchronization."
         }
       ],
       "ua": [
         {
           "id": 1,
-          "description": "Розробляв і підтримував компоненти інтерфейсу та вебсторінки відповідно до дизайн-специфікацій."
+          "description": "Проектування та впровадження масштабованих FullStack-архітектур з використанням Next.js 14+ та NestJS, дотримуючись принципів модульного та атомарного дизайну."
         },
         {
           "id": 2,
-          "description": "Інтегрував сторонні сервіси та API, зокрема Shopify Storefront API, Contentful та внутрішні системи."
+          "description": "Розробка надійних RESTful API із сервісними шарами на основі доменно-орієнтованого підходу (Domain-Driven Design), реалізація складної бізнес-логіки та керування даними за допомогою Prisma ORM."
         },
         {
           "id": 3,
-          "description": "Створював багаторазові UI-секції та реалізовував інтерактивні функції, як-от калькулятори продуктів і фільтри пошуку."
+          "description": "Впровадження передових систем автентифікації та авторизації (Auth0, Clerk, RBAC) для мульти-тенентних середовищ із гранулярним керуванням правами доступу."
         },
         {
           "id": 4,
-          "description": "Додав підтримку декількох валют і альтернативних платіжних провайдерів."
+          "description": "Інтеграція Headless-рішень, таких як Shopify та Contentful, у статичні та динамічні веб-додатки."
         },
         {
           "id": 5,
-          "description": "Рефакторив кодову базу й стилі для покращення структури, узгодженості та продуктивності з використанням Material UI."
+          "description": "Управління Serverless-функціями (Netlify/Vercel), реалізація завантаження великих файлів (S3 Multipart) та налаштування CI/CD процесів через GitHub Actions."
         },
         {
           "id": 6,
-          "description": "Виправляв баги, оптимізував функціональність і забезпечував готовність продукту до продакшену."
-        },
-        {
-          "id": 7,
-          "description": "Співпрацював із командами SEO та дизайну для впровадження покращень у продуктивність, контент і доступність."
-        },
-        {
-          "id": 8,
-          "description": "Підтримував і оновлював кодову базу, забезпечуючи довготривалу підтримку активних проєктів."
+          "description": "Розробка спеціалізованих Shopify-додатків на базі фреймворку Remix, інтеграція з Shopify Admin API та налаштування системи вебхуків для синхронізації даних у реальному часі."
         }
       ]
     }
