@@ -1,6 +1,7 @@
 import LangSwitcher from '@/components/features/LangSwitcher/LangSwitcher';
 import ThemeSwitcher from '@/components/features/ThemeSwitcher/ThemeSwitcher';
 import Header from '@/components/layout/Header/Header';
+import { LangType } from '@/lib/types/LangType';
 import { RootLayoutProps } from '@/lib/types/RootLayoutType';
 import { getDictionary, langs } from '@/lib/utils/getDictionary';
 
@@ -13,7 +14,7 @@ export default async function RootLayout({
   children,
   params,
 }: Readonly<RootLayoutProps>) {
-  const lang = (await params).lang;
+  const lang = (await params).lang as LangType;
   const dict = await getDictionary(lang);
 
   return (
