@@ -104,61 +104,53 @@
       "en": [
         {
           "id": 1,
-          "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
+          "description": "Contributed to a comprehensive management ecosystem for swim teams, including a web-based Manager app for coaches, mobile/web Workouts apps, and a shared API with complex business logic."
         },
         {
           "id": 2,
-          "description": "Created reusable UI components consistent with the updated design system."
+          "description": "Executed a complete overhaul of the Manager interface, developing 55+ styled-components and implementing a unified Design System based on tokens (colors, typography, spacing, and animations)."
         },
         {
           "id": 3,
-          "description": "Developed advanced filtering and search functionality for improved service discoverability."
+          "description": "Reconstructed the Messaging module from scratch, introducing advanced recipient selection with complex filtering (USA Swimming, groups, tags) and custom React hooks (useFilterSubCategories, useDebounceValue)."
         },
         {
           "id": 4,
-          "description": "Refactored and enhanced the user communication system to increase reliability and usability."
+          "description": "Optimized the application Layout and Navigation (NavSideBar, DropDowns, SubMenuTabs), ensuring full mobile responsiveness and a seamless user experience."
         },
         {
           "id": 5,
-          "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
+          "description": "Scaled and maintained the shared Meteor API, developing methods and publications for core business modules: payments, rosters, registrations, seasonal planning, and reporting."
         },
         {
           "id": 6,
-          "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
-        },
-        {
-          "id": 7,
-          "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
+          "description": "Implemented robust server-side access control and data validation, while maintaining high code quality standards through ESLint and Prettier."
         }
       ],
       "ua": [
         {
           "id": 1,
-          "description": "Очолив повний редизайн платформи, оновивши користувацький інтерфейс відповідно до нових дизайн-специфікацій та покращивши загальний користувацький досвід."
+          "description": "Здійснював внесок у розробку комплексної екосистеми для управління плавальними командами, що включає вебдодаток для тренерів, мобільні та вебдодатки, а також спільний API зі складною бізнес-логікою."
         },
         {
           "id": 2,
-          "description": "Створював багаторазові UI-компоненти відповідно до оновленої дизайн-системи."
+          "description": "Виконав повне оновлення інтерфейсу додатка, розробивши 150+ styled-components та впровадивши єдину дизайн-систему на основі токенів (кольори, типографіка, відступи та анімації)."
         },
         {
           "id": 3,
-          "description": "Розробив розширену систему фільтрації та пошуку для покращення доступності сервісів."
+          "description": "З нуля реконструював модуль Messaging, впровадивши просунутий вибір одержувачів зі складною фільтрацією"
         },
         {
           "id": 4,
-          "description": "Рефакторив та покращив систему користувацьких повідомлень для підвищення стабільності та зручності у використанні."
+          "description": "Оптимізував структуру та навігацію додатка, забезпечивши повну адаптивність для мобільних пристроїв та зручний UX."
         },
         {
           "id": 5,
-          "description": "Оптимізував функціональність розкладу та сповіщень, реалізувавши інтеграцію з календарем і логіку нагадувань."
+          "description": "Масштабував та підтримував спільний Meteor API, розробляючи методи та публікації для ключових бізнес-модулів: платежі, ростери, реєстрації, сезонне планування та звітність."
         },
         {
           "id": 6,
-          "description": "Розробив та впровадив рішення для глобального управління станом додатку з ефективною передачею даних між компонентами."
-        },
-        {
-          "id": 7,
-          "description": "Тісно співпрацював із командами продакт-менеджменту, дизайну та QA для створення якісного функціоналу, орієнтованого на користувача."
+          "description": "Впровадив надійну перевірку прав доступу на стороні сервера та валідацію даних, підтримуючи високі стандарти якості коду за допомогою ESLint та Prettier."
         }
       ]
     }
