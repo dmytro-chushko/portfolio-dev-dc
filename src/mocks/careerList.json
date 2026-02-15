@@ -104,53 +104,57 @@
       "en": [
         {
           "id": 1,
-          "description": "Contributed to a comprehensive management ecosystem for swim teams, including a web-based Manager app for coaches, mobile/web Workouts apps, and a shared API with complex business logic."
+          "description": "Contributed to the development of a large-scale web platform for swim team management, including a web-based Manager application and shared backend API with complex business logic."
         },
         {
           "id": 2,
-          "description": "Executed a complete overhaul of the Manager interface, developing 55+ styled-components and implementing a unified Design System based on tokens (colors, typography, spacing, and animations)."
+          "description": "Led a full UI refactor of the Manager application using React and TypeScript, developing 150+ reusable components with styled-components and implementing a scalable Design System based on design tokens (colors, typography, spacing, animations)"
         },
         {
           "id": 3,
-          "description": "Reconstructed the Messaging module from scratch, introducing advanced recipient selection with complex filtering (USA Swimming, groups, tags) and custom React hooks (useFilterSubCategories, useDebounceValue)."
+          "description": "Rebuilt the Messaging module from scratch, implementing advanced recipient filtering logic and developing custom React hooks (e.g., debouncing and dynamic filtering)."
         },
         {
           "id": 4,
-          "description": "Optimized the application Layout and Navigation (NavSideBar, DropDowns, SubMenuTabs), ensuring full mobile responsiveness and a seamless user experience."
+          "description": "Improved application architecture and navigation structure (sidebars, dropdowns, tab navigation), ensuring responsive design and optimized user experience across devices."
         },
         {
           "id": 5,
-          "description": "Scaled and maintained the shared Meteor API, developing methods and publications for core business modules: payments, rosters, registrations, seasonal planning, and reporting."
+          "description": "Developed and maintained server-side logic using Node.js, implementing API endpoints, business rules, and data validation for core modules such as payments, registrations, rosters, and reporting."
         },
         {
           "id": 6,
-          "description": "Implemented robust server-side access control and data validation, while maintaining high code quality standards through ESLint and Prettier."
+          "description": "Implemented secure authentication and role-based access control, ensuring proper data protection and system integrity."
+        },
+        {
+          "id": 7,
+          "description": "Maintained code quality standards using ESLint, Prettier, and Git-based workflows."
         }
       ],
       "ua": [
         {
           "id": 1,
-          "description": "Здійснював внесок у розробку комплексної екосистеми для управління плавальними командами, що включає вебдодаток для тренерів, мобільні та вебдодатки, а також спільний API зі складною бізнес-логікою."
+          "description": "Брав участь у розробці масштабної веб-платформи для управління спортивними командами, включаючи веб-додаток для менеджерів та спільний backend API зі складною бізнес-логікою."
         },
         {
           "id": 2,
-          "description": "Виконав повне оновлення інтерфейсу додатка, розробивши 150+ styled-components та впровадивши єдину дизайн-систему на основі токенів (кольори, типографіка, відступи та анімації)."
+          "description": "Провів повний рефакторинг інтерфейсу Manager-додатку з використанням React та TypeScript, розробивши понад 150 перевикористовуваних компонентів та впровадивши єдину Design System на основі дизайн-токенів (кольори, типографіка, відступи, анімації)."
         },
         {
           "id": 3,
-          "description": "З нуля реконструював модуль Messaging, впровадивши просунутий вибір одержувачів зі складною фільтрацією"
+          "description": "Повністю перебудував модуль обміну повідомленнями, реалізував складну логіку фільтрації отримувачів та створив кастомні React-хуки (debounce, динамічна фільтрація даних)."
         },
         {
           "id": 4,
-          "description": "Оптимізував структуру та навігацію додатка, забезпечивши повну адаптивність для мобільних пристроїв та зручний UX."
+          "description": "Оптимізував архітектуру застосунку та навігацію (sidebar, dropdown-меню, вкладки), забезпечивши повну адаптивність для мобільних пристроїв та покращений користувацький досвід."
         },
         {
           "id": 5,
-          "description": "Масштабував та підтримував спільний Meteor API, розробляючи методи та публікації для ключових бізнес-модулів: платежі, ростери, реєстрації, сезонне планування та звітність."
+          "description": "Розробляв та підтримував серверну частину на Node.js, реалізовуючи API-ендпоїнти, бізнес-правила та валідацію даних для ключових модулів: платежі, реєстрації, списки учасників, звітність."
         },
         {
-          "id": 6,
-          "description": "Впровадив надійну перевірку прав доступу на стороні сервера та валідацію даних, підтримуючи високі стандарти якості коду за допомогою ESLint та Prettier."
+          "id": 7,
+          "description": "Дотримувався стандартів якості коду з використанням ESLint, Prettier та Git-workflow."
         }
       ]
     }
