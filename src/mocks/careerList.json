@@ -186,61 +186,45 @@
       "en": [
         {
           "id": 1,
-          "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
+          "description": "Developed and maintained a full-featured web platform with a public website (Next.js, React, TypeScript) and secure admin panel with full CRUD capabilities."
         },
         {
           "id": 2,
-          "description": "Created reusable UI components consistent with the updated design system."
+          "description": "Designed and implemented REST APIs using Node.js (Express) + TypeScript, working with MongoDB, JWT authentication, and AWS S3 integration."
         },
         {
           "id": 3,
-          "description": "Developed advanced filtering and search functionality for improved service discoverability."
+          "description": "Built core business modules including blog (SEO & scheduled publishing), careers (job management & applications), and portfolio (cases, testimonials, filtering)."
         },
         {
           "id": 4,
-          "description": "Refactored and enhanced the user communication system to increase reliability and usability."
+          "description": "Integrated real-time customer support chat and developed a dedicated admin interface for support operators."
         },
         {
           "id": 5,
-          "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
-        },
-        {
-          "id": 6,
-          "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
-        },
-        {
-          "id": 7,
-          "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
+          "description": "Established a unified client–server architecture (custom HttpService + JWT, React Query) ensuring secure data validation and access control."
         }
       ],
       "ua": [
         {
           "id": 1,
-          "description": "Очолив повний редизайн платформи, оновивши користувацький інтерфейс відповідно до нових дизайн-специфікацій та покращивши загальний користувацький досвід."
+          "description": "Розробка та підтримка веб-платформи з публічним сайтом (Next.js, React, TypeScript) та захищеною адмін-панеллю з повним CRUD-функціоналом."
         },
         {
           "id": 2,
-          "description": "Створював багаторазові UI-компоненти відповідно до оновленої дизайн-системи."
+          "description": "Проєктування та реалізація REST API на Node.js (Express) + TypeScript, робота з MongoDB, JWT, інтеграція AWS S3."
         },
         {
           "id": 3,
-          "description": "Розробив розширену систему фільтрації та пошуку для покращення доступності сервісів."
+          "description": "Розробка бізнес-модулів: блог (SEO, планування публікацій), вакансії (керування та обробка заявок), портфоліо (кейси, відгуки, фільтрація)."
         },
         {
           "id": 4,
-          "description": "Рефакторив та покращив систему користувацьких повідомлень для підвищення стабільності та зручності у використанні."
+          "description": "Інтеграція real-time чату підтримки та створення окремого адмін-інтерфейсу для операторів."
         },
         {
           "id": 5,
-          "description": "Оптимізував функціональність розкладу та сповіщень, реалізувавши інтеграцію з календарем і логіку нагадувань."
-        },
-        {
-          "id": 6,
-          "description": "Розробив та впровадив рішення для глобального управління станом додатку з ефективною передачею даних між компонентами."
-        },
-        {
-          "id": 7,
-          "description": "Тісно співпрацював із командами продакт-менеджменту, дизайну та QA для створення якісного функціоналу, орієнтованого на користувача."
+          "description": "Побудова єдиної клієнт-серверної архітектури (HttpService + JWT, React Query), забезпечення валідації даних та контролю доступу."
         }
       ]
     }
