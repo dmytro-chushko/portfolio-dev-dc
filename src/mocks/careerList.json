@@ -251,61 +251,53 @@
       "en": [
         {
           "id": 1,
-          "description": "Led a full platform redesign, modernizing the user interface according to new design specifications and improving overall user experience."
+          "description": "Developed a fullstack freelance platform using NestJS, MySQL, TypeORM and React 18 (Nx) with Employer and Freelancer roles."
         },
         {
           "id": 2,
-          "description": "Created reusable UI components consistent with the updated design system."
+          "description": "Implemented authentication (JWT, Google OAuth), email verification, password recovery, and role-based access control."
         },
         {
           "id": 3,
-          "description": "Developed advanced filtering and search functionality for improved service discoverability."
+          "description": "Built real-time chat and notification system using Socket.IO."
         },
         {
           "id": 4,
-          "description": "Refactored and enhanced the user communication system to increase reliability and usability."
+          "description": "Configured Docker-based local setup and managed deployment (PM2 for backend, AWS S3 for frontend)."
         },
         {
           "id": 5,
-          "description": "Improved the scheduling and notification features, including calendar integration and alert logic."
+          "description": "Implemented i18n (i18next) and created reusable UI component library (Nx libs)."
         },
         {
           "id": 6,
-          "description": "Designed and implemented a global state management solution to handle shared data across components efficiently."
-        },
-        {
-          "id": 7,
-          "description": "Collaborated closely with product, design, and QA teams to deliver high-quality, user-focused features."
+          "description": "Designed and developed core business modules, file uploads, email service, DTO validation, and custom decorators."
         }
       ],
       "ua": [
         {
           "id": 1,
-          "description": "Очолив повний редизайн платформи, оновивши користувацький інтерфейс відповідно до нових дизайн-специфікацій та покращивши загальний користувацький досвід."
+          "description": "Розробив fullstack-платформу для фрілансу з використанням NestJS, MySQL, TypeORM та React 18 (Nx) з ролями Employer і Freelancer."
         },
         {
           "id": 2,
-          "description": "Створював багаторазові UI-компоненти відповідно до оновленої дизайн-системи."
+          "description": "Реалізував автентифікацію (JWT, Google OAuth), підтвердження email, відновлення пароля та рольову модель доступу.."
         },
         {
           "id": 3,
-          "description": "Розробив розширену систему фільтрації та пошуку для покращення доступності сервісів."
+          "description": "Створив систему чату та сповіщень у реальному часі на базі Socket.IO."
         },
         {
           "id": 4,
-          "description": "Рефакторив та покращив систему користувацьких повідомлень для підвищення стабільності та зручності у використанні."
+          "description": "Налаштував локальне середовище з Docker і керував деплоєм (PM2 для бекенду, AWS S3 для фронтенду)."
         },
         {
           "id": 5,
-          "description": "Оптимізував функціональність розкладу та сповіщень, реалізувавши інтеграцію з календарем і логіку нагадувань."
+          "description": "Реалізував інтернаціоналізацію (i18next) та створив бібліотеку перевикористовуваних UI-компонентів (Nx libs)."
         },
         {
           "id": 6,
-          "description": "Розробив та впровадив рішення для глобального управління станом додатку з ефективною передачею даних між компонентами."
-        },
-        {
-          "id": 7,
-          "description": "Тісно співпрацював із командами продакт-менеджменту, дизайну та QA для створення якісного функціоналу, орієнтованого на користувача."
+          "description": "Спроєктував і розробив ключові бізнес-модулі, завантаження файлів, email-сервіс, DTO-валідацію та кастомні декоратори."
         }
       ]
     }
