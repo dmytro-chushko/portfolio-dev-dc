@@ -54,6 +54,14 @@
       "en": "Training Platform for Swim Coaches & Teams.",
       "ua": "Тренувальна платформа для тренерів з плавання та команд."
     },
+    "architecture": {
+      "frontend": "Gatsby (React, static rendering)",
+      "dataSources": ["Contentful", "Shopify"],
+      "backend": "Netlify Functions (serverless)",
+      "search": "Algolia",
+      "seo": ["sitemap", "robots", "schema.org"],
+      "hosting": "Netlify"
+    },
     "company": "HaloLab",
     "link": "https://team.commitswimming.com/sign-in",
     "background": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/bg-commitswimming.png",
