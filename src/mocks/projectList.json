@@ -5,6 +5,14 @@
       "en": "Headless E-commerce Website (Gatsby + Shopify + Contentful).",
       "ua": "Безголовий E-commerce сайт (Gatsby + Shopify + Contentful)."
     },
+    "architecture": {
+      "frontend": "Gatsby (React, static rendering)",
+      "dataSources": ["Contentful", "Shopify"],
+      "backend": "Netlify Functions (serverless)",
+      "search": "Algolia",
+      "seo": ["sitemap", "robots", "schema.org"],
+      "hosting": "Netlify"
+    },
     "company": "DevIt",
     "link": "https://www.heliguy.com/",
     "background": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/bg-heliguy.png",
@@ -30,6 +38,13 @@
     "description": {
       "en": "AI-Powered SaaS for Educators.",
       "ua": "SaaS для освітян на основі штучного інтелекту."
+    },
+    "architecture": {
+      "frontend": "Next.js 14 (App Router), React 18, TypeScript, MUI, TipTap",
+      "dataSources": ["PostgreSQL", "Auth0", "Vercel Blob"],
+      "backend": ["Next.js API Routes", "Prisma", "Node.js"],
+      "seo": ["Next.js Metadata API"],
+      "hosting": "Vercel"
     },
     "company": "DevIt",
     "link": "https://www.gokaiba.com/",
