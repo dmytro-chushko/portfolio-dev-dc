@@ -70,12 +70,16 @@
       "ua": "Тренувальна платформа для тренерів з плавання та команд."
     },
     "architecture": {
-      "frontend": "Gatsby (React, static rendering)",
-      "dataSources": ["Contentful", "Shopify"],
-      "backend": "Netlify Functions (serverless)",
-      "search": "Algolia",
-      "seo": ["sitemap", "robots", "schema.org"],
-      "hosting": "Netlify"
+      "frontend": "React, Material-UI, Ant Design",
+      "dataSources": [
+        "MongoDB Atlas",
+        "Stripe",
+        "USA Swimming API",
+        "Mailchimp"
+      ],
+      "backend": ["Meteor (Node.js)", "Stripe API"],
+      "seo": ["React Helmet"],
+      "hosting": "Meteor Galaxy, Netlify, App Store / Google Play"
     },
     "company": "HaloLab",
     "link": "https://team.commitswimming.com/sign-in",
