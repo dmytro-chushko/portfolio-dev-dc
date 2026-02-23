@@ -1,9 +1,6 @@
 {
-  "theme": {
-    "light": "Light",
-    "dark": "Dark",
-    "system": "System"
-  },
+  "projects": { "architecture": "Architecture" },
+  "theme": { "light": "Light", "dark": "Dark", "system": "System" },
   "nav": {
     "links": {
       "career": "Career",
@@ -13,24 +10,15 @@
       "contacts": "Contact Me",
       "dc-dashboard": "Dashboard"
     },
-    "dashboard": {
-      "live": "Go to Live",
-      "hero": "Hero"
-    }
+    "dashboard": { "live": "Go to Live", "hero": "Hero" }
   },
   "hero": {
     "title": "Dmytro Chushko",
     "description": "I am an accomplished Full Stack developer with about 2 years of commercial experience focused on ReactJS and NodeJS application development. Currently, I am actively seeking opportunities to progress my career as a Full Stack developer or in related fields, ready to engage and collaborate at the earliest chance. I have a proven capacity to rapidly acquire and apply new technologies. I excel in team settings and thrive in dynamic work environments. Additionally, I bring not only technical proficiency but also enthusiasm, creativity, and a positive outlook to the workplace."
   },
-  "slkills": {
-    "primary": "Primary",
-    "secondary": "Secondary"
-  },
+  "slkills": { "primary": "Primary", "secondary": "Secondary" },
   "dashboard": {
-    "hero": {
-      "page_title": "Hero Settings",
-      "add_hero": "Add new version"
-    },
+    "hero": { "page_title": "Hero Settings", "add_hero": "Add new version" },
     "hero_item": {
       "version_name": "Version Name",
       "full_name": "Full Name",
@@ -44,18 +32,12 @@
       "removeHero": "Remove"
     }
   },
-  "form": {
-    "save_submit": "Save",
-    "cancel": "Cancel"
-  },
+  "form": { "save_submit": "Save", "cancel": "Cancel" },
   "form_field": {
     "hero_photo": "Photo image",
     "hero_name": "Name",
     "hero_description": "Description",
-    "translation": {
-      "array": "Translaition varriant",
-      "lang": "Language"
-    }
+    "translation": { "array": "Translaition varriant", "lang": "Language" }
   },
   "form_validation_message": {
     "required": "{fieldName} is required",

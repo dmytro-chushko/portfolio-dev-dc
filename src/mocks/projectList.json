@@ -9,7 +9,6 @@
       "frontend": "Gatsby (React, static rendering)",
       "dataSources": ["Contentful", "Shopify"],
       "backend": "Netlify Functions (serverless)",
-      "search": "Algolia",
       "seo": ["sitemap", "robots", "schema.org"],
       "hosting": "Netlify"
     },
