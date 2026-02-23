@@ -1,11 +1,13 @@
 import clsx from 'clsx';
 
 import './projectList.css';
+import ProjectArchitecture from '@/components/features/ProjectList/ProjectArchitecture';
 import Paragraph from '@/components/typography/Paragraph/Paragraph';
 import Title from '@/components/typography/Title/Title';
 import ExtLink from '@/components/ui/ExtLink/ExtLink';
 import StyledImage from '@/components/ui/StyledImage/StyledImage';
 import TechIconFactory from '@/components/ui/TechIconFactory/TechIconFactory';
+import type { ArchitectureType } from '@/lib/types/ArchitectureType';
 
 type ProjectListProps = {
   projectList: {
@@ -17,10 +19,12 @@ type ProjectListProps = {
     desktop: string;
     mobile: string;
     tech: string[];
+    architecture?: ArchitectureType;
   }[];
+  architectureLabel: string;
 };
 
-const ProjectList = ({ projectList }: ProjectListProps) => {
+const ProjectList = ({ projectList, architectureLabel }: ProjectListProps) => {
   return (
     <div>
       <ul className="w-11/12 mx-auto grid gap-4 cards">
@@ -36,6 +40,7 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                 company,
                 description,
                 tech,
+                architecture,
               },
               i
             ) => (
@@ -83,6 +88,12 @@ const ProjectList = ({ projectList }: ProjectListProps) => {
                             </li>
                           ))}
                       </ul>
+                      {architecture && (
+                        <ProjectArchitecture
+                          architecture={architecture}
+                          buttonLabel={architectureLabel}
+                        />
+                      )}
                     </div>
                     <div className="relative sm:w-2/4">
                       <StyledImage

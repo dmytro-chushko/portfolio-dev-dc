@@ -16,7 +16,10 @@ export default async function ProjectsSlot({ params }: ProjectsSlotProps) {
 
   return (
     <SectionLayout id="projects" title={dictionary.nav.links.projects}>
-      <ProjectList projectList={projectList} />
+      <ProjectList
+        projectList={projectList}
+        architectureLabel={dictionary.projects.architecture}
+      />
     </SectionLayout>
   );
 }
