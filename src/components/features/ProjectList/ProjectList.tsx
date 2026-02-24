@@ -47,10 +47,7 @@ const ProjectList = ({ projectList, architectureLabel }: ProjectListProps) => {
               <li
                 key={title}
                 id={`card_${i + 1}`}
-                className={clsx(
-                  'sticky transition-all h-[90vh] top-8 lg:top-[90px]',
-                  'card'
-                )}
+                className={clsx('sticky  h-[90vh] top-8 lg:top-[90px]', 'card')}
               >
                 <div className="rounded-2xl h-full card_content overflow-hidden">
                   <div
@@ -64,7 +61,7 @@ const ProjectList = ({ projectList, architectureLabel }: ProjectListProps) => {
                     <div className="h-full w-full bg-gradient-to-r from-foreground/25 to-foreground/25" />
                   </div>
                   <div className="absolute card_content_inner sm:p-0 sm:flex sm:justify-around sm:items-center">
-                    <div className="p-4 mb-8 sm:mb-0 sm:w-1/3 bg-background/70 text-foreground">
+                    <div className="p-4 mb-8 sm:mb-0 sm:w-1/3 bg-background/70 text-foreground transition-all min-h-0">
                       <ExtLink
                         className="md:justify-start"
                         href={link}

@@ -1,13 +1,19 @@
 'use client';
 
+import clsx from 'clsx';
 import { ReactNode, useState } from 'react';
 
 type HoverToltipProps = {
   children: ReactNode;
   tooltipValue: string;
+  disabled?: boolean;
 };
 
-const HoverToolTip = ({ children, tooltipValue }: HoverToltipProps) => {
+const HoverToolTip = ({
+  children,
+  tooltipValue,
+  disabled,
+}: HoverToltipProps) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(false);
 
@@ -18,10 +24,10 @@ const HoverToolTip = ({ children, tooltipValue }: HoverToltipProps) => {
   return (
     <div className="relative">
       <div
-        onMouseEnter={() => setVisible(true)}
+        onMouseEnter={() => !disabled && setVisible(true)}
         onMouseLeave={() => setVisible(false)}
         onMouseMove={handleMouseMove}
-        className="cursor-pointer"
+        className={clsx(!disabled && 'cursor-pointer')}
       >
         {children}
       </div>

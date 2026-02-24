@@ -49,7 +49,7 @@ const ProjectArchitecture = ({
     <Disclosure as="div" className="mt-2">
       <div
         className={clsx(
-          'grid transition-[grid-template-rows] duration-200 ease-out',
+          'grid transition-[grid-template-rows] duration-400  ease-out',
           'grid-rows-[auto_0fr] [&:has([data-headlessui-state~=open])]:grid-rows-[auto_1fr]'
         )}
       >
@@ -77,7 +77,12 @@ const ProjectArchitecture = ({
           </DisclosureButton>
         </div>
         <div className="min-h-0 overflow-hidden">
-          <DisclosurePanel unmount={false} as="div" className="min-h-0">
+          <DisclosurePanel
+            unmount={false}
+            as="div"
+            className="!block min-h-0 origin-top transition duration-400 ease-out data-closed:-translate-y-6 data-closed:opacity-0"
+            transition
+          >
             <div className="mt-2 pt-2 border-t border-foreground/20 space-y-1 text-sm text-foreground/90">
               {entries.map((key) => (
                 <div key={key}>
