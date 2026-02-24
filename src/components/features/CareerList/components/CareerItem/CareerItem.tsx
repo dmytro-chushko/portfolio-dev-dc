@@ -69,7 +69,7 @@ const CareerItem = ({
           {tech.length > 0 &&
             tech.map((techName) => (
               <li key={techName}>
-                <TechIconFactory techName={techName} size={24} />
+                <TechIconFactory techName={techName} size={24} tooltip />
               </li>
             ))}
         </ul>
