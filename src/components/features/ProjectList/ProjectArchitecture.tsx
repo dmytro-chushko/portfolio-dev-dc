@@ -7,10 +7,8 @@ import {
 } from '@headlessui/react';
 import clsx from 'clsx';
 
-import {
-  ArchitectureType,
-  formatArchitectureValue,
-} from '@/lib/types/ArchitectureType';
+import TechIconFactory from '@/components/ui/TechIconFactory/TechIconFactory';
+import { ArchitectureType } from '@/lib/types/ArchitectureType';
 
 const ARCHITECTURE_KEYS: (keyof ArchitectureType)[] = [
   'frontend',
@@ -40,7 +38,7 @@ const ProjectArchitecture = ({
   buttonLabel,
 }: ProjectArchitectureProps) => {
   const entries = ARCHITECTURE_KEYS.filter(
-    (key) => architecture[key] != null && architecture[key] !== ''
+    (key) => architecture[key] != null && architecture[key]
   );
 
   if (entries.length === 0) return null;
@@ -85,9 +83,22 @@ const ProjectArchitecture = ({
           >
             <div className="mt-2 pt-2 border-t border-foreground/20 space-y-1 text-sm text-foreground/90">
               {entries.map((key) => (
-                <div key={key}>
-                  <span className="font-medium">{LABEL_MAP[key]}:</span>{' '}
-                  {formatArchitectureValue(architecture[key]!)}
+                <div key={key} className="flex items-end flex-wrap gap-1">
+                  <span className="font-bold text-base underline">
+                    {LABEL_MAP[key]}:{' '}
+                  </span>{' '}
+                  {architecture[key]?.map((item, i, arr) => (
+                    <span
+                      key={`${key}${item.label}`}
+                      className="flex items-end gap-1"
+                    >
+                      {item.tech && (
+                        <TechIconFactory techName={item.tech} size={16} />
+                      )}
+                      {item.label}
+                      {i !== arr.length - 1 ? ',' : ';'}
+                    </span>
+                  ))}
                 </div>
               ))}
             </div>
