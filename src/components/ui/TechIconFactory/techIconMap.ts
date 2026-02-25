@@ -1,6 +1,7 @@
 import { SVGProps, JSX } from 'react';
 
 import AmazonAwsTechIcon from '@/components/icons/tech/amazonaws.svg';
+import ContentfulTechIcon from '@/components/icons/tech/contentful.svg';
 import CssTechIcon from '@/components/icons/tech/css3.svg';
 import DockerTechIcon from '@/components/icons/tech/docker.svg';
 import ExpressTechIcon from '@/components/icons/tech/express.svg';
@@ -163,6 +164,10 @@ const techIconMap = {
   storybook: {
     icon: StorybookTechIcon,
     title: 'Storybook',
+  },
+  contentful: {
+    icon: ContentfulTechIcon,
+    title: 'Contentful',
   },
 } satisfies Record<
   string,

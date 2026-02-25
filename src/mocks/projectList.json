@@ -6,11 +6,71 @@
       "ua": "Безголовий E-commerce сайт (Gatsby + Shopify + Contentful)."
     },
     "architecture": {
-      "frontend": "Gatsby (React, static rendering)",
-      "dataSources": ["Contentful", "Shopify"],
-      "backend": "Netlify Functions (serverless)",
-      "seo": ["sitemap", "robots", "schema.org"],
-      "hosting": "Netlify"
+      "frontend": [
+        {
+          "tech": "gatsby",
+          "label": "Gatsby (React, static rendering)"
+        },
+        {
+          "tech": "react",
+          "label": "React 18"
+        },
+        {
+          "tech": "remixjs",
+          "label": "Remix (Shopify Apps)"
+        },
+        {
+          "tech": "styledcomponents",
+          "label": "Style Components"
+        },
+        {
+          "tech": "typescript",
+          "label": "TypeScript"
+        }
+      ],
+      "dataSources": [
+        {
+          "tech": "contentful",
+          "label": "Contentful"
+        },
+        {
+          "tech": "shopify",
+          "label": "Shopify API"
+        },
+        {
+          "tech": null,
+          "label": "Zuppier"
+        },
+        {
+          "tech": null,
+          "label": "Klaviyo"
+        },
+        {
+          "tech": null,
+          "label": "Judge.me"
+        }
+      ],
+      "backend": [
+        { "tech": "netlify", "label": "Netlify Functions (serverless)" },
+        { "tech": "shopify", "label": "Shopify Apps" },
+        { "tech": "graphql", "label": "GraphQL" },
+        { "tech": "postgresql", "label": "PostgreSQL" }
+      ],
+      "seo": [
+        {
+          "tech": null,
+          "label": "sitemap"
+        },
+        {
+          "tech": null,
+          "label": "robots"
+        },
+        {
+          "tech": null,
+          "label": "schema.org"
+        }
+      ],
+      "hosting": [{ "tech": "netlify", "label": "Netlify" }]
     },
     "company": "DevIt",
     "link": "https://www.heliguy.com/",
@@ -27,6 +87,7 @@
       "graphql",
       "sass",
       "styledcomponents",
+      "contentful",
       "prismaorm",
       "postgresql",
       "netlify"
@@ -39,11 +100,28 @@
       "ua": "SaaS для освітян на основі штучного інтелекту."
     },
     "architecture": {
-      "frontend": "Next.js 14 (App Router), React 18, TypeScript, MUI, TipTap",
-      "dataSources": ["PostgreSQL", "Auth0", "Vercel Blob"],
-      "backend": ["Next.js API Routes", "Prisma", "Node.js"],
-      "seo": ["Next.js Metadata API"],
-      "hosting": "Vercel"
+      "frontend": [
+        { "tech": "next", "label": "Next.js 14 (App Router)" },
+        { "tech": "react", "label": "React 18" },
+        { "tech": "shopify", "label": "TypeScript" },
+        { "tech": null, "label": "Material UI" }
+      ],
+      "dataSources": [
+        { "tech": "postgresql", "label": "PostgreSQL" },
+        { "tech": null, "label": "Auth0" }
+      ],
+      "backend": [
+        { "tech": "next", "label": "Next.js API Routes" },
+        { "tech": "prismaorm", "label": "Prisma" },
+        { "tech": "node", "label": "Node.js" }
+      ],
+      "seo": [
+        {
+          "tech": "next",
+          "label": "Next.js Metadata API"
+        }
+      ],
+      "hosting": [{ "tech": "vercel", "label": "Vercel" }]
     },
     "company": "DevIt",
     "link": "https://www.gokaiba.com/",
@@ -69,16 +147,27 @@
       "ua": "Тренувальна платформа для тренерів з плавання та команд."
     },
     "architecture": {
-      "frontend": "React, Material-UI, Ant Design",
-      "dataSources": [
-        "MongoDB Atlas",
-        "Stripe",
-        "USA Swimming API",
-        "Mailchimp"
+      "frontend": [
+        { "tech": "meteor", "label": "Meteor JS" },
+        { "tech": "react", "label": "React 18" },
+        { "tech": "shopify", "label": "TypeScript" },
+        { "tech": null, "label": "Material UI" },
+        {
+          "tech": "styledcomponents",
+          "label": "Style Components"
+        }
       ],
-      "backend": ["Meteor (Node.js)", "Stripe API"],
-      "seo": ["React Helmet"],
-      "hosting": "Meteor Galaxy, Netlify, App Store / Google Play"
+      "dataSources": [
+        { "tech": "mongodb", "label": "MongoDB Atlas" },
+        { "tech": "mongoose", "label": "Mongoose" },
+        { "tech": null, "label": "Stripe" }
+      ],
+      "backend": [
+        { "tech": "meteor", "label": "Meteor JS" },
+        { "tech": "node", "label": "Node.js" },
+        { "tech": null, "label": "Stripe API" }
+      ],
+      "hosting": [{ "tech": "netlify", "label": "Netlify" }]
     },
     "company": "HaloLab",
     "link": "https://team.commitswimming.com/sign-in",
