@@ -38,15 +38,15 @@
           "label": "Shopify API"
         },
         {
-          "tech": null,
-          "label": "Zuppier"
+          "tech": "zapier",
+          "label": "Zapier"
         },
         {
-          "tech": null,
+          "tech": "klaviyo",
           "label": "Klaviyo"
         },
         {
-          "tech": null,
+          "tech": "judgeme",
           "label": "Judge.me"
         }
       ],
@@ -90,6 +90,9 @@
       "contentful",
       "prismaorm",
       "postgresql",
+      "zapier",
+      "klaviyo",
+      "judgeme",
       "netlify"
     ]
   },
@@ -108,7 +111,7 @@
       ],
       "dataSources": [
         { "tech": "postgresql", "label": "PostgreSQL" },
-        { "tech": null, "label": "Auth0" }
+        { "tech": "autho", "label": "Auth0" }
       ],
       "backend": [
         { "tech": "next", "label": "Next.js API Routes" },
@@ -136,6 +139,7 @@
       "styledcomponents",
       "materialui",
       "storybook",
+      "autho",
       "prismaorm",
       "postgresql",
       "vercel"
@@ -151,7 +155,7 @@
       "frontend": [
         { "tech": "meteor", "label": "Meteor JS" },
         { "tech": "react", "label": "React 18" },
-        { "tech": "shopify", "label": "TypeScript" },
+        { "tech": "typescript", "label": "TypeScript" },
         { "tech": "materialui", "label": "Material UI" },
         {
           "tech": "styledcomponents",

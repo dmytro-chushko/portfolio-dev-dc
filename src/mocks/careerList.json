@@ -21,8 +21,12 @@
       "styledcomponents",
       "materialui",
       "storybook",
+      "autho",
       "prismaorm",
       "postgresql",
+      "zapier",
+      "klaviyo",
+      "judgeme",
       "vercel",
       "netlify"
     ],

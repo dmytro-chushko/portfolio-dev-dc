@@ -1,6 +1,7 @@
 import { SVGProps, JSX } from 'react';
 
 import AmazonAwsTechIcon from '@/components/icons/tech/amazonaws.svg';
+import AuthOTechIcon from '@/components/icons/tech/auth0.svg';
 import ContentfulTechIcon from '@/components/icons/tech/contentful.svg';
 import CssTechIcon from '@/components/icons/tech/css3.svg';
 import DockerTechIcon from '@/components/icons/tech/docker.svg';
@@ -11,6 +12,8 @@ import GithubTechIcon from '@/components/icons/tech/github.svg';
 import GraphqlTechIcon from '@/components/icons/tech/graphql.svg';
 import HerokuTechIcon from '@/components/icons/tech/heroku.svg';
 import HtmlTechIcon from '@/components/icons/tech/html5.svg';
+import JudgemeTechIcon from '@/components/icons/tech/judgeme.svg';
+import KlaviyoTechIcon from '@/components/icons/tech/klaviyo.svg';
 import MaterialUiTechIcon from '@/components/icons/tech/material-ui.svg';
 import MeteorTechIcon from '@/components/icons/tech/meteor.svg';
 import MongoTechIcon from '@/components/icons/tech/mongodb.svg';
@@ -35,6 +38,7 @@ import Tailwind from '@/components/icons/tech/tailwind.svg';
 import TypeOrmTechIcon from '@/components/icons/tech/typeorm-seeklogo.svg';
 import TypeScriptTechIcon from '@/components/icons/tech/typescript.svg';
 import VercelTechIcon from '@/components/icons/tech/vercel.svg';
+import ZapierTechIcon from '@/components/icons/tech/zapier.svg';
 
 const techIconMap = {
   gatsby: { icon: GatsbyTechIcon, title: 'Gatsby.js' },
@@ -173,6 +177,22 @@ const techIconMap = {
   materialui: {
     icon: MaterialUiTechIcon,
     title: 'Material UI',
+  },
+  autho: {
+    icon: AuthOTechIcon,
+    title: 'Auth0',
+  },
+  zapier: {
+    icon: ZapierTechIcon,
+    title: 'Zapier',
+  },
+  klaviyo: {
+    icon: KlaviyoTechIcon,
+    title: 'Klaviyo',
+  },
+  judgeme: {
+    icon: JudgemeTechIcon,
+    title: 'Judge.me',
   },
 } satisfies Record<
   string,
