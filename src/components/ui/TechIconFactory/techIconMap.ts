@@ -11,6 +11,7 @@ import GithubTechIcon from '@/components/icons/tech/github.svg';
 import GraphqlTechIcon from '@/components/icons/tech/graphql.svg';
 import HerokuTechIcon from '@/components/icons/tech/heroku.svg';
 import HtmlTechIcon from '@/components/icons/tech/html5.svg';
+import MaterialUiTechIcon from '@/components/icons/tech/material-ui.svg';
 import MeteorTechIcon from '@/components/icons/tech/meteor.svg';
 import MongoTechIcon from '@/components/icons/tech/mongodb.svg';
 import MongooseTechIcon from '@/components/icons/tech/mongoose.svg';
@@ -168,6 +169,10 @@ const techIconMap = {
   contentful: {
     icon: ContentfulTechIcon,
     title: 'Contentful',
+  },
+  materialui: {
+    icon: MaterialUiTechIcon,
+    title: 'Material UI',
   },
 } satisfies Record<
   string,

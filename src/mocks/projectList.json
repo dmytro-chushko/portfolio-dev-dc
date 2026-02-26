@@ -103,8 +103,8 @@
       "frontend": [
         { "tech": "next", "label": "Next.js 14 (App Router)" },
         { "tech": "react", "label": "React 18" },
-        { "tech": "shopify", "label": "TypeScript" },
-        { "tech": null, "label": "Material UI" }
+        { "tech": "typescript", "label": "TypeScript" },
+        { "tech": "materialui", "label": "Material UI" }
       ],
       "dataSources": [
         { "tech": "postgresql", "label": "PostgreSQL" },
@@ -134,6 +134,7 @@
       "typescript",
       "next",
       "styledcomponents",
+      "materialui",
       "storybook",
       "prismaorm",
       "postgresql",
@@ -151,7 +152,7 @@
         { "tech": "meteor", "label": "Meteor JS" },
         { "tech": "react", "label": "React 18" },
         { "tech": "shopify", "label": "TypeScript" },
-        { "tech": null, "label": "Material UI" },
+        { "tech": "materialui", "label": "Material UI" },
         {
           "tech": "styledcomponents",
           "label": "Style Components"
@@ -180,6 +181,7 @@
       "typescript",
       "meteor",
       "styledcomponents",
+      "materialui",
       "storybook",
       "mongoose",
       "mongodb",
