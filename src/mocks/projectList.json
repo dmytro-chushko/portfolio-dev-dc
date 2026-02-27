@@ -165,12 +165,12 @@
       "dataSources": [
         { "tech": "mongodb", "label": "MongoDB Atlas" },
         { "tech": "mongoose", "label": "Mongoose" },
-        { "tech": null, "label": "Stripe" }
+        { "tech": "stripe", "label": "Stripe" }
       ],
       "backend": [
         { "tech": "meteor", "label": "Meteor JS" },
         { "tech": "node", "label": "Node.js" },
-        { "tech": null, "label": "Stripe API" }
+        { "tech": "stripe", "label": "Stripe API" }
       ],
       "hosting": [{ "tech": "netlify", "label": "Netlify" }]
     },
@@ -189,6 +189,7 @@
       "storybook",
       "mongoose",
       "mongodb",
+      "stripe",
       "netlify"
     ]
   },
