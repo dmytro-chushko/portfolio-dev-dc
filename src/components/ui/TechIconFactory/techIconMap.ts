@@ -32,6 +32,7 @@ import RemixTechIcon from '@/components/icons/tech/remix.svg';
 import SassTechIcon from '@/components/icons/tech/sass.svg';
 import ShopifyTechIcon from '@/components/icons/tech/shopify.svg';
 import StorybookTechIcon from '@/components/icons/tech/storybook.svg';
+import StripeTechIcon from '@/components/icons/tech/stripe.svg';
 import StyledComponentsTechIcon from '@/components/icons/tech/styled-components.svg';
 import SwaggerTechIcon from '@/components/icons/tech/swagger.svg';
 import Tailwind from '@/components/icons/tech/tailwind.svg';
@@ -193,6 +194,10 @@ const techIconMap = {
   judgeme: {
     icon: JudgemeTechIcon,
     title: 'Judge.me',
+  },
+  stripe: {
+    icon: StripeTechIcon,
+    title: 'Stripe',
   },
 } satisfies Record<
   string,
