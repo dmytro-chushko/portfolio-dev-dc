@@ -232,7 +232,7 @@
   {
     "techName": "nest",
     "title": "NestJS v11.1.6",
-    "category": "secondary",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "Progressive Node.js framework with TypeScript support.",
@@ -328,6 +328,86 @@
     "description": {
       "en": "Tool for developing and testing UI components in isolation.",
       "ua": "Інструмент для розробки та тестування UI-компонентів окремо."
+    }
+  },
+  {
+    "techName": "contentful",
+    "title": "Contentful v11.10.5",
+    "category": "primary",
+    "estimate": 4,
+    "description": {
+      "en": "Headless CMS for managing and delivering structured content via APIs.",
+      "ua": "Headless CMS для керування та доставки структурованого контенту через API."
+    }
+  },
+  {
+    "techName": "materialui",
+    "title": "Material UI v7.3.8",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "React component library implementing Google’s Material Design system.",
+      "ua": "Бібліотека React-компонентів, що реалізує дизайн-систему Material Design від Google."
+    }
+  },
+  {
+    "techName": "autho",
+    "title": "Auth0",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Authentication and authorization platform for securing web and mobile applications.",
+      "ua": "Платформа автентифікації та авторизації для захисту веб- і мобільних застосунків."
+    }
+  },
+  {
+    "techName": "clerk",
+    "title": "Clerk",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "User management and authentication solution with prebuilt UI components.",
+      "ua": "Рішення для керування користувачами та автентифікації з готовими UI-компонентами."
+    }
+  },
+  {
+    "techName": "zapier",
+    "title": "Zapier v18.0.0",
+    "category": "secondary",
+    "estimate": 3,
+    "description": {
+      "en": "Automation platform that connects apps and services through workflows (Zaps).",
+      "ua": "Платформа автоматизації, що з'єднує застосунки та сервіси через автоматизовані сценарії (Zaps)."
+    }
+  },
+  {
+    "techName": "klaviyo",
+    "title": "Klaviyo",
+    "category": "secondary",
+    "estimate": 3,
+    "description": {
+      "en": "Marketing automation and email platform focused on e-commerce growth.",
+      "ua": "Платформа маркетингової автоматизації та email-розсилок з фокусом на e-commerce."
+    }
+  },
+  {
+    "techName": "stripe",
+    "title": "Stripe",
+    "category": "secondary",
+    "estimate": 4,
+    "description": {
+      "en": "Payment processing platform and API for online businesses.",
+      "ua": "Платформа для обробки платежів та API для інтернет-бізнесу."
+    }
+  },
+  {
+    "techName": "judgeme",
+    "title": "Judge.me",
+    "category": "secondary",
+    "estimate": 3,
+    "description": {
+      "en": "Product review and rating platform to collect and display reviews on e-commerce stores.",
+      "ua": "Платформа для відгуків та рейтингів, щоб збирати й відображати відгуки на e-commerce-магазинах."
     }
   }
 ]

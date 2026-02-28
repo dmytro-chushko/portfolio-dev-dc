@@ -12,10 +12,6 @@
           "label": "Gatsby (React, static rendering)"
         },
         {
-          "tech": "react",
-          "label": "React 18"
-        },
-        {
           "tech": "remixjs",
           "label": "Remix (Shopify Apps)"
         },
@@ -24,8 +20,8 @@
           "label": "Style Components"
         },
         {
-          "tech": "typescript",
-          "label": "TypeScript"
+          "tech": "sass",
+          "label": "SCSS"
         }
       ],
       "dataSources": [
@@ -55,20 +51,6 @@
         { "tech": "shopify", "label": "Shopify Apps" },
         { "tech": "graphql", "label": "GraphQL" },
         { "tech": "postgresql", "label": "PostgreSQL" }
-      ],
-      "seo": [
-        {
-          "tech": null,
-          "label": "sitemap"
-        },
-        {
-          "tech": null,
-          "label": "robots"
-        },
-        {
-          "tech": null,
-          "label": "schema.org"
-        }
       ],
       "hosting": [{ "tech": "netlify", "label": "Netlify" }]
     },
@@ -105,8 +87,6 @@
     "architecture": {
       "frontend": [
         { "tech": "next", "label": "Next.js 14 (App Router)" },
-        { "tech": "react", "label": "React 18" },
-        { "tech": "typescript", "label": "TypeScript" },
         { "tech": "materialui", "label": "Material UI" }
       ],
       "dataSources": [
@@ -115,14 +95,7 @@
       ],
       "backend": [
         { "tech": "next", "label": "Next.js API Routes" },
-        { "tech": "prismaorm", "label": "Prisma" },
-        { "tech": "node", "label": "Node.js" }
-      ],
-      "seo": [
-        {
-          "tech": "next",
-          "label": "Next.js Metadata API"
-        }
+        { "tech": "prismaorm", "label": "Prisma" }
       ],
       "hosting": [{ "tech": "vercel", "label": "Vercel" }]
     },
@@ -154,8 +127,6 @@
     "architecture": {
       "frontend": [
         { "tech": "meteor", "label": "Meteor JS" },
-        { "tech": "react", "label": "React 18" },
-        { "tech": "typescript", "label": "TypeScript" },
         { "tech": "materialui", "label": "Material UI" },
         {
           "tech": "styledcomponents",
@@ -169,7 +140,6 @@
       ],
       "backend": [
         { "tech": "meteor", "label": "Meteor JS" },
-        { "tech": "node", "label": "Node.js" },
         { "tech": "stripe", "label": "Stripe API" }
       ],
       "hosting": [{ "tech": "netlify", "label": "Netlify" }]
