@@ -2,6 +2,7 @@ import { SVGProps, JSX } from 'react';
 
 import AmazonAwsTechIcon from '@/components/icons/tech/amazonaws.svg';
 import AuthOTechIcon from '@/components/icons/tech/auth0.svg';
+import ClerkTechIcon from '@/components/icons/tech/clerk.svg';
 import ContentfulTechIcon from '@/components/icons/tech/contentful.svg';
 import CssTechIcon from '@/components/icons/tech/css3.svg';
 import DockerTechIcon from '@/components/icons/tech/docker.svg';
@@ -198,6 +199,10 @@ const techIconMap = {
   stripe: {
     icon: StripeTechIcon,
     title: 'Stripe',
+  },
+  clerk: {
+    icon: ClerkTechIcon,
+    title: 'Clerk',
   },
 } satisfies Record<
   string,
