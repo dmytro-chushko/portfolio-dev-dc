@@ -1,4 +1,5 @@
 {
+  "common": { "backToTop": "Back to top" },
   "projects": { "architecture": "Architecture" },
   "theme": { "light": "Light", "dark": "Dark", "system": "System" },
   "nav": {
