@@ -13,7 +13,6 @@ export const useBodyScrollLock = (elementId: string) => {
     const checkbox = document.getElementById(elementId) as HTMLInputElement;
 
     if (!checkbox) return;
-
     const handleMenuToggle = () => {
       toggleBodyScroll(checkbox.checked);
     };

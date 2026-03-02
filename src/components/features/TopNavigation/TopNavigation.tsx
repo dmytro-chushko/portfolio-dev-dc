@@ -41,6 +41,7 @@ const TopNavigation = ({
 
     if (checkbox) {
       checkbox.checked = false;
+      document.body.style.overflow = '';
     }
   };
 
