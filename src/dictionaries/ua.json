@@ -1,4 +1,5 @@
 {
+  "common": { "backToTop": "Нагору" },
   "projects": { "architecture": "Архітектура" },
   "theme": { "light": "Світла", "dark": "Темна", "system": "Система" },
   "nav": {

@@ -1,4 +1,5 @@
 import LangSwitcher from '@/components/features/LangSwitcher/LangSwitcher';
+import ScrollToTopButton from '@/components/features/ScrollToTopButton/ScrollToTopButton';
 import Socials from '@/components/features/Socials/Socials';
 import ThemeSwitcher from '@/components/features/ThemeSwitcher/ThemeSwitcher';
 import TopNavigation from '@/components/features/TopNavigation/TopNavigation';
@@ -46,6 +47,7 @@ export default async function RootLayout({
         {about_me}
         {modal}
       </main>
+      <ScrollToTopButton label={dict.common.backToTop} />
     </>
   );
 }
