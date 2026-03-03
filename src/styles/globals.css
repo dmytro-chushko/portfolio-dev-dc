@@ -22,7 +22,19 @@
 
 body {
   color: rgb(var(--foreground));
-  background: rgb(var(--background));
+  background-color: rgb(var(--background));
+  background-image:
+    radial-gradient(
+      circle at top left,
+      rgba(var(--foreground), 0.08),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(var(--foreground), 0.05),
+      transparent 55%
+    );
+  background-attachment: fixed;
   font-family: var(--font-roboto);
   font-size: 14px;
   overflow-x: hidden;
@@ -43,5 +55,124 @@ input {
 @layer components {
   .section-title {
     @apply text-center mb-7;
+  }
+
+  .hero-section {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    /* Більш контрастна технічна сітка з вузлами на перетинах */
+    background-image:
+      linear-gradient(rgba(var(--foreground), 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(var(--foreground), 0.1) 1px, transparent 1px),
+      radial-gradient(
+        circle at 1px 1px,
+        rgba(var(--foreground), 0.24) 0,
+        rgba(var(--foreground), 0.24) 2px,
+        transparent 2px
+      );
+    background-size:
+      32px 32px,
+      32px 32px,
+      32px 32px;
+    /* Сітка концентрується ближче до центру/верху й розчиняється донизу */
+    mask-image: radial-gradient(circle at top, black, transparent 70%);
+    opacity: 0.9;
+  }
+
+  /* ===== Section backgrounds ===== */
+
+  /* Career: вертикальний таймлайн-патерн у верхній частині секції */
+  section#career {
+    position: relative;
+    z-index: 0;
+  }
+
+  section#career::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: linear-gradient(
+      90deg,
+      rgba(var(--foreground), 0.16) 1px,
+      transparent 1px
+    );
+    background-size: 80px 1px;
+    /* Спочатку прозорий, швидкий перехід до видимого, потім повільне згасання */
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 45%,
+      transparent 100%
+    );
+    opacity: 0.9;
+  }
+
+  /* Skills: дрібний «піксельний»/точковий патерн */
+  section#skills {
+    position: relative;
+    z-index: 0;
+  }
+
+  section#skills::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(
+      circle,
+      rgba(var(--foreground), 0.25) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+    /* Прозорий центр, швидкий перехід до видимого кільця, далі плавне згасання */
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 60%,
+      transparent 100%
+    );
+    opacity: 0.9;
+  }
+
+  /* Projects: діагональні лінії в куті секції (версія до repeating-linear) */
+  section#projects {
+    position: relative;
+    z-index: 0;
+  }
+
+  section#projects::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: linear-gradient(
+      135deg,
+      rgba(var(--foreground), 0.18) 1px,
+      transparent 0
+    );
+    background-size: 90px 90px;
+    /* Прозорий верхній кут, швидкий вхід у видиму зону, потім довге згасання */
+    mask-image: radial-gradient(
+      circle at top right,
+      transparent 0%,
+      black 20%,
+      black 50%,
+      transparent 100%
+    );
+    opacity: 0.9;
   }
 }
