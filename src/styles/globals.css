@@ -90,12 +90,14 @@ input {
   /* ===== Section backgrounds ===== */
 
   /* Career: вертикальний таймлайн-патерн у верхній частині секції */
-  section#career {
+  section#career,
+  section#projects {
     position: relative;
     z-index: 0;
   }
 
-  section#career::before {
+  section#career::before,
+  section#projects::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -148,7 +150,7 @@ input {
   }
 
   /* Projects: діагональні лінії в куті секції (версія до repeating-linear) */
-  section#projects {
+  /* section#projects {
     position: relative;
     z-index: 0;
   }
@@ -161,12 +163,12 @@ input {
     pointer-events: none;
     background-image: linear-gradient(
       135deg,
-      rgba(var(--foreground), 0.18) 1px,
+      rgba(var(--foreground), 0.5) 1px,
       transparent 0
     );
-    background-size: 90px 90px;
-    /* Прозорий верхній кут, швидкий вхід у видиму зону, потім довге згасання */
-    mask-image: radial-gradient(
+    background-size: 90px 90px; */
+  /* Прозорий верхній кут, швидкий вхід у видиму зону, потім довге згасання */
+  /* mask-image: radial-gradient(
       circle at top right,
       transparent 0%,
       black 20%,
@@ -174,5 +176,5 @@ input {
       transparent 100%
     );
     opacity: 0.9;
-  }
+  } */
 }

@@ -169,6 +169,22 @@
       "en": "IT Services Company Website.",
       "ua": "Вебсайт компанії з IT-послуг."
     },
+    "architecture": {
+      "frontend": [
+        { "tech": "next", "label": "Next.js 14 (App Router)" },
+        { "tech": "materialui", "label": "Material UI" },
+        {
+          "tech": "styledcomponents",
+          "label": "Style Components"
+        }
+      ],
+      "dataSources": [
+        { "tech": "mongodb", "label": "MongoDB Atlas" },
+        { "tech": "mongoose", "label": "Mongoose" }
+      ],
+      "backend": [{ "tech": "nest", "label": "Nest JS" }],
+      "hosting": [{ "tech": "heroku", "label": "Heroku" }]
+    },
     "company": "CGS",
     "link": "https://cgsteam.io/",
     "background": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/bg-cgsteam.png",
