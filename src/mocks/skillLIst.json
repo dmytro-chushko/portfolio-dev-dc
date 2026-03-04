@@ -363,7 +363,7 @@
   {
     "techName": "clerk",
     "title": "Clerk",
-    "category": "secondary",
+    "category": "primary",
     "estimate": 4,
     "description": {
       "en": "User management and authentication solution with prebuilt UI components.",
