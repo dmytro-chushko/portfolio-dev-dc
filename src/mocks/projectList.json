@@ -211,11 +211,30 @@
       "en": "Online store for modular drum instruments.",
       "ua": "Інтернет-магазин модульних ударних інструментів."
     },
+    "architecture": {
+      "frontend": [
+        { "tech": "react", "label": "React" },
+        {
+          "tech": "styledcomponents",
+          "label": "Style Components"
+        }
+      ],
+      "dataSources": [{ "tech": "firebase", "label": "Firebase" }],
+      "backend": [{ "tech": "firebase", "label": "Firebase" }],
+      "hosting": [{ "tech": "heroku", "label": "Heroku" }]
+    },
     "company": "Freelance",
     "link": "https://puzz-drums.com/",
     "background": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/bg-puzz-drums.png",
     "desktop": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/macbook-air-puzz-drums.png",
     "mobile": "https://jrvahgupsifnchwwzflu.supabase.co/storage/v1/object/public/dev-dc-portfolio-bucket/projects/iphone-14-puzz-drums.png",
-    "tech": ["node", "react", "typescript", "styledcomponents", "heroku"]
+    "tech": [
+      "node",
+      "react",
+      "typescript",
+      "styledcomponents",
+      "firebase",
+      "heroku"
+    ]
   }
 ]
