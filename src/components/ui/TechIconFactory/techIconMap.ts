@@ -8,6 +8,7 @@ import CssTechIcon from '@/components/icons/tech/css3.svg';
 import DockerTechIcon from '@/components/icons/tech/docker.svg';
 import ExpressTechIcon from '@/components/icons/tech/express.svg';
 import FigmaTechIcon from '@/components/icons/tech/figma.svg';
+import FirebaseTechIcon from '@/components/icons/tech/firebase.svg';
 import GatsbyTechIcon from '@/components/icons/tech/gatsby.svg';
 import GithubTechIcon from '@/components/icons/tech/github.svg';
 import GraphqlTechIcon from '@/components/icons/tech/graphql.svg';
@@ -203,6 +204,10 @@ const techIconMap = {
   clerk: {
     icon: ClerkTechIcon,
     title: 'Clerk',
+  },
+  firebase: {
+    icon: FirebaseTechIcon,
+    title: 'Firebase',
   },
 } satisfies Record<
   string,
