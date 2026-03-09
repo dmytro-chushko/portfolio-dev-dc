@@ -2,8 +2,8 @@
   {
     "title": "Heliguy",
     "description": {
-      "en": "Headless E-commerce Website (Gatsby + Shopify + Contentful).",
-      "ua": "Безголовий E-commerce сайт (Gatsby + Shopify + Contentful)."
+      "en": "E-commerce Website (Gatsby + Shopify + Contentful).",
+      "ua": "E-commerce сайт (Gatsby + Shopify + Contentful)."
     },
     "architecture": {
       "frontend": [
