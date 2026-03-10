@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import DiscordIcon from '@/components/icons/socials/discord.svg';
+// import DiscordIcon from '@/components/icons/socials/discord.svg';
 import GitHubIcon from '@/components/icons/socials/github.svg';
 import LinkedInIcon from '@/components/icons/socials/linkedin.svg';
 import TelegramIcon from '@/components/icons/socials/telegram.svg';
@@ -45,13 +45,13 @@ const socialArray = [
     label: 'whatsapp',
     link: 'https://wa.me/380674097948',
   },
-  {
-    icon: (size: IconSize) => (
-      <DiscordIcon className={clsx('fill - current', SOCIAL_SIZE_MAP[size])} />
-    ),
-    label: 'discord',
-    link: 'https://discord.gg/7uK6qupkrV',
-  },
+  // {
+  //   icon: (size: IconSize) => (
+  //     <DiscordIcon className={clsx('fill - current', SOCIAL_SIZE_MAP[size])} />
+  //   ),
+  //   label: 'discord',
+  //   link: 'https://discord.gg/7uK6qupkrV',
+  // },
 ];
 
 type SocialsProps = {
