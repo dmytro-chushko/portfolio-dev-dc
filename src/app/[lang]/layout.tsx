@@ -18,17 +18,17 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
           // Inline CSS to avoid initial flash before Tailwind/global styles load
           dangerouslySetInnerHTML={{
             __html: `
-:root {
-  --background: 239, 246, 255;
-  --foreground: 23, 37, 84;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: 23, 37, 84;
-    --foreground: 239, 246, 255;
-  }
-}
-`,
+                    :root {
+                      --background: 239, 246, 255;
+                      --foreground: 23, 37, 84;
+                    }
+                    @media (prefers-color-scheme: dark) {
+                      :root {
+                        --background: 23, 37, 84;
+                        --foreground: 239, 246, 255;
+                      }
+                    }
+                    `,
           }}
         />
         <Script
