@@ -12,7 +12,7 @@ type HeroProps = {
 const Hero = ({ heroTitle, heroDescripton, heroPhoto }: HeroProps) => {
   return (
     <div className="hero-section ">
-      <div className=" container flex flex-col items-center justify-center lg:flex-row px-4 min-h-screen mx-auto  lg:h-[calc(100vh-88px)] lg:max-w-4xl">
+      <div className=" container flex flex-col items-center justify-center lg:flex-row px-4 max-md:pt-8 min-h-screen mx-auto  lg:h-[calc(100vh-88px)] lg:max-w-4xl">
         <div className="order-2 grid gap-4 lg:order-1">
           <Title className="max-lg:text-center" header="h1" copy={heroTitle} />
           <Paragraph accent>{heroDescripton}</Paragraph>
